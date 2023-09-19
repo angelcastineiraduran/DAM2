@@ -6,9 +6,9 @@
 ^ xor
 - not
 << desplazamento a esquerda
-"""128<<1 --> 64"""
+# 128<<1 --> 64
 >> desplacemento a derecha
-"""128>>3 --> 16"""
+# 128>>3 --> 16
 ```
 
 ## Colecciones
@@ -30,7 +30,7 @@ lista3 = [1, 2.0, "hola que tal", [3+7j, 23], 22, 33, 44, 55] # objetos:entero,f
 print(lista3[3][0]) # imprime [3+7j]
 print(lista3[3]) # imprime [(3+7j),(23)]
 print(lista3[0:8:3]) # empieza en 0, ultimo ele lista el 8, saltos de 3. imprime: [1,[(3+7j),23],44]
-lista3 ) [0:3] = ["un", "dous", "tres", "catro"]"""sustituyo el 0,1 y 2 por eso. imprime ["un", "dous", "tres", "catro", [3+7j, 23], 22, 33, 44, 55]"""
+lista3 ) [0:3] = ["un", "dous", "tres", "catro"] # sustituyo el 0,1 y 2 por eso. imprime ["un", "dous", "tres", "catro", [3+7j, 23], 22, 33, 44, 55]
 
 l = list() # lista vacia
 ```
