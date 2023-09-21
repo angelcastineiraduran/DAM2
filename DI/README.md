@@ -79,6 +79,44 @@ print(diccionario[3]) # 2
 
 ```
 
+### Condicionales
+* si en el bloque no hay por lo menos 1 instruccion, da error. de que tipo? en java
+no pasaria esto?No
+* codigo se tabula con espacios - bloque de codigo todo lo que esta tabulado
+* num bloques libre
+
+```python
+variable = 3
+if variable == 3: # bloque de codigo se marca con ":"
+ # bloque codigo
+else
+ # ""
+# finaliza
+```
+
+### Bucles
+```python
+while variable < 20:
+ variable = variable + 1
+ print ("O valor é" + str(variable)) # necesario es cast para que me imprima el int
+ if variable = 16:
+  break
+ else
+  print ("sigo en bucle")
+
+numeros = [1,2,3,4,5] # toda collecion debe llamarse en plural: antes se llamaba "lista", lista no dice nada, es muy generico
+suma = 0
+for numero in numeros:
+ print (numero)
+ suma = suma + numero
+print suma
+
+# generadores = funcion que genera
+for i in range(5)
+ print (i) // 1,2,3,4
+
+or i in range(5,17,3) # empiez 5, acaba en 17 (no incluido), saltos de 3 en 3
+```
 
 
 
