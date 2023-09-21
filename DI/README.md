@@ -104,19 +104,33 @@ while variable < 20:
  else
   print ("sigo en bucle")
 
-numeros = [1,2,3,4,5] # toda collecion debe llamarse en plural: antes se llamaba "lista", lista no dice nada, es muy generico
+numeros = [1,2,3,4,5] # toda collecion debe llamarse en plural: antes se llamaba "lista" pero lista no dice nada (muy generico)
 suma = 0
 for numero in numeros:
  print (numero)
  suma = suma + numero
 print suma
 
-# generadores = funcion que genera
-for i in range(5)
- print (i) // 1,2,3,4
+# generadores = funcion que genera ...??
 
-or i in range(5,17,3) # empiez 5, acaba en 17 (no incluido), saltos de 3 en 3
+" REPRESENTACION en Java: for(int i = 1; i < 20; i++) con for x in "
+for i in range(5)
+ print (i) # 1,2,3,4
+
+for i in range(5,17,3) # empiez 5, acaba en 17 (no incluido), saltos de 3 en 3
+
+numeros = ("cero", "un", "dous", "tres")
+
+for i in range(len(numeros)): # len = longitud, serian 4 -> *1
+ print(numeros[i]) # imprime posiciones del 1 al 3 (pq 4 esta en el limite)
+
+# no la entiendo???
+for i, numero in enumerate (numeros): # enumerate me devuelve una tupla ...????
+ print (str(i) + " " + numeros[i]) # no hay que castearlo????
 ```
+
+
+PREGUNTAR MANUEL ARRIBAAAAAAA!!!!
 
 
 
