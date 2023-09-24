@@ -1,5 +1,5 @@
 # Práctica: Docker - Comandos básicos
-> La siguiente práctica es una lista de tareas que tenéis que hacer. Por cada tarea tenéis que ir poniendo los comandos utilizados y, brevemente, describir el proceso
+La siguiente práctica es una lista de tareas que tenéis que hacer. Por cada tarea tenéis que ir poniendo los comandos utilizados y, brevemente, describir el proceso
 
 ## 1. Descarga la imagen 'ubuntu y comprueba que está en tu equipo
 
@@ -24,12 +24,12 @@ $ docker run -dit ubuntu:latest bash
 56d1e0ae5ce9424310dc1ad604b8ed3341c755ee4ceb53a0ecad2ccfccb90ed5
 ```
 Parametros
-* `-d` detach para que podamos utilizar el terminal mientras se lanza.
+* `-d` (detach) para que podamos utilizar el terminal mientras se lanza.
 * `-i` y `-t` para crear una sesion interactiva del terminal dentro del contendor.
 
-`bash` es el comando que se ejecutará dentro del contenedor una vez se inicie, es un interprete de comandos y en este caso lo utilizamos porque es compatible con nuestro Sistema Operativo.
+`bash` es el comando que se ejecutará dentro del contenedor una vez se inicie, es un intérprete de comandos y en este caso lo utilizamos porque es compatible con nuestro Sistema Operativo.
 
-Comprobamos que esta arrancado con el comando `ps` el 
+Comprobamos que está arrancado con el comando `ps` el 
 ```bash
 $ docker ps
 CONTAINER ID   IMAGE           COMMAND   CREATED         STATUS         PORTS     NAMES
@@ -62,9 +62,9 @@ $ docker inspect dam_ubu1
 ```
 La salida muestra un objeto "Networks" que muestra a las redes a las que está conectado el contenedor. Este está conectado a una red de tipo "bridge" y su dirección IP es "IPAddress": "172.17.0.3"
 
-Ping a www.google.com
+Ping a google.com
 ```bash
-# Nos metemos en el contenedor
+# Nos metemos en el contenedor...
 # Instalamos el paquete iputils-ping
 root@7e44cbf9cedd:/# apt install iputils-ping
 # Realizamos el ping a google (enviamos 2 paquetes)
@@ -72,12 +72,14 @@ root@7e44cbf9cedd:/# ping -c 2 8.8.8.8
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 64 bytes from 8.8.8.8: icmp_seq=1 ttl=117 time=19.6 ms
 64 bytes from 8.8.8.8: icmp_seq=2 ttl=117 time=20.6 ms
-# Otra alternativ desde fuera del contenedor:
+
+# Otra alternativa desde fuera del contenedor:
 $ docker exec -it dam_ubu1 ping -c 2 8.8.8.8
 ```
 
 ## 5. Crea un contenedor con el nombre 'dam_ubu2'. ¿Puedes hacer ping entre los contenedores?
 Como no hemos especificado el tipo de red asociada al contenedor, ambas fueron creadas con el tipo **brige** el cual nos permite una comunnicación entre contenedores del mismo host. 
+
 _Tanto los contenedores como el tipo de red tienen que estar en ejecución para que sea posible_
 ```bash
 # comprobamos que esta corriendo el tipo de red asociada a esos contenedores
@@ -98,11 +100,11 @@ exit
 # comprobamos estado del mismo 
 $ docker ps -a
 ```
-El contenedor sigue levantado. Si queremos pausarlo o pararlo utilizamos las palabras reservasdas
+El contenedor sigue levantado. Si queremos pausarlo o pararlo utilizamos las palabras reservadas
 de `pause` y `stop` respectivamente.
 
 ## 7. ¿Cuanta memoria ocupaste en el disco?
-Vemos toda 
+
 ```bash
 # Comando de docker 
 $ docker system df
