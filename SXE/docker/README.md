@@ -101,17 +101,36 @@ $ docker ps -a
 El contenedor sigue levantado. Si queremos pausarlo o pararlo utilizamos las palabras reservasdas
 de `pause` y `stop` respectivamente.
 
-## ¿7. Cuanta memoria ocupaste en el disco?
+## 7. ¿Cuanta memoria ocupaste en el disco?
+Vemos toda 
 ```bash
+# Comando de docker 
 $ docker system df
 TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
 Images          1         1         77.82MB   0B (0%)
 Containers      4         3         47.74MB   31B (0%)
 Local Volumes   1         1         11B       0B (0%)
 Build Cache     0         0         0B        0B
+
+# Comando de shell (tradicional)
+$ sudo du -sh /var/lib/docker/
+426M	/var/lib/docker/
 ```
 
+Si añadimos el parámetro `-v` nos da información más detallada.
+Si queremos sólo ver el espacio de las imagenes `docker image ls` y sólo el de los contenedores `docker ps --size
+
 ## 8. ¿Cuanta RAM ocupan los contenedores? ¿Hay algún comando docker para saber esto?
+```bash
+$ docker stats --all
+CONTAINER ID   NAME            CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+1c4cceac8bec   dam_ubu2        0.00%     884KiB / 15.52GiB     0.01%     9.27kB / 840B    0B / 4.1kB    1
+f13c02a2865a   ubu2            0.00%     0B / 0B               0.00%     0B / 0B          0B / 0B       0
+7e44cbf9cedd   dam_ubu1        0.00%     47.91MiB / 15.52GiB   0.30%     29.2MB / 622kB   0B / 76.1MB   2
+56d1e0ae5ce9   lucid_goodall   0.00%     884KiB / 15.52GiB     0.01%     16.3kB / 0B      0B / 0B       1
+
+```
+Utilizamos `--all` para que me muestre todos los contenedores incluidos los que no están levantados (ubu2).
 
 
 
