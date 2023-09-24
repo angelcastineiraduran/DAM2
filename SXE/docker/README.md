@@ -36,7 +36,7 @@ CONTAINER ID   IMAGE           COMMAND   CREATED         STATUS         PORTS   
 56d1e0ae5ce9   ubuntu:latest   "bash"    4 seconds ago   Up 3 seconds             lucid_goodall
 ```
 
-> Si no hubieramos hecho el `pull` previamente al levantar el contenedor no encontraria en local ninguna imagen y por tanto se descagaría la mism de [Docker Hub](https://hub.docker.com)
+> Si no hubieramos hecho el `pull` previamente al levantar el contenedor no encontraria en local ninguna imagen y por tanto se descagaría la misma de [Docker Hub](https://hub.docker.com)
 
 ## 3. Crea un contenedor con el nombre 'dam_ubu1'. ¿Como puedes acceder a él?
 
@@ -120,7 +120,7 @@ $ sudo du -sh /var/lib/docker/
 ```
 
 Si añadimos el parámetro `-v` nos da información más detallada.
-Si queremos sólo ver el espacio de las imagenes `docker image ls` y sólo el de los contenedores `docker ps --size
+Si queremos sólo ver el espacio de las imagenes `docker image ls` y sólo el de los contenedores `docker ps --size`.
 
 ## 8. ¿Cuanta RAM ocupan los contenedores? ¿Hay algún comando docker para saber esto?
 ```bash
