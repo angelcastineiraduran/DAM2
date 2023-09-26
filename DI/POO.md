@@ -4,7 +4,8 @@
 * cuando llamamos al metodo `__init__` la instancia ya esta hecha. en java necesitas reservar variables variables en memoria antes de crear la clase. Pero en python, al hacerse dinamicamente
 no hace falta, la clase se referencia a si misma. no es el constructor, es un metodo para inicializar.
 * `self` == `this`, no se puede utilizar si no se añade en los param del metodo?? se tiene que poner siempre
-```phyton
+
+```python
 class Punto:
  """
  Clase que define a un punto nun plano bidimensional
