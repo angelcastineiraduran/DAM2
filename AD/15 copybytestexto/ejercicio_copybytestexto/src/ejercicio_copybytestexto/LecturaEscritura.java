@@ -24,19 +24,22 @@ public class LecturaEscritura {
             byte byte_leido;
             char letra_leida = 0;
             entrada = new FileInputStream(rutaCopiar);
-            while(c != -1){
-                byte_leido = (byte)entrada.read();
-                c = byte_leido;
-                if(c != -1)
-                    //System.out.print(letra); //imprime bytes
-                    almacenBytes[contador] = byte_leido;
-                    letra_leida = (char)byte_leido;
-                    System.out.print(letra_leida);
-                    contador++;
+            salida = new FileOutputStream(rutaPegar,true); // no sobreescribimos
+           
+            while(( c = entrada.read()) != -1){
+                salida.write(c);
+//                c = byte_leido;
+//                if(c != -1)
+//                    //System.out.print(letra); //imprime bytes
+//                    almacenBytes[contador] = byte_leido;
+//                    letra_leida = (char)byte_leido;
+//                    System.out.print(letra_leida);
+//                    contador++;
                     
             } 
             System.out.println('\n' + "Ya no leemos mas");
             entrada.close();
+            salida.close();
             return true;
         }catch(IOException ex){
             ex.getMessage();

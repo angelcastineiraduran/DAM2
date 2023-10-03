@@ -20,22 +20,23 @@ public class Main {
     public static void main(String[] args) {
         String MSG_CORRECTO = "**Proceso exitoso**";
         String MSG_INCORRECTO = "**Proceso erroneo**";
-        LecturaEscritura lecturaEscritura = new LecturaEscritura();
-        boolean puedeLeer = lecturaEscritura.leer();
-        boolean puedeEscribir = lecturaEscritura.escribir();
+        LecturaEscritura lecturaEscritura = new LecturaEscritura(); 
         
-        System.out.println("--LECTURA--");
-        if(puedeLeer){
-            System.out.println(MSG_CORRECTO);
-        } else {
-            System.out.println(MSG_INCORRECTO);
-        }
-        System.out.println("--ESCRITURA--");
-        if(puedeEscribir){
-            System.out.println(MSG_CORRECTO);
-        } else {
-            System.out.println(MSG_INCORRECTO);
-        }
+        boolean puedeLeer = lecturaEscritura.leer();
+//        boolean puedeEscribir = lecturaEscritura.escribir();
+//        
+//        System.out.println("--LECTURA--");
+//        if(puedeLeer){
+//            System.out.println(MSG_CORRECTO);
+//        } else {
+//            System.out.println(MSG_INCORRECTO);
+//        }
+//        System.out.println("--ESCRITURA--");
+//        if(puedeEscribir){
+//            System.out.println(MSG_CORRECTO);
+//        } else {
+//            System.out.println(MSG_INCORRECTO);
+//        }
 
     } 
     
