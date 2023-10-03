@@ -21,3 +21,15 @@ Cuando la actividad ya no es visible para el usuario. A continuación tendríamo
 7. `onDestroy()`
 Ultimo estado por el que pasa la Activity. Para cerrar procesos o matar recursos antes de que 
 se cierre la app.
+
+## Resultado
+Al correr la clase observaremos si filtramos el Logcat la siguiente salida:
+
+![inicio](imagenes/inicio.png)
+
+Si ponemos en segundo plano la app:
+
+![2plano](imagenes/2plano.png)
+
+Si volvemos a seleccionarla:
+![retomamos](imagenes/retomamos.png)
