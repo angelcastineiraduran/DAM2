@@ -1,70 +1,70 @@
 [
-    {
-        "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-hdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-xxhdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/drawable_ic_launcher_background.xml.flat",
-        "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/drawable/ic_launcher_background.xml"
-    },
-    {
-        "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-xxxhdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-xxhdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/drawable/ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-anydpi_ic_launcher.xml.flat",
-        "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-anydpi/ic_launcher.xml"
-    },
-    {
-        "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-anydpi_ic_launcher_round.xml.flat",
-        "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-anydpi/ic_launcher_round.xml"
-    },
-    {
-        "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-mdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-hdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/xml_backup_rules.xml.flat",
-        "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/xml/backup_rules.xml"
-    },
-    {
-        "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-xhdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/xml_data_extraction_rules.xml.flat",
-        "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/xml/data_extraction_rules.xml"
-    },
-    {
-        "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-xhdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "com.dam.ejercicio_tiempoactivo.app-merged_res-44:/drawable_baseline_adb_24.xml.flat",
-        "source": "com.dam.ejercicio_tiempoactivo.app-main-46:/drawable/baseline_adb_24.xml"
-    },
-    {
-        "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-mdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-xxxhdpi/ic_launcher_round.webp"
-    }
+  {
+    "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-hdpi_ic_launcher_round.webp.flat",
+    "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-hdpi/ic_launcher_round.webp"
+  },
+  {
+    "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+    "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-xxhdpi/ic_launcher_round.webp"
+  },
+  {
+    "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/drawable_ic_launcher_background.xml.flat",
+    "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/drawable/ic_launcher_background.xml"
+  },
+  {
+    "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+    "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-xxxhdpi/ic_launcher.webp"
+  },
+  {
+    "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-xxhdpi_ic_launcher.webp.flat",
+    "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-xxhdpi/ic_launcher.webp"
+  },
+  {
+    "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/drawable_ic_launcher_foreground.xml.flat",
+    "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/drawable/ic_launcher_foreground.xml"
+  },
+  {
+    "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-anydpi_ic_launcher.xml.flat",
+    "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-anydpi/ic_launcher.xml"
+  },
+  {
+    "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-anydpi_ic_launcher_round.xml.flat",
+    "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-anydpi/ic_launcher_round.xml"
+  },
+  {
+    "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-mdpi_ic_launcher.webp.flat",
+    "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-mdpi/ic_launcher.webp"
+  },
+  {
+    "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-hdpi_ic_launcher.webp.flat",
+    "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-hdpi/ic_launcher.webp"
+  },
+  {
+    "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/xml_backup_rules.xml.flat",
+    "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/xml/backup_rules.xml"
+  },
+  {
+    "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-xhdpi_ic_launcher.webp.flat",
+    "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-xhdpi/ic_launcher.webp"
+  },
+  {
+    "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/xml_data_extraction_rules.xml.flat",
+    "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/xml/data_extraction_rules.xml"
+  },
+  {
+    "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+    "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-xhdpi/ic_launcher_round.webp"
+  },
+  {
+    "merged": "com.dam.ejercicio_tiempoactivo.app-merged_res-44:/drawable_baseline_adb_24.xml.flat",
+    "source": "com.dam.ejercicio_tiempoactivo.app-main-46:/drawable/baseline_adb_24.xml"
+  },
+  {
+    "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-mdpi_ic_launcher_round.webp.flat",
+    "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-mdpi/ic_launcher_round.webp"
+  },
+  {
+    "merged": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+    "source": "/home/dam2/.gradle/daemon/8.0/com.dam.ejercicio_tiempoactivo.app-main-46:/mipmap-xxxhdpi/ic_launcher_round.webp"
+  }
 ]

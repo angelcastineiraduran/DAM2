@@ -1,0 +1,9 @@
+/.idea
+/.gradle
+/app
+/buld.gradle.kts/
+/gradle.properties/
+/gradlew/
+gradlew.bat/
+/local.propierties/
+/settings.gradle.kts/

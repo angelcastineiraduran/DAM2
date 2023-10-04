@@ -8,5 +8,5 @@
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">ejercicio_tiempoActivo</string>
-    <style name="Theme.Ejercicio_tiempoActivo" parent="android:Theme.Material.Light.NoActionBar"/>
+    <style name="Theme.Ejercicio_tiempoActivo" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>
