@@ -7,6 +7,7 @@ color purple_700
 color teal_200
 color teal_700
 color white
+drawable baseline_adb_24
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 mipmap ic_launcher

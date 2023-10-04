@@ -50,6 +50,7 @@ int dimen notification_small_icon_size_as_large 0x7f030012
 int dimen notification_subtext_size 0x7f030013
 int dimen notification_top_pad 0x7f030014
 int dimen notification_top_pad_large_text 0x7f030015
+int drawable baseline_adb_24 0x7f04000f
 int drawable ic_launcher_background 0x7f040001
 int drawable ic_launcher_foreground 0x7f040002
 int drawable notification_action_background 0x7f040003

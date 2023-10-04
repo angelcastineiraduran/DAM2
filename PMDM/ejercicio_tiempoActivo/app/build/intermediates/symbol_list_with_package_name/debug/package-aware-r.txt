@@ -51,6 +51,7 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+drawable baseline_adb_24
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable notification_action_background
