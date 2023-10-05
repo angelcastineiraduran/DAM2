@@ -155,7 +155,6 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
-
     fun recorrerMatriz_v2 (matriz: Array<IntArray>) {
         //for (i in 0 .. 2){  // correcto creo tambien
         for (i in (0 until matriz.size)) { // No hace falta -1 pq NO incluye el ultimo
