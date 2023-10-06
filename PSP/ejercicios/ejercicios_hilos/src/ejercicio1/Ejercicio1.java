@@ -12,6 +12,7 @@ import java.util.logging.Logger;
  * @author dam2
  */
 public class Ejercicio1 extends Thread{
+    
     public Ejercicio1(String str){
         super(str);
     }
