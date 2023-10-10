@@ -12,6 +12,10 @@ class MainActivity : AppCompatActivity(){
         var angel : Person = Person("Angel", "32234233")
         angel.passport = "dwieh"
 
+        var cristiano : Futbolista = Futbolista("cristiano", "iude", 7)
+        cristiano.patada()
+
+
 
     }
 

@@ -15,13 +15,21 @@ open class Person (var name : String = "Antonio", var passport : String? = null)
     open fun andar (){ // open para que pueda sobreescribirla
         println("esta andando")
     }
+    open fun patada(){
+        println("dar patada")
+    }
 }
-class futbolista(name: String, passport: String?, var dorsal : Int) : Person (name, passport) {
+class Futbolista(name: String, passport: String?, var dorsal : Int) : Person (name, passport) {
     fun velocidad(name: String, dorsal: Int) {
         this.name = name
     }
     override fun andar(){ //override para que me deje sobreescribir
         println("esta corriendo")
+    }
+
+    override fun patada(){
+        super.patada()
+        print("....al balon")
     }
 }
 
