@@ -4,9 +4,13 @@
  */
 package pkg29_textodelimitado;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 
 /**
  *
@@ -17,7 +21,7 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
         // TODO code application logic here
         String[] cod={"p1","p2","p3"};
         String[] desc ={"parafusos","cravos","tachas"};
@@ -28,24 +32,43 @@ public class Main {
         // ESCRIBIMOS
         PrintWriter printWriter = new PrintWriter(new File(ruta));
         
-        String registros[] = new String[3];
+        String registros[][] = new String[3][3];
+
+        for(int i = 0; i < registros.length; i++){
+            for(int j = 0; j < registros[i].length; j++){
+                switch(i){
+                    case 0:
+                        registros[i][j] = cod[j];
+                        printWriter.print(registros[i][j] + '\t');
+                        break;
+                    case 1:
+                        registros[i][j] = desc[j];
+                        printWriter.print(registros[i][j] + '\t');
+                        break;
+                    case 2:
+                        registros[i][j] = String.valueOf(prezo[j]);
+                        printWriter.print(registros[i][j] + '\t');
+                        break;
+                }
+            }
+            printWriter.println();
+            
+        }
         
-        for(String elemento : cod){
-            registros[0] += (elemento + '\t');
-        } 
-        for(String elemento : desc){
-            registros[1] += (elemento + '\t');
-        }
-        for(int elemento : prezo){
-            registros[2] += (elemento + '\t');
-        }
-        
-        for(String regristo : registros){
-            printWriter.println(regristo);
-        }
         printWriter.close();
         
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(ruta)));
+        String linea;
+        String[] campo1 = bufferedReader.readLine().split(String.valueOf('\t'));
+        String[] campo2 = bufferedReader.readLine().split(String.valueOf('\t'));
+        String[] campo3 = bufferedReader.readLine().split(String.valueOf('\t'));
         
+        for(int i = 0; i < campo1.length; i++){
+            System.out.println("Codigo:        " +  campo1[i]);
+            System.out.println("Descricion:    " +  campo2[i]);
+            System.out.println("Prezo:         " +  Double.parseDouble(campo3[i]) + "€");
+        }
     }
+    
     
 }
