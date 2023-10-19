@@ -1,4 +1,4 @@
-#Wed Oct 04 11:13:11 CEST 2023
+#Thu Oct 19 10:34:44 CEST 2023
 base.0=/home/dam2/DAM2/PMDM/ejercicio_tiempoActivo/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/home/dam2/DAM2/PMDM/ejercicio_tiempoActivo/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.2=/home/dam2/DAM2/PMDM/ejercicio_tiempoActivo/app/build/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex

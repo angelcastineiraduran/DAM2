@@ -1,60 +1,60 @@
 {
-  "logs": [
-    {
-      "outputFile": "com.dam.ejercicio_tiempoactivo.app-mergeDebugResources-42:/values-sk/values-sk.xml",
-      "map": [
+    "logs": [
         {
-          "source": "/home/dam2/.gradle/caches/transforms-3/9cc0b765caf38179c734d10b72e03aed/transformed/material3-1.0.0/res/values-sk/values-sk.xml",
-          "from": {
-            "startLines": "2,3,4",
-            "startColumns": "4,4,4",
-            "startOffsets": "55,131,211",
-            "endColumns": "75,79,76",
-            "endOffsets": "126,206,283"
-          },
-          "to": {
-            "startLines": "4,7,9",
-            "startColumns": "4,4,4",
-            "startOffsets": "284,558,730",
-            "endColumns": "75,79,76",
-            "endOffsets": "355,633,802"
-          }
-        },
-        {
-          "source": "/home/dam2/.gradle/caches/transforms-3/0e2111bda17921a3e330548840228749/transformed/core-1.9.0/res/values-sk/values-sk.xml",
-          "from": {
-            "startLines": "2",
-            "startColumns": "4",
-            "startOffsets": "55",
-            "endColumns": "100",
-            "endOffsets": "151"
-          },
-          "to": {
-            "startLines": "19",
-            "startColumns": "4",
-            "startOffsets": "1531",
-            "endColumns": "100",
-            "endOffsets": "1627"
-          }
-        },
-        {
-          "source": "/home/dam2/.gradle/caches/transforms-3/83cf593ad36391ee132da6f44330026f/transformed/ui-1.4.0/res/values-sk/values-sk.xml",
-          "from": {
-            "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-            "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-            "startOffsets": "105,200,284,379,482,574,653,747,837,918,987,1056,1139,1226,1298,1376,1444",
-            "endColumns": "94,83,94,102,91,78,93,89,80,68,68,82,86,71,77,67,113",
-            "endOffsets": "195,279,374,477,569,648,742,832,913,982,1051,1134,1221,1293,1371,1439,1553"
-          },
-          "to": {
-            "startLines": "2,3,5,6,8,10,11,12,13,14,15,16,17,18,20,21,22",
-            "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-            "startOffsets": "105,200,360,455,638,807,886,980,1070,1151,1220,1289,1372,1459,1632,1710,1778",
-            "endColumns": "94,83,94,102,91,78,93,89,80,68,68,82,86,71,77,67,113",
-            "endOffsets": "195,279,450,553,725,881,975,1065,1146,1215,1284,1367,1454,1526,1705,1773,1887"
-          }
+            "outputFile": "com.dam.ejercicio_tiempoactivo.app-mergeDebugResources-42:/values-sk/values-sk.xml",
+            "map": [
+                {
+                    "source": "/home/dam2/.gradle/caches/transforms-3/9cc0b765caf38179c734d10b72e03aed/transformed/material3-1.0.0/res/values-sk/values-sk.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,131,211",
+                        "endColumns": "75,79,76",
+                        "endOffsets": "126,206,283"
+                    },
+                    "to": {
+                        "startLines": "4,7,9",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "284,558,730",
+                        "endColumns": "75,79,76",
+                        "endOffsets": "355,633,802"
+                    }
+                },
+                {
+                    "source": "/home/dam2/.gradle/caches/transforms-3/0e2111bda17921a3e330548840228749/transformed/core-1.9.0/res/values-sk/values-sk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "19",
+                        "startColumns": "4",
+                        "startOffsets": "1531",
+                        "endColumns": "100",
+                        "endOffsets": "1627"
+                    }
+                },
+                {
+                    "source": "/home/dam2/.gradle/caches/transforms-3/83cf593ad36391ee132da6f44330026f/transformed/ui-1.4.0/res/values-sk/values-sk.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,200,284,379,482,574,653,747,837,918,987,1056,1139,1226,1298,1376,1444",
+                        "endColumns": "94,83,94,102,91,78,93,89,80,68,68,82,86,71,77,67,113",
+                        "endOffsets": "195,279,374,477,569,648,742,832,913,982,1051,1134,1221,1293,1371,1439,1553"
+                    },
+                    "to": {
+                        "startLines": "2,3,5,6,8,10,11,12,13,14,15,16,17,18,20,21,22",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,200,360,455,638,807,886,980,1070,1151,1220,1289,1372,1459,1632,1710,1778",
+                        "endColumns": "94,83,94,102,91,78,93,89,80,68,68,82,86,71,77,67,113",
+                        "endOffsets": "195,279,450,553,725,881,975,1065,1146,1215,1284,1367,1454,1526,1705,1773,1887"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
