@@ -27,7 +27,7 @@ public class Metodos {
         Connection conn = DriverManager.getConnection(url, usuario, password);
         return conn;
     }
-
+    
     public boolean insireProduto(String codigo, String descricion, Double prezo, String datac) {
         nombreColumnas = "codigo, descricion, prezo, datac";
         nombreValores = "'" + codigo + "'" + ", " + "'" + descricion + "'" + ", " + prezo + ", " + "'" + datac + "'";
