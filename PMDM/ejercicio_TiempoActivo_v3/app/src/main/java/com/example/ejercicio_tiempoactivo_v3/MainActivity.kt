@@ -11,7 +11,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.ComposeCompilerApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import com.example.ejercicio_tiempoactivo_v3.ui.theme.Ejercicio_TiempoActivo_v3Theme
 import com.example.ejercicio_tiempoactivo_v3.ui.theme.InterfazUsuario
 import com.example.ejercicio_tiempoactivo_v3.ui.theme.MyViewModel
@@ -77,38 +80,17 @@ class MainActivity : ComponentActivity() {
         return tiempoTotal
     }
 
-    /*
-@Composable
-private fun InterfazUsuario() {
-    var numbers by remember {mutableStateOf(0) }
-    var name = remember {
-        mutableStateOf("")
-    }
-    Column (
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-
-        Text(text = "Hola mundo $numbers")
-        Button(
-            onClick = { numbers = (0..10).random() }
-        ) {
-            Text("general numero aleatorio")
-            Image(
-                painter = painterResource(id = R.drawable.ic_android_black_24dp),
-                contentDescription = "generar numeros aleatorios"
-            )
+    @Preview
+    @Composable
+    fun vistaPrevia(){
+        val miViewModel: MyViewModel =MyViewModel()
+        Ejercicio_TiempoActivo_v3Theme {
+            Surface (
+                color = MaterialTheme.colorScheme.background,
+                modifier = Modifier.fillMaxSize()
+            ){
+                InterfazUsuario(miViewModel = miViewModel)
+            }
         }
-        // campo de texto para rellenar
-        OutlinedTextField(
-            value = name.value,
-            onValueChange = {
-                name.value = it
-            },
-            label = { Text(text = "Name") }
-        )
     }
-
-     */
 }
