@@ -1,12 +1,18 @@
 package com.example.ejercicio_tiempoactivo_v3.ui.theme
 
+import android.media.Image
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+
 import androidx.compose.foundation.layout.Column
+
+
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.*
+
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -31,6 +37,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -48,6 +55,9 @@ fun InterfazUsuario(miViewModel: MyViewModel) {
 @Composable
 fun ColorButtons() {
     var contador by remember { mutableStateOf(0) }
+    var buttonText by remember { mutableStateOf("Start") }
+    var contadorSize by remember { mutableStateOf(32.sp) } // Tamaño del contador
+
     LazyColumn(
         //modifier = Modifier.fillMaxSize(),
         contentPadding = PaddingValues(30.dp)
@@ -55,10 +65,17 @@ fun ColorButtons() {
         item {
             Column {
                 Text(
-                    text = "CLICS: $contador",
+                    text = "CLICS:", //$contador",
                     modifier = Modifier
                         .padding(8.dp)
                         .align(Alignment.End)
+                )
+                Text(
+                    text = "$contador",
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .align(Alignment.End)
+                        .scale((if (contador >= 10) contadorSize else 1f) as Float) // Aplicar escala si contador >= 10
                 )
                 Row(
                     modifier = Modifier
@@ -77,20 +94,35 @@ fun ColorButtons() {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(vertical = 8.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween
+                    horizontalArrangement = Arrangement.SpaceBetween,
+
+
                 ) {
                     ColorButton(Color.Red)
                     ColorButton(Color.Yellow)
                 }
-                RoundButton(
-                    onClick = {
-                        contador++
-                    },
-                    Image(
-                        painter = ,
-                        contentDescription =
+                Row {
+                    RowButton(
+                        onClick = {
+                            if (buttonText == "Start") {
+                                buttonText = "Reset"
+                            } else {
+                                buttonText = "Start"
+                                contador = 0
+                            }
+                        },
+                        text = buttonText
                     )
-                )
+                    Spacer(modifier = Modifier.width(16.dp)) // Agregar una separación horizontal
+                    RoundButton(
+                        onClick = {
+                            contador++
+                        },
+                        iconResourceId = R.drawable.ic_android_black_24dp
+                    )
+
+                }
+
             }
         }
     }
@@ -110,6 +142,29 @@ fun ColorButton(buttonColor: Color) {
 @Composable
 fun RoundButton(
     onClick: () -> Unit,
+    iconResourceId: Int
+) {
+    Button(
+        onClick = onClick,
+        modifier = Modifier
+            .size(100.dp)
+            .background(
+                shape = CircleShape,
+                color = Color.Magenta
+            )
+
+    ) {
+        Image(
+            painter = painterResource(id = iconResourceId),
+            contentDescription = null
+        )
+    }
+}
+
+
+@Composable
+fun RowButton(
+    onClick: () -> Unit,
     text: String
 ) {
     Button(
@@ -124,6 +179,7 @@ fun RoundButton(
         Text(text)
     }
 }
+
 
 @Preview(showBackground = true)
 @Composable
