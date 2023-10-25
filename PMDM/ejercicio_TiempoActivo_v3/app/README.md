@@ -27,5 +27,30 @@ gestión más eficiente.
 La nueva clase, llamada "RandomData," podría definirse de la siguiente manera:
 
 ```kotlin
+data class RandomData(val numbers: List<Int>)
+
+class MyViewModel : ViewModel() {
+    // Resto del código...
+
+    var randomData = mutableStateOf(RandomData(emptyList()))
+
+    fun crearRandom() {
+        val randomNumber = (0..3).random()
+        val updatedNumbers = randomData.value.numbers.toMutableList()
+        updatedNumbers.add(randomNumber)
+        randomData.value = RandomData(updatedNumbers)
+        Log.d(TAG_LOG, "Creamos random $randomNumber")
+    }
+
+    fun getListaRandom(): List<Int> {
+        return randomData.value.numbers
+    }
+
+    // Resto del código...
+}
 
 ```
+
+En este código, hemos definido una clase "RandomData" como una Data Class que almacena la lista de números aleatorios. La función "crearRandom" ahora actualiza el estado de "randomData" en lugar de manipular la lista directamente. La función "getListaRandom" se ha modificado para acceder a la lista desde "randomData" en lugar de "numbers."
+
+Esta adaptación permite un mejor encapsulamiento de los datos y facilita la gestión de la lista de números aleatorios en la aplicación.
