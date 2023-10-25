@@ -11,7 +11,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import com.example.ejercicio_tiempoactivo_v3.ui.theme.Ejercicio_TiempoActivo_v3Theme
 import com.example.ejercicio_tiempoactivo_v3.ui.theme.InterfazUsuario
 import com.example.ejercicio_tiempoactivo_v3.ui.theme.MyViewModel
@@ -111,4 +113,18 @@ private fun InterfazUsuario() {
     }
 
      */
+    @Preview
+    @Composable
+    fun vistaPreview(){
+        val miViewModel: MyViewModel =MyViewModel()
+        Ejercicio_TiempoActivo_v3Theme {
+            Surface (
+                color = MaterialTheme.colorScheme.background,
+                modifier = Modifier.fillMaxSize()
+            ){
+                InterfazUsuario(miViewModel = miViewModel)
+            }
+        }
+
+    }
 }
