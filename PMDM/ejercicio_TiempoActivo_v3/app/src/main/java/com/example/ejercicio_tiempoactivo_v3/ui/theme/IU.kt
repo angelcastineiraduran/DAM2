@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
@@ -40,34 +41,56 @@ import com.example.ejercicio_tiempoactivo_v3.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun InterfazUsuario(miViewModel: MyViewModel) {
+    val TAG_LOG:String="Mensaje UI"
+    ColorButtons()
 }
 
 @Composable
 fun ColorButtons() {
+    var contador by remember { mutableStateOf(0) }
     LazyColumn(
         //modifier = Modifier.fillMaxSize(),
-        contentPadding = PaddingValues(16.dp)
+        contentPadding = PaddingValues(30.dp)
     ) {
         item {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 8.dp),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                ColorButton(Color.Blue)
-                ColorButton(Color.Green)
+            Column {
+                Text(
+                    text = "CLICS: $contador",
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .align(Alignment.End)
+                )
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 8.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    ColorButton(Color.Blue)
+                    ColorButton(Color.Green)
+                }
             }
         }
         item {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 8.dp),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                ColorButton(Color.Red)
-                ColorButton(Color.Yellow)
+            Column {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 8.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    ColorButton(Color.Red)
+                    ColorButton(Color.Yellow)
+                }
+                RoundButton(
+                    onClick = {
+                        contador++
+                    },
+                    Image(
+                        painter = ,
+                        contentDescription =
+                    )
+                )
             }
         }
     }
@@ -84,10 +107,30 @@ fun ColorButton(buttonColor: Color) {
     }
 }
 
+@Composable
+fun RoundButton(
+    onClick: () -> Unit,
+    text: String
+) {
+    Button(
+        onClick = onClick,
+        modifier = Modifier
+            .size(100.dp)
+            .background(
+                shape = CircleShape,
+                color = Color.Magenta
+            )
+    ) {
+        Text(text)
+    }
+}
+
 @Preview(showBackground = true)
 @Composable
 fun ColorButtonsPreview() {
     Ejercicio_TiempoActivo_v3Theme {
-        ColorButtons()
+
+            ColorButtons()
+
     }
 }

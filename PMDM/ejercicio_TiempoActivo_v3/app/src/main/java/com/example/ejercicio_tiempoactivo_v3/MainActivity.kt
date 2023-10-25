@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
             Ejercicio_TiempoActivo_v3Theme {
                 Surface (
                     color = MaterialTheme.colorScheme.background,
-                    modifier = Modifier.fillMaxSize()
+                    //modifier = Modifier.fillMaxSize()
                 ){
                     InterfazUsuario(miViewModel = miViewModel)
                 }
@@ -87,7 +87,7 @@ class MainActivity : ComponentActivity() {
         Ejercicio_TiempoActivo_v3Theme {
             Surface (
                 color = MaterialTheme.colorScheme.background,
-                modifier = Modifier.fillMaxSize()
+                //modifier = Modifier.fillMaxSize()
             ){
                 InterfazUsuario(miViewModel = miViewModel)
             }
