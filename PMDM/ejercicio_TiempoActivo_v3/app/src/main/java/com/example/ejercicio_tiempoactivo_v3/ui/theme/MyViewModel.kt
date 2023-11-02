@@ -1,10 +1,13 @@
 package com.example.ejercicio_tiempoactivo_v3.ui.theme
 
+import android.R
 import android.util.Log
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 
 class MyViewModel() : ViewModel() {
     private val TAG_LOG: String = "Mensaje ViewModel"
@@ -75,6 +78,18 @@ class MyViewModel() : ViewModel() {
      */
     fun getTexto():String{
         return name.value
+    }
+
+    suspend fun getNumero_v2() : Int {
+        corutina()
+        return _numbers.value
+    }
+
+    suspend fun corutina() = runBlocking{
+        delay(1000L)
+        Log.d(TAG_LOG, "World")
+        delay(3000L)
+        Log.d(TAG_LOG, "Hello")
     }
 
 }
