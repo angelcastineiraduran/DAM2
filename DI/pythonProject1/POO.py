@@ -1,8 +1,8 @@
 class miClase:
-    "docstring de la clase"
-    def __init__(self, gasolina): #param, pertenece a func
-        self.gasolina = gasolina #atributo, pertenece a obj
-        self.neumaticos #neumaticos=None
+    """docstring de la clase"""
+    def __init__(self, gasolina): #param:gasolina, pertenece a func
+        """se ejecuta justo despues de crear un nuevo obj"""
+        self.gasolina = gasolina #atributo:gasolina, pertenece a obj
         print("Tenemos", gasolina, "litros")
 
     def arrancar(self):
