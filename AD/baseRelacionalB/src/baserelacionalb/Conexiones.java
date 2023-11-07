@@ -14,12 +14,11 @@ import java.sql.Statement;
  *
  * @author dam2
  */
-public class Conexion {
+public class Conexiones {
+
     String nombreTabla = "produtos";
     String nombreColumnas; // si son varios separar por comas
     String nombreValores; // "" y entrecomillados con la simple "\'"
-    ResultSet resultSet = null;
-    Statement statement = null;
 
     public Connection conexion() throws SQLException {
         System.out.println("estableciendo conexion...");
@@ -33,32 +32,20 @@ public class Conexion {
         Connection conn = DriverManager.getConnection(url, usuario, password);
         return conn;
     }
-    
-    public ResultSet crearStatement(String consultaSQL){
+
+    public Statement crearStatement(Connection conn) throws SQLException {
         System.out.println("estableciendo statement...");
-        try (Connection conn = conexion()){
-            this.statement= conn.createStatement (ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            this.resultSet = statement.executeQuery(consultaSQL);
-            return this.resultSet;
-        } catch(SQLException e){
-            e.printStackTrace();
-            return this.resultSet;
-        }
-        
+        Statement st = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        return st;
+
     }
-    
-    public void cerrarConexion() throws SQLException{
+
+
+    public void cerrarConexion(Statement st, ResultSet rs, Connection conn) throws SQLException {
         System.out.println("cerrando conexion...");
-        this.statement.close();
-        this.resultSet.close();
+        st.close();
+        rs.close();
+        conn.close();
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }
