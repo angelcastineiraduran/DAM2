@@ -7,8 +7,8 @@ services:
     #image: mysql:8.0.27
     command: '--default-authentication-plugin=mysql_native_password'
     volumes:
-      - .db_data:/var/lib/mysql
-    environment:
+      - ./db_data:/var/lib/mysql
+    enviroSnment:
       - MYSQL_ROOT_PASSWORD=somewordpress
       - MYSQL_DATABASE=wordpress
       - MYSQL_USER=wordpress
@@ -19,7 +19,7 @@ services:
     container_name: wp_wp
     image: wordpress:latest
     volumes:
-      - .wp_data:/var/www/html
+      - ./wp_data:/var/www/html
     ports:
       - 80:80
     environment:
