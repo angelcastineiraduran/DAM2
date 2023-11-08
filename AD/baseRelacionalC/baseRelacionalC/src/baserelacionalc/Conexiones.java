@@ -73,7 +73,7 @@ public class Conexiones {
         Connection conn = conexion();
         System.out.println(SENTENZA_ACTUALIZAR);
         PreparedStatement ps = conn.prepareStatement(SENTENZA_ACTUALIZAR);
-        ps.setString(1, "descrion_new");
+        ps.setString(1, "holii");
         ps.setString(2, "111");
         int filasInseridas = ps.executeUpdate();
         System.out.println("filasInseridas = " + filasInseridas);
