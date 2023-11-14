@@ -7,6 +7,6 @@ e almacenaos en formato XML nun ficheiro denominado "products.xml"
 
 ## Respuesta
 Para importar serializacion2 tengo que crear el jar en dicho proyecto con `clean and build` y luego
-lo importo (se encuentra localizado en la carpeta "dist") a la carpeta de Libreries del este proyecto.
+lo importo (se localiza en la carpeta "dist") a la carpeta de Libreries del este proyecto.
 
 
