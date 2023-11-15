@@ -46,6 +46,4 @@ public class DatosSerializados {
         return codigoEncontrado;
     }
     
-    
-
 }

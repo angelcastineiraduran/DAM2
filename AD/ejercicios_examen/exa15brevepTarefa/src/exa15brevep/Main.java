@@ -21,10 +21,13 @@ public class Main {
     public static void main(String[] args) throws IOException, FileNotFoundException, ClassNotFoundException, SQLException {
         DatosSerializados ds = new DatosSerializados();
         String codp_1 = ds.leerPorCodigo("p1");
+        String codp_2 = ds.leerPorCodigo("p2");
         
         Consultas consultas = new Consultas();
         ArrayList<String> pesos = consultas.buscarCampoPorCodigo("peso","codp", codp_1, "composicion");
-        ArrayList<String> codcs = consultas.buscarCampoPorCodigo("codc", "codp", codp_1, "composicion");
+        ArrayList<String> conjunto_codc = consultas.buscarCampoPorCodigo("codc", "codp", codp_1, "composicion");
+        
+        
         
     }
     
