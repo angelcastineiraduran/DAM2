@@ -13,5 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "simon_dice"
+rootProject.name = "simon_dice_v2"
 include(":app")
+ 

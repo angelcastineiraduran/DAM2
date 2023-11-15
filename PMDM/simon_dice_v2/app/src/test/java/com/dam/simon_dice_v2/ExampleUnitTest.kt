@@ -1,4 +1,4 @@
-package com.dam.simo_dice_proyect
+package com.dam.simon_dice_v2
 
 import org.junit.Test
 

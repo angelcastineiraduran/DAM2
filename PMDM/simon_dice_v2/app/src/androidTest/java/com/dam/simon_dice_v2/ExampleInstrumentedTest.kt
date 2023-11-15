@@ -1,4 +1,4 @@
-package com.dam.simo_dice_proyect
+package com.dam.simon_dice_v2
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.dam.simo_dice_proyect", appContext.packageName)
+        assertEquals("com.dam.simon_dice_v2", appContext.packageName)
     }
 }
