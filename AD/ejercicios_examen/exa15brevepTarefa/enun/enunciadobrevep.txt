@@ -1,0 +1,41 @@
+/*
+ 1)  Dispomos de duas taboas denominadas composicion e componentes (no script taboasexameb.sql) 
+
+ Os campos da taboa composicion  son:
+ codigo do plato (codp) , codigo dun componente do plato , e peso de dito componente en dito plato
+
+ Os campos da taboa componentes son :
+ codigo dun componente , nome do componente, contido en graxa por cada 100gr de dito componente
+ 
+ 2) Dispomos dunha clase java denominada Platos.java que implementa a interface Serializable
+ 
+ 3) Dispomos dun ficheiro  denominado platoss que foi creado mediante serializacion de obxectos.  O contido de dito ficheiro son obxectos da clae platos  ( en concreto conten dous obxectos cos valores:
+  p1, platocarnico1 
+  p2 platocarnico2 
+ 
+ 4) Debes desenvolver unha aplicacion chamada EXACTAMENTE exa15brevep que partindo do ficheiro platoss e das taboas dadas (script taboasexameb.sql)imprima  o código e nome de cada obxecto de tipo  platos  que se atopan   no ficheiro platoss  xunto co seu contido en graxas totais,
+ 
+ ( Ter en conta que ainda que na taboa composicion temos os 
+  componentes de tres platos  so deben grabarse  o contido en graxa dos pratos p1 e p2 que son   os que estan referidos no ficheiro platoss)
+
+a impresion deberia ser algo parecida ao  seguinte : 
+
+ p1
+ platocarnico1
+ graxatotal:80
+
+ p2
+ platocarnico2 
+ graxatotal:160
+ 
+ 
+ NOTA importante : 
+ a graxa correspondente a cada componente do plato calculase asi:
+ graxa_parcial= peso/100*graxa
+ 
+ a grasa total do plato e a suma das grasas parciais
+ 
+ graxa_total=graxa_total+graxa parcial
+
+ */
+
