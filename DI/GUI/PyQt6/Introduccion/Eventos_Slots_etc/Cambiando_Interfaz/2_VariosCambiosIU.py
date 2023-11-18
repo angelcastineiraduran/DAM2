@@ -2,7 +2,7 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QPushButton
 from random import choice
 import sys
 
-nombres_ventanas = [ # fuera de la clase pq¿
+nombres_ventanas = [
             "Bienvenida",
             "Ventana nueva",
             "Ventana nueva 2.0",
@@ -16,6 +16,7 @@ class miVentanaPrincipal(QMainWindow):
         self.miBoton = QPushButton("Presioname")
         self.miBoton.setCheckable(True)
         self.miBoton.clicked.connect(self.miBoton_fue_clickado)
+        # solo se activa si el nuevo titulo != del anterior; si son iguales NO se envia 2 veces
         self.windowTitleChanged.connect(self.nombre_ventana_ha_cambiado)
 
         self.setCentralWidget(self.miBoton)
