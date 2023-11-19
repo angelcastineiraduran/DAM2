@@ -26,6 +26,9 @@ class MainWindow(QMainWindow):
         # cuando usuario edita txt
         widget.textEdited.connect(self.text_edited)
 
+        # solo admite el formato especificado de 4 digitos separados por puntos
+        #widget.setInputMask('000.000.000.000;_')
+
         self.setCentralWidget(widget)
 
     def return_pressed(self):
