@@ -8,20 +8,20 @@ services:
     command: '--default-authentication-plugin=mysql_native_password'
     volumes:
       - ./db_data:/var/lib/mysql
-    enviroSnment:
+    environment:
       - MYSQL_ROOT_PASSWORD=somewordpress
       - MYSQL_DATABASE=wordpress
       - MYSQL_USER=wordpress
       - MYSQL_PASSWORD=wordpress
     ports:
-      - 3306:3306
+      - 33062:3306
   wordpress:
     container_name: wp_wp
     image: wordpress:latest
     volumes:
       - ./wp_data:/var/www/html
     ports:
-      - 80:80
+      - 8080:80
     environment:
       - WORDPRESS_DB_HOST=db
       - WORDPRESS_DB_USER=wordpress
