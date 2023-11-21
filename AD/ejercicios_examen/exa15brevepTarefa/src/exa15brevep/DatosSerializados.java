@@ -12,6 +12,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
 /**
  * Tengo que copiar y pegar la clase Platos.java en mi paquete para poder utilizar el tipo creo
@@ -28,22 +29,24 @@ public class DatosSerializados {
      * @throws IOException
      * @throws ClassNotFoundException 
      */
-    public String leerPorCodigo(String codigoBuscado) throws FileNotFoundException, IOException, ClassNotFoundException{
+    public ArrayList leerPorCodigo(String codigoBuscado) throws FileNotFoundException, IOException, ClassNotFoundException{
+        ArrayList <String> valoresEncontrados= new ArrayList();
         System.out.println("Abrimos flujo para leer fich serializado...");
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File(ruta_fich_serializado)));
         
         System.out.println("Leo objetos serializado:...");        
         Platos plato;
-        String codigoEncontrado = null;
+        //String codigoEncontrado = null;
         while ((plato = (Platos) ois.readObject()) != null) {
             if(codigoBuscado.equals(plato.getCodigop())){
-                System.out.println(plato.getCodigop());
-                System.out.println(plato.getNomep());
-                codigoEncontrado = plato.getCodigop();
+                valoresEncontrados.add(plato.getCodigop());
+                valoresEncontrados.add(plato.getNomep());
+                //codigoEncontrado = plato.getCodigop();
             } 
         }
         ois.close();
-        return codigoEncontrado;
+        //return codigoEncontrado;
+        return valoresEncontrados;
     }
     
 }

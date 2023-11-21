@@ -23,28 +23,31 @@ public class Consultas {
     String nombreValores; // "" y entrecomillados con la simple "\'"
     
 
-    public ArrayList buscarCampoPorCodigo(String campoDevuelto, String tipoCodigoBuscado, String valorDelCodigo, String nombreTabla) throws SQLException {
+    public ArrayList buscarCampoPorCodigo(String campoDevuelto, String campoIdeal, String valorIdeal, String nombreTabla) throws SQLException {
         ArrayList<String> valoresDevueltos = new ArrayList();
         
-        String consultaSQL = "SELECT * FROM " + nombreTabla + " WHERE " + tipoCodigoBuscado + "='" + valorDelCodigo + "';";
+        String consultaSQL = "SELECT * FROM " + nombreTabla + " WHERE " + campoIdeal + "='" + valorIdeal + "';";
         System.out.println(consultaSQL);
         Connection conn = conexiones.conexion();
         Statement st = conn.createStatement();
         ResultSet rs = st.executeQuery(consultaSQL);
         while (rs.next()) {
             String valorDevuelto = rs.getString(campoDevuelto);
-            System.out.println(campoDevuelto + ": " + valorDevuelto);
+            //System.out.println(campoDevuelto + ": " + valorDevuelto);
             valoresDevueltos.add(valorDevuelto);
         }
         return valoresDevueltos;
 
     }
     
-    public Double buscarGraxaPor_codp(String codc){
-        ArrayList<String> graxas = new ArrayList();
-        String consultaSQL = "SELECT * FROM componentes WHERE codc='" + codc + "'";
-        System.out.println(consultaSQL);
-
-    }
+//    public Double buscarGraxaPor_codp(String codc) throws SQLException{
+//        ArrayList<String> graxas = new ArrayList();
+//        String consultaSQL = "SELECT * FROM componentes WHERE codc='" + codc + "'";
+//        System.out.println(consultaSQL);
+//        Connection conn = conexiones.conexion();
+//        Statement st = conn.createStatement();
+//        
+//        
+//    }
 
 }
