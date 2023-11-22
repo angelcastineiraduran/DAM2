@@ -23,12 +23,22 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.core.app.unusedapprestrictions.IUnusedAppRestrictionsBackportCallback
+import androidx.lifecycle.ViewModel
 import com.dam.simon_dice_v2.ui.theme.Simon_dice_v2Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        var miViewModel : MiViewModel = MiViewModel()
         setContent {
+            MaterialTheme {
+                Surface(
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    MiInterfaz(miViewModel = miViewModel)
+                }
+            }
 
         }
     }
@@ -46,6 +56,7 @@ fun miBoton() {
     Button(onClick = {
         Toast.makeText(context, "Has presionado el boton", Toast.LENGTH_LONG).show()
     }) {Text(text = "Presiona aqui")} // texto del boton
+
 }
 
 @Composable
@@ -69,6 +80,15 @@ fun miEtiqueta() {
             )
         }
     }
+}
+
+@Preview
+@Composable
+fun principal(){
+    var context = LocalContext.current
+    Button(onClick = {
+        Toast.makeText(context, "Has presionado el boton", Toast.LENGTH_LONG).show()
+    }) {Text(text = "Presiona aqui")} // texto del boton
 }
 
 
