@@ -22,6 +22,7 @@ public class SincronizacionHilos {
         HilosVarios hilo2 = new HilosVarios();
         hilo2.start();
         
+        // si no lo pongo, se ejecutara el hilo 3
         hilo2.join();
         
         // hilo del main, hilo3
