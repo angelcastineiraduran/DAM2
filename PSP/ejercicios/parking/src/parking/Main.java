@@ -4,33 +4,36 @@
  */
 package parking;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author dam2
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Parking parking = new Parking();
         parking.start();
+        
+        parking.timbrar(1);
+        Thread.sleep(5000); // Simulación de tiempo entre llamadas
+
         parking.timbrar(2);
-        try {
-            Thread.sleep(3000); // Simulación de tiempo entre llamadas
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Thread.sleep(5000); // Simulación de tiempo entre llamadas
+        
         parking.timbrar(3);
-         try {
-            Thread.sleep(3000); // Simulación de tiempo entre llamadas
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Thread.sleep(5000);
+        
         parking.timbrar(4);
-         try {
-            Thread.sleep(3000); // Simulación de tiempo entre llamadas
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Thread.sleep(5000);
+        
         parking.timbrar(5);
+        Thread.sleep(5000);
+
+        parking.timbrarSalida(2);
+        Thread.sleep(5000);
+
     }
 }
