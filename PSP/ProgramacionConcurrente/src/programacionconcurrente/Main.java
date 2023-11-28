@@ -8,7 +8,7 @@ package programacionconcurrente;
  *
  * @author ubuntu
  */
-public class ProgramacionConcurrente {
+public class Main {
 
     /**
      * @param args the command line arguments

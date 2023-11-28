@@ -2,16 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package programacionconcurrente;
+package programacionconcurrente.sincronizacionHilos;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Le damos orden de manera manual con el join()
+ * 
  * @author ubuntu
  */
-public class SincronizacionHilos {
+public class Sincronizacion1Manual {
     public static void main(String[] args) throws InterruptedException {
         
         HilosVarios hilo1 = new HilosVarios();
@@ -27,8 +28,7 @@ public class SincronizacionHilos {
         
         // hilo del main, hilo3
         System.out.println("Terminadas las tareas");
-        
-        
+                
     }
     
 }
