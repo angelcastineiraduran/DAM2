@@ -2,11 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package programacionconcurrente.sincronizacionHilos.Sincronizacion3Estados;
+package sincronizacionHilos.sincronizacion3;
 
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-import java.util.logging.Level;
+import java.lang.System.Logger.Level;
 import java.util.logging.Logger;
 
 /**
@@ -92,7 +90,7 @@ class EjecutarTransferencia implements Runnable {
             try {
                 Thread.sleep((int)(Math.random()*10));
             } catch (InterruptedException ex) {
-                Logger.getLogger(EjecutarTransferencia.class.getName()).log(Level.SEVERE, null, ex);
+                
             }
         }
     }
