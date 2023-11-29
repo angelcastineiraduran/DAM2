@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * @author dam2
  */
 public class DatosSerializados {
-    String ruta_fich_serializado = "/home/dam2/DAM2/AD/ejercicios_examen/exa15brevepTarefa/enun/platoss";
+    String ruta_fich_serializado = "/home/dam2/DAM2/AD/ejercicios_examen/exa15brevep/enun/platoss";
     
     /**
      * 
