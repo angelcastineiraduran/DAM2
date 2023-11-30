@@ -1,6 +1,6 @@
 package com.example.pruebaborrar2.datos
 
-import com.example.pruebaborrar2.Mensaje
+import com.dam.teoriacompose_v2.Mensaje
 
 
 object SampleData {

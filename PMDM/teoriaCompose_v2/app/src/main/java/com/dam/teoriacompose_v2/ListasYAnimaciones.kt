@@ -1,4 +1,4 @@
-package com.example.pruebaborrar2
+package com.dam.teoriacompose_v2
 
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items

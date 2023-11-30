@@ -1,8 +1,7 @@
-package com.example.pruebaborrar2
+package com.dam.teoriacompose_v2
 
 import android.content.res.Configuration
 import android.os.Bundle
-import android.os.Message
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -10,7 +9,6 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -28,9 +26,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.dam.teoriacompose_v2.R
 import com.dam.teoriacompose_v2.ui.theme.TeoriaCompose_v2Theme
 import com.example.pruebaborrar2.datos.SampleData
+import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.animateContentSize
+
 
 
 class MainActivity : ComponentActivity() {
@@ -41,7 +41,7 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 //Greeting(name = "Angel")
                 //MyApp(modifier = Modifier.fillMaxSize())
-                Conversation(SampleData.conversationSample)
+                Conversation(messages = SampleData.conversationSample)
             }
         }
     }
@@ -93,18 +93,32 @@ fun MensajesVarios(msg: Mensaje) {
                 .border(1.5.dp, MaterialTheme.colorScheme.secondary, CircleShape)
 
         )
+
+        // seguimos el valor de esExpasndido
         var esExpandido by remember { mutableStateOf(false) }
-        Column(modifier = Modifier.clickable { esExpandido != esExpandido }) {
+
+        // va a cambiar gradualmente entre colores
+        val surfaceColor by animateColorAsState(
+            if(esExpandido) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surface,
+        )
+
+        // alternamos esExpandido si se clicka sobre esta columna
+        Column(modifier = Modifier.clickable { esExpandido = !esExpandido }) {
             Text(
                 text = msg.autor,
                 color = MaterialTheme.colorScheme.secondaryContainer,
                 style = MaterialTheme.typography.titleMedium
             )
-            Surface(color = MaterialTheme.colorScheme.tertiary){
+            Surface(
+                color = surfaceColor,
+                modifier = Modifier.animateContentSize().padding(1.dp)
+            ){
                 Text(
                     text = msg.cuerpo,
-                    color = MaterialTheme.colorScheme.secondaryContainer,
+                    //color = MaterialTheme.colorScheme.secondaryContainer,
                     style = MaterialTheme.typography.bodySmall,
+                    // si esExpandido=True desplegamos todos el contenido del msg
+                    // de lo contrario no
                     maxLines = if(esExpandido) Int.MAX_VALUE else 1
                 )
             }
@@ -112,7 +126,7 @@ fun MensajesVarios(msg: Mensaje) {
     }
 }
 
-@Preview (name="Light mode")
+//@Preview (name="Light mode")
 @Preview(
     uiMode = Configuration.UI_MODE_NIGHT_YES,
     showBackground = true,
@@ -128,6 +142,14 @@ fun previoMensajes(){
 fun DefaultPreview() {
     TeoriaCompose_v2Theme {
         MyApp()
+    }
+}
+
+@Preview("Pruebas Main")
+@Composable
+fun previewMain() {
+    TeoriaCompose_v2Theme {
+        Conversation(messages = SampleData.conversationSample)
     }
 }
 
