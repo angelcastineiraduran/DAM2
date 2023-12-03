@@ -93,7 +93,7 @@ fun MensajesVarios(msg: Mensaje) {
 
         )
         var esExpandido by remember { mutableStateOf(false) }
-        Column(modifier = Modifier.clickable { esExpandido != esExpandido }) {
+        Column(modifier = Modifier.clickable { esExpandido = !esExpandido }) {
             Text(
                 text = msg.autor,
                 color = MaterialTheme.colorScheme.secondaryContainer,
