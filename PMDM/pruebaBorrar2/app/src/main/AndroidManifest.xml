@@ -10,13 +10,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PruebaBorrar2"
+        android:theme="@style/Theme.teoriaCompose"
         tools:targetApi="31">
         <activity
-            android:name=".estados.MainActivity"
+            android:name="com.example.teoriaCompose.estados.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.PruebaBorrar2">
+            android:theme="@style/Theme.teoriaCompose">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">pruebaBorrar2</string>
+    <string name="placeholder_search">Buscar</string>
+    <string name="ab1_inversions">Inversiones</string>
 </resources>
