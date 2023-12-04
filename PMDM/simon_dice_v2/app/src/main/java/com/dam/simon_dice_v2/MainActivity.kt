@@ -8,7 +8,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -17,6 +19,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
@@ -30,16 +33,16 @@ import com.dam.simon_dice_v2.ui.theme.Simon_dice_v2Theme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        var miViewModel : MiViewModel = MiViewModel()
+        var miViewModel: MiViewModel = MiViewModel()
         setContent {
             MaterialTheme {
                 Surface(
-                    color = MaterialTheme.colorScheme.background
+                    modifier = Modifier.fillMaxWidth().fillMaxHeight(),
+                    color = MaterialTheme.colorScheme.background,
                 ) {
                     MiInterfaz(miViewModel = miViewModel)
                 }
             }
-
         }
     }
 }
@@ -55,13 +58,13 @@ fun miBoton() {
     var context = LocalContext.current
     Button(onClick = {
         Toast.makeText(context, "Has presionado el boton", Toast.LENGTH_LONG).show()
-    }) {Text(text = "Presiona aqui")} // texto del boton
+    }) { Text(text = "Presiona aqui") } // texto del boton
 
 }
 
 @Composable
 fun miEtiqueta() {
-    Surface (color = MaterialTheme.colorScheme.primary){ // color de fondo
+    Surface(color = MaterialTheme.colorScheme.primary) { // color de fondo
         Row {
             Column {
                 Text(text = "Hola Mundo")
@@ -82,13 +85,17 @@ fun miEtiqueta() {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
-fun principal(){
-    var context = LocalContext.current
-    Button(onClick = {
-        Toast.makeText(context, "Has presionado el boton", Toast.LENGTH_LONG).show()
-    }) {Text(text = "Presiona aqui")} // texto del boton
+fun PreviewPrincipal() {
+    var miViewModel: MiViewModel = MiViewModel()
+    MaterialTheme {
+        Surface(
+            color = MaterialTheme.colorScheme.background
+        ) {
+            MiInterfaz(miViewModel = miViewModel)
+        }
+    }
 }
 
 

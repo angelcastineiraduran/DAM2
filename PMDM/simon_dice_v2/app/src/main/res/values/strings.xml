@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">simon_dice_v2</string>
+    <string name="txtReset">Reset</string>
+    <string name="txtStart">Start</string>
 </resources>

@@ -1,132 +1,203 @@
 package com.dam.simon_dice_v2
 
-import android.R
 import android.util.Log
-import android.widget.Toast
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.annotation.StringRes
+import androidx.compose.animation.animateContentSize
 
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.CutCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Done
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.text.rememberTextMeasurer
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.dam.simon_dice_v2.Data.btnSize
+import com.dam.simon_dice_v2.ui.theme.Simon_dice_v2Theme
 
-//@Preview("prev")
 @Composable
 fun MiInterfaz(miViewModel: MiViewModel) {
-
     val TAR_LOG: String = "Mensaje IU"
-    val clickado = remember { mutableStateOf(false) }
-    val secuenciaColores : MutableList<Int> = remember { mutableListOf() }
-    var botonSeleccionado : Int = -1
-    val BOTON1 : Int = 1
-    val BOTON2 : Int = 2
-    val BOTON3 : Int = 3
-    val BOTON4 : Int = 4
+    val TAG_LOG_vM: String = "ViewModel"
 
     Column(
-        modifier = Modifier
-            .padding(10.dp),
-        horizontalAlignment = Alignment.CenterHorizontally // centra los compos de la Column
+        modifier = Modifier.padding(10.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Simon dice", modifier = Modifier.padding(10.dp), Color.Black)
+        ContadorRonda()
+        Botonera(
+            modifier = Modifier
+                .padding(5.dp)
+                .size(150.dp),
+            isEnabled = if(Data.isStarted.value) {true} else {false},
+        )
+        Row(
+            modifier = Modifier
+                .padding(30.dp),
+        ) {
+            if (Data.isStarted.value) {
+                BotonReset(
+                    clicado = { miViewModel.isGameOverTrue() },
+                    txtReset = R.string.txtReset,
+                )
+            } else {
+                BotonStart(
+                    //clicado = { Data.isStarted.value = !Data.isStarted.value },
+                    clicado = { miViewModel.isStarted()
+                        miViewModel.modifyColor()
+                        Log.d(TAG_LOG_vM, "${Data.isGameOver.value}")
+                              },
+                    txtStart = R.string.txtStart,
+                    //miViewModel = miViewModel
+                )
+            }
+            Spacer(modifier = Modifier.width(70.dp))
+            BotonContinuar(
+                miViewModel = miViewModel,
+                modifier = Modifier
 
-        Row {
-            Button(
-                onClick = {
-                    Log.d("botonera", "Boton 1")
-                    secuenciaColores.add(BOTON1)
-                    Log.d("botonera", miViewModel.iterarLista(secuenciaColores))
-                },
-                colors = ButtonDefaults.buttonColors(Color.Red),
-            ) { Text(text = "b1") }
-            Spacer(modifier = Modifier.width(10.dp))
-            Button(
-                onClick = {
-                    Log.d("botonera", "Boton 2")
-                    secuenciaColores.add(BOTON2)
-                    Log.d("botonera", miViewModel.iterarLista(secuenciaColores))
-                },
-                colors = ButtonDefaults.buttonColors(Color.Yellow),
-            ) { Text(text = "b2") }
-        }
-        Row {
-            Button(
-                onClick = {
-                    Log.d("botonera", "Boton 3")
-                    secuenciaColores.add(BOTON3)
-                    Log.d("botonera", miViewModel.iterarLista(secuenciaColores))
-                },
-                colors = ButtonDefaults.buttonColors(Color.Green),
-            ) { Text(text = "b3") }
-            Spacer(modifier = Modifier.width(10.dp))
-            Button(
-                onClick = {
-                    Log.d("botonera", "Boton 4")
-                    secuenciaColores.add(BOTON4)
-                    Log.d("botonera", miViewModel.iterarLista(secuenciaColores))
-                },
-                colors = ButtonDefaults.buttonColors(Color.Blue),
-            ) { Text(text = "b4") }
-        }
+            )
 
+        }
+    }
+}
+
+@Composable
+fun Botonera(
+    modifier: Modifier = Modifier,
+    isEnabled: Boolean
+) {
+    val TAG_LOG_vM: String = "ViewModel"
+
+    Row {
         Button(
             onClick = {
-                Log.d("botonera", "principal = ${clickado.value}")
-                clickado.value = !clickado.value
+                Data.userSecuence.add(Data.ROJO)
+                Log.d(TAG_LOG_vM, "userSecuence: ${(Data.userSecuence)}")
             },
-            shape = CutCornerShape(0),
-            modifier = Modifier
-                .padding(10.dp)
-        ) {
-            Text(if(clickado.value) "Reset" else "Start")
-        }
+            colors = ButtonDefaults.buttonColors(containerColor = Data.colorRojo.value),
+            modifier = modifier,
+            enabled = isEnabled
+        ) {  }
+        Button(
+            onClick = {
+                Data.userSecuence.add(Data.AMARILLO)
+                Log.d(TAG_LOG_vM, "userSecuence: ${(Data.userSecuence)}")
+            },
+            colors = ButtonDefaults.buttonColors(containerColor = Data.colorAmarillo.value),
+            modifier = modifier,
+            enabled = isEnabled
+        ) { }
+    }
+    Row {
+        Button(
+            onClick = {
+                Data.userSecuence.add(Data.VERDE)
+                Log.d(TAG_LOG_vM, "userSecuence: ${(Data.userSecuence)}")
+            },
+            colors = ButtonDefaults.buttonColors(containerColor = Data.colorVerde.value),
+            modifier = modifier,
+            enabled = isEnabled
+        ) { }
+        Button(
+            onClick = {
+                Data.userSecuence.add(Data.AZUL)
+                Log.d(TAG_LOG_vM, "userSecuence: ${(Data.userSecuence)}")
+            },
+            colors = ButtonDefaults.buttonColors(containerColor = Data.colorAzul.value),
+            modifier = modifier,
+            enabled = isEnabled
+        ) {  }
+    }
+
+}
+
+@Composable
+fun BotonStart(
+    @StringRes txtStart: Int,
+    modifier: Modifier = Modifier,
+    clicado: () -> Unit,
+    //miViewModel: MiViewModel
+) {
+    Button(
+        onClick = {
+            clicado()
+            //miViewModel.setBotSecuence(Data.botSecuence)
+                  },
+        modifier = modifier
+    ) {
+        Text(stringResource(id = txtStart))
     }
 }
-@Composable
-fun funcStart(){
 
+@Composable
+fun BotonReset(
+    @StringRes txtReset: Int,
+    modifier: Modifier = Modifier,
+    clicado: () -> Unit,
+) {
+    Button(
+        // tengo que llamar a la funcion y no al valor
+        // funcion: clicado(), valor clicado
+        onClick = {
+            clicado()
+                  },
+        modifier = modifier
+    ) {
+        Text(stringResource(id = txtReset))
+    }
 }
 
 @Composable
-fun mostrarNumeros(miViewModel: MiViewModel) {
-    Column {
-        Text(
-            text = "Numeros: ${miViewModel.getNumeroRandom()}",
-            color = MaterialTheme.colorScheme.primary
+fun BotonContinuar(
+    modifier: Modifier = Modifier,
+    miViewModel: MiViewModel
+) {
+    IconButton(
+        onClick = {
+            miViewModel.validateSecuences()
+            miViewModel.answerRequest()
+                  },
+        modifier = modifier
+    ) {
+        Icon(
+            imageVector = Icons.Default.Done,
+            contentDescription = "Siguiente"
         )
-        Button(onClick = { miViewModel.crearRandom() }) {
-
-        }
-
     }
 }
+
+@Composable
+fun ContadorRonda(
+    modifier: Modifier = Modifier
+) {
+    Text("Ronda: ${Data.record.value}")
+}
+
+
 @Preview("Prev de mostrarNum")
 @Composable
-fun prevMostrarNumeros(){
-    val miViewModel : MiViewModel = MiViewModel()
-    MiInterfaz(miViewModel = miViewModel)
+fun prevMostrarNumeros() {
+    var miViewModel: MiViewModel = MiViewModel()
+    Simon_dice_v2Theme {
+        Surface {
+            MiInterfaz(miViewModel = miViewModel)
+        }
+    }
 }
