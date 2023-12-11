@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Platos>
+<Plato Codigop="p1"><nomep>platocarnico1</nomep><graxatotal>80.0</graxatotal></Plato>
+<Plato Codigop="p2"><nomep>platocarnico2 </nomep><graxatotal>160.0</graxatotal></Plato>
+</Platos>

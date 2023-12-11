@@ -40,13 +40,13 @@ public class Main {
 
         // --BUSCO PESOS (codp)--
         // p1
-        ArrayList<String> pesos_p1 = consultas.buscarCampoPorCodigo("peso", "codp", codp_p1, "composicion");
+        ArrayList<String> pesos_p1 = consultas.buscarRegistrosPorCodigo("peso", "codp", codp_p1, "composicion");
         //comunes.iterarArray(pesos_p1);
         Double peso1_codp1 = Double.parseDouble(pesos_p1.get(0));
         Double peso2_codp1 = Double.parseDouble(pesos_p1.get(1));
         Double totalPesos_codp1 = peso1_codp1 + peso2_codp1;
         // p2
-        ArrayList<String> pesos_p2 = consultas.buscarCampoPorCodigo("peso", "codp", codp_p2, "composicion");
+        ArrayList<String> pesos_p2 = consultas.buscarRegistrosPorCodigo("peso", "codp", codp_p2, "composicion");
         //comunes.iterarArray(pesos_p2);
         Double peso1_codp2 = Double.parseDouble(pesos_p2.get(0));
         Double peso2_codp2 = Double.parseDouble(pesos_p2.get(1));
@@ -55,12 +55,12 @@ public class Main {
 
         // --BUSCO CODC--
         // p1
-        ArrayList<String> conjunto_codc_p1 = consultas.buscarCampoPorCodigo("codc", "codp", codp_p1, "composicion");
+        ArrayList<String> conjunto_codc_p1 = consultas.buscarRegistrosPorCodigo("codc", "codp", codp_p1, "composicion");
         //comunes.iterarArray(conjunto_codc_p1);
         String codc1_p1 = conjunto_codc_p1.get(0);
         String codc2_p1 = conjunto_codc_p1.get(1);
         // p2
-        ArrayList<String> conjunto_codc_p2 = consultas.buscarCampoPorCodigo("codc", "codp", codp_p2, "composicion");
+        ArrayList<String> conjunto_codc_p2 = consultas.buscarRegistrosPorCodigo("codc", "codp", codp_p2, "composicion");
         //comunes.iterarArray(conjunto_codc_p2);
         String codc1_p2 = conjunto_codc_p2.get(0);
         String codc2_p2 = conjunto_codc_p2.get(1);
@@ -69,21 +69,21 @@ public class Main {
         // --BUSCO GRAXA--
         // busco graxa por codigo en la tabla componentes
         // p1
-        ArrayList<String> graxas_codc1_p1 = consultas.buscarCampoPorCodigo("graxa", "codc", codc1_p1, "componentes");
+        ArrayList<String> graxas_codc1_p1 = consultas.buscarRegistrosPorCodigo("graxa", "codc", codc1_p1, "componentes");
         Double graxa_codc1_p1 = Double.parseDouble(graxas_codc1_p1.get(0));
         Double graxa_parcial_codc1_p1 = comunes.calcularGraxaParcial(peso1_codp1, graxa_codc1_p1);
-        ArrayList<String> graxas_codc2_p1 = consultas.buscarCampoPorCodigo("graxa", "codc", codc2_p1, "componentes");
+        ArrayList<String> graxas_codc2_p1 = consultas.buscarRegistrosPorCodigo("graxa", "codc", codc2_p1, "componentes");
         Double graxa_codc2_p1 = Double.parseDouble(graxas_codc2_p1.get(0));
         Double graxa_parcial_codc2_p1 = comunes.calcularGraxaParcial(peso2_codp1, graxa_codc2_p1);
 
         // p2
-        ArrayList<String> graxas_codc1_p2 = consultas.buscarCampoPorCodigo("graxa", "codc", codc1_p2, "componentes");
+        ArrayList<String> graxas_codc1_p2 = consultas.buscarRegistrosPorCodigo("graxa", "codc", codc1_p2, "componentes");
         Double graxa_codc1_p2 = Double.parseDouble(graxas_codc1_p2.get(0));
         Double graxa_parcial_codc1_p2 = comunes.calcularGraxaParcial(peso1_codp2, graxa_codc1_p2);
-        ArrayList<String> graxas_codc2_p2 = consultas.buscarCampoPorCodigo("graxa", "codc", codc2_p2, "componentes");
+        ArrayList<String> graxas_codc2_p2 = consultas.buscarRegistrosPorCodigo("graxa", "codc", codc2_p2, "componentes");
         Double graxa_codc2_p2 = Double.parseDouble(graxas_codc2_p2.get(0));
         Double graxa_parcial_codc2_p2 = comunes.calcularGraxaParcial(peso2_codp2, graxa_codc2_p2);
-        ArrayList<String> graxas_codc3_p2 = consultas.buscarCampoPorCodigo("graxa", "codc", codc3_p2, "componentes");
+        ArrayList<String> graxas_codc3_p2 = consultas.buscarRegistrosPorCodigo("graxa", "codc", codc3_p2, "componentes");
         Double graxa_codc3_p2 = Double.parseDouble(graxas_codc3_p2.get(0));
         Double graxa_parcial_codc3_p2 = comunes.calcularGraxaParcial(peso3_codp2, graxa_codc3_p2);
         
@@ -100,8 +100,13 @@ public class Main {
         System.out.println(descripcion_p2);
         Double graxaTotal_p2 = graxa_parcial_codc1_p2 + graxa_parcial_codc2_p2 + graxa_parcial_codc3_p2;
         System.out.println("graxaTotal = " + graxaTotal_p2);
-
-        String ruta_xml = "/home/dam2/DAM2/AD/ejercicios_examen/exa15brevepXML/enun/platos.xml"; 
+        
+        System.out.println("--EJERCICIO 2 (XML)--");
+        
+        // ruta del de clase:
+        //String ruta_xml = "/home/dam2/DAM2/AD/ejercicios_examen/exa15brevepXML/platos.xml"; 
+        // ruta casa
+        String ruta_xml = "/home/ubuntu/DAM2/AD/ejercicios_examen/exa15brevepXML/platos.xml";
         
         /*
         // --LEEMOS EN SERIALIZADO--
@@ -128,13 +133,14 @@ public class Main {
         producto1.add(graxaTotal_p1.toString());
         
         ArrayList <String> producto2 = new ArrayList();
-        producto1.add(codp_p2);
-        producto1.add(descripcion_p2);
-        producto1.add(graxaTotal_p2.toString());
+        producto2.add(codp_p2);
+        producto2.add(descripcion_p2);
+        producto2.add(graxaTotal_p2.toString());
         
-        ArrayList <ArrayList> productos = new ArrayList();
+        ArrayList<ArrayList> productos = new ArrayList<>();
         productos.add(producto1);
         productos.add(producto2);
+        
 
         // --ESCRIBIMOS EN XML--
         // abrimos flujo XML
@@ -152,8 +158,8 @@ public class Main {
         for (int i = 0; i < 2; i++) {
             System.out.println("Escribiendo producto: " + i);
             ArrayList pro = productos.get(i);
-            for(Object e : pro){
-                System.out.println(e);
+            for(int j = 0; j < 3; j++) {
+                System.out.println("Producto " + j + ": " + pro.get(j));
             }
             
             xmlsw.writeStartElement("Plato");

@@ -21,7 +21,7 @@ public class Conexiones {
         String driver = "jdbc:postgresql:";
         String host = "//localhost:"; // tamen poderia ser una ip como "192.168.1.14"
         String porto = "5432";
-        String sid = "postgres";
+        String sid = "postgres"; // database-name
         String usuario = "dam2";
         String password = "dam2";
         String url = driver + host + porto + "/" + sid;

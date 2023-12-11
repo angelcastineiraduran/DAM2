@@ -34,13 +34,13 @@ public class Main {
         
         // --BUSCO PESOS--
         // p1
-        ArrayList<String> pesos_p1 = consultas.buscarCampoPorCodigo("peso","codp", codp_p1, "composicion");
+        ArrayList<String> pesos_p1 = consultas.buscarRegistrosPorCodigo("peso","codp", codp_p1, "composicion");
         //comunes.iterarArray(pesos_p1);
         Double peso1_codp1 = Double.parseDouble(pesos_p1.get(0));
         Double peso2_codp1 = Double.parseDouble(pesos_p1.get(1));
         Double totalPesos_codp1 = peso1_codp1 + peso2_codp1;
         // p2
-        ArrayList<String> pesos_p2 = consultas.buscarCampoPorCodigo("peso","codp", codp_p2, "composicion");
+        ArrayList<String> pesos_p2 = consultas.buscarRegistrosPorCodigo("peso","codp", codp_p2, "composicion");
         //comunes.iterarArray(pesos_p2);
         Double peso1_codp2 = Double.parseDouble(pesos_p2.get(0));
         Double peso2_codp2 = Double.parseDouble(pesos_p2.get(1));
@@ -49,12 +49,12 @@ public class Main {
         
         // --BUSCO CODC--
         // p1
-        ArrayList<String> conjunto_codc_p1 = consultas.buscarCampoPorCodigo("codc", "codp", codp_p1, "composicion");
+        ArrayList<String> conjunto_codc_p1 = consultas.buscarRegistrosPorCodigo("codc", "codp", codp_p1, "composicion");
         //comunes.iterarArray(conjunto_codc_p1);
         String codc1_p1 = conjunto_codc_p1.get(0);
         String codc2_p1 = conjunto_codc_p1.get(1);
         // p2
-        ArrayList<String> conjunto_codc_p2 = consultas.buscarCampoPorCodigo("codc", "codp", codp_p2, "composicion");
+        ArrayList<String> conjunto_codc_p2 = consultas.buscarRegistrosPorCodigo("codc", "codp", codp_p2, "composicion");
         //comunes.iterarArray(conjunto_codc_p2);
         String codc1_p2 = conjunto_codc_p2.get(0);
         String codc2_p2 = conjunto_codc_p2.get(1);
@@ -65,21 +65,21 @@ public class Main {
         // busco graxa por codigo en la tabla componentes
         
         // p1
-        ArrayList<String> graxas_codc1_p1 = consultas.buscarCampoPorCodigo("graxa", "codc", codc1_p1, "componentes");
+        ArrayList<String> graxas_codc1_p1 = consultas.buscarRegistrosPorCodigo("graxa", "codc", codc1_p1, "componentes");
         Double graxa_codc1_p1 = Double.parseDouble(graxas_codc1_p1.get(0));
         Double graxa_parcial_codc1_p1 = comunes.calcularGraxaParcial(peso1_codp1, graxa_codc1_p1);
-        ArrayList<String> graxas_codc2_p1 = consultas.buscarCampoPorCodigo("graxa", "codc", codc2_p1, "componentes");
+        ArrayList<String> graxas_codc2_p1 = consultas.buscarRegistrosPorCodigo("graxa", "codc", codc2_p1, "componentes");
         Double graxa_codc2_p1 = Double.parseDouble(graxas_codc2_p1.get(0));
         Double graxa_parcial_codc2_p1 = comunes.calcularGraxaParcial(peso2_codp1, graxa_codc2_p1);
         
         // p2
-        ArrayList<String> graxas_codc1_p2 = consultas.buscarCampoPorCodigo("graxa", "codc", codc1_p2, "componentes");
+        ArrayList<String> graxas_codc1_p2 = consultas.buscarRegistrosPorCodigo("graxa", "codc", codc1_p2, "componentes");
         Double graxa_codc1_p2 = Double.parseDouble(graxas_codc1_p2.get(0));
         Double graxa_parcial_codc1_p2 = comunes.calcularGraxaParcial(peso1_codp2, graxa_codc1_p2);
-        ArrayList<String> graxas_codc2_p2 = consultas.buscarCampoPorCodigo("graxa", "codc", codc2_p2, "componentes");
+        ArrayList<String> graxas_codc2_p2 = consultas.buscarRegistrosPorCodigo("graxa", "codc", codc2_p2, "componentes");
         Double graxa_codc2_p2 = Double.parseDouble(graxas_codc2_p2.get(0));
         Double graxa_parcial_codc2_p2 = comunes.calcularGraxaParcial(peso2_codp2, graxa_codc2_p2);
-        ArrayList<String> graxas_codc3_p2 = consultas.buscarCampoPorCodigo("graxa", "codc", codc3_p2, "componentes");
+        ArrayList<String> graxas_codc3_p2 = consultas.buscarRegistrosPorCodigo("graxa", "codc", codc3_p2, "componentes");
         Double graxa_codc3_p2 = Double.parseDouble(graxas_codc3_p2.get(0));
         Double graxa_parcial_codc3_p2 = comunes.calcularGraxaParcial(peso3_codp2, graxa_codc3_p2);
         

@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.sql.PreparedStatement;
 
 /**
  *
@@ -21,11 +22,11 @@ public class Consultas {
 
     String nombreColumnas; // si son varios separar por comas
     String nombreValores; // "" y entrecomillados con la simple "\'"
-    
 
-    public ArrayList buscarCampoPorCodigo(String campoDevuelto, String campoIdeal, String valorIdeal, String nombreTabla) throws SQLException {
+    public ArrayList buscarRegistrosPorCodigo(String campoDevuelto, String campoIdeal, String valorIdeal, String nombreTabla) throws SQLException {
         ArrayList<String> valoresDevueltos = new ArrayList();
-        
+        // campoDevuelto no lo utilizo realmente, deberia eliminarse pero no lo hago pq tendria que corregirlo
+
         String consultaSQL = "SELECT * FROM " + nombreTabla + " WHERE " + campoIdeal + "='" + valorIdeal + "';";
         System.out.println(consultaSQL);
         Connection conn = conexiones.conexion();
@@ -39,15 +40,67 @@ public class Consultas {
         return valoresDevueltos;
 
     }
+
+    public int buscarIntPorCodigo(String campoDevuelto, String campoIdeal, String valorIdeal, String nombreTabla) throws SQLException {
+        String consultaSQL = "SELECT * FROM " + nombreTabla + " WHERE " + campoIdeal + "='" + valorIdeal + "';";
+        int valorDevuelto = -1;
+        System.out.println(consultaSQL);
+        Connection conn = conexiones.conexion();
+        Statement st = conn.createStatement();
+        ResultSet rs = st.executeQuery(consultaSQL);
+        while (rs.next()) {
+            valorDevuelto = rs.getInt(campoDevuelto);
+        }
+        return valorDevuelto;
+    }
     
-//    public Double buscarGraxaPor_codp(String codc) throws SQLException{
-//        ArrayList<String> graxas = new ArrayList();
-//        String consultaSQL = "SELECT * FROM componentes WHERE codc='" + codc + "'";
-//        System.out.println(consultaSQL);
-//        Connection conn = conexiones.conexion();
-//        Statement st = conn.createStatement();
-//        
-//        
-//    }
+    public int buscarIntPorCodigoInt(String campoDevuelto, String campoIdeal, int valorIdeal, String nombreTabla) throws SQLException {
+        String consultaSQL = "SELECT * FROM " + nombreTabla + " WHERE " + campoIdeal + "='" + valorIdeal + "';";
+        int valorDevuelto = -1;
+        System.out.println(consultaSQL);
+        Connection conn = conexiones.conexion();
+        Statement st = conn.createStatement();
+        ResultSet rs = st.executeQuery(consultaSQL);
+        while (rs.next()) {
+            valorDevuelto = rs.getInt(campoDevuelto);
+        }
+        return valorDevuelto;
+    }
+
+
+    public String buscarStringPorCodigo(String campoDevuelto, String campoIdeal, String valorIdeal, String nombreTabla) throws SQLException {
+        String consultaSQL = "SELECT * FROM " + nombreTabla + " WHERE " + campoIdeal + "='" + valorIdeal + "';";
+        String valorDevuelto = "";
+        System.out.println(consultaSQL);
+        Connection conn = conexiones.conexion();
+        Statement st = conn.createStatement();
+        ResultSet rs = st.executeQuery(consultaSQL);
+        while (rs.next()) {
+            valorDevuelto = rs.getString(campoDevuelto);
+        }
+        return valorDevuelto;
+    }
+
+    // actualizar un campo
+    public void actualizarIntPorCodigo(String db, String table,
+            String columnaDelValorAReemplazar, int valorAReemplazarAnterior,
+            String columnaCondicion, String valorCondicion) throws SQLException {
+
+        // en este caso el valor a reemplazar es uno mas
+        int valorAReemplazar = valorAReemplazarAnterior + 1;
+
+        String consultaSQL = "update " + db + "." + table + " set "
+                + columnaDelValorAReemplazar + "='" + valorAReemplazar + "' where " + columnaCondicion
+                + "='" + valorCondicion + "'";
+        System.out.println(consultaSQL);
+        Connection conn = conexiones.conexion();
+        PreparedStatement pst = conn.prepareStatement(consultaSQL);
+        int filasActualizadas = pst.executeUpdate();
+        if (filasActualizadas > 0) {
+            System.out.println("Se actualizaron " + filasActualizadas + " filas");
+        } else {
+            System.out.println("No se actualizo ninguna fila");
+        }
+    }
 
 }
