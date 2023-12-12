@@ -1,0 +1,60 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.dam.teoriacompose_v2.app-mergeDebugResources-42:/values-ja/values-ja.xml",
+            "map": [
+                {
+                    "source": "/home/dam2/.gradle/caches/transforms-3/93df8d9948672a1ac9de4361877b3f83/transformed/material3-1.0.0/res/values-ja/values-ja.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,130,201",
+                        "endColumns": "74,70,73",
+                        "endOffsets": "125,196,270"
+                    },
+                    "to": {
+                        "startLines": "4,7,9",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "269,530,684",
+                        "endColumns": "74,70,73",
+                        "endOffsets": "339,596,753"
+                    }
+                },
+                {
+                    "source": "/home/dam2/.gradle/caches/transforms-3/d07a0cb5f05cbada87d30bd57f33a441/transformed/core-1.9.0/res/values-ja/values-ja.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "19",
+                        "startColumns": "4",
+                        "startOffsets": "1421",
+                        "endColumns": "100",
+                        "endOffsets": "1517"
+                    }
+                },
+                {
+                    "source": "/home/dam2/.gradle/caches/transforms-3/bffd72fa0e72df915f68c9057e3de00a/transformed/ui-1.4.0/res/values-ja/values-ja.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,191,269,358,455,538,616,694,779,854,918,982,1056,1132,1201,1277,1342",
+                        "endColumns": "85,77,88,96,82,77,77,84,74,63,63,73,75,68,75,64,116",
+                        "endOffsets": "186,264,353,450,533,611,689,774,849,913,977,1051,1127,1196,1272,1337,1454"
+                    },
+                    "to": {
+                        "startLines": "2,3,5,6,8,10,11,12,13,14,15,16,17,18,20,21,22",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,191,344,433,601,758,836,914,999,1074,1138,1202,1276,1352,1522,1598,1663",
+                        "endColumns": "85,77,88,96,82,77,77,84,74,63,63,73,75,68,75,64,116",
+                        "endOffsets": "186,264,428,525,679,831,909,994,1069,1133,1197,1271,1347,1416,1593,1658,1775"
+                    }
+                }
+            ]
+        }
+    ]
+}

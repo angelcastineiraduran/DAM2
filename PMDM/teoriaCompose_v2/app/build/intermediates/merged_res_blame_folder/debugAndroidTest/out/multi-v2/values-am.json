@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.dam.teoriacompose_v2.test.app-mergeDebugAndroidTestResources-32:/values-am/values-am.xml",
+            "map": [
+                {
+                    "source": "/home/dam2/.gradle/caches/transforms-3/bffd72fa0e72df915f68c9057e3de00a/transformed/ui-1.4.0/res/values-am/values-am.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,188,265,357,453,535,613,696,778,856,922,988,1066,1147,1217,1297,1362",
+                        "endColumns": "82,76,91,95,81,77,82,81,77,65,65,77,80,69,79,64,115",
+                        "endOffsets": "183,260,352,448,530,608,691,773,851,917,983,1061,1142,1212,1292,1357,1473"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,188,265,357,453,535,613,696,778,856,922,988,1066,1147,1318,1398,1463",
+                        "endColumns": "82,76,91,95,81,77,82,81,77,65,65,77,80,69,79,64,115",
+                        "endOffsets": "183,260,352,448,530,608,691,773,851,917,983,1061,1142,1212,1393,1458,1574"
+                    }
+                },
+                {
+                    "source": "/home/dam2/.gradle/caches/transforms-3/d07a0cb5f05cbada87d30bd57f33a441/transformed/core-1.9.0/res/values-am/values-am.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "16",
+                        "startColumns": "4",
+                        "startOffsets": "1217",
+                        "endColumns": "100",
+                        "endOffsets": "1313"
+                    }
+                }
+            ]
+        }
+    ]
+}
