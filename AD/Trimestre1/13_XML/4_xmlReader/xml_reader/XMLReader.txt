@@ -1,0 +1,6 @@
+/*
+  Exercicio 17
+XMLreader
+ ler dende o ficheiro products.xml que creaches no exercicio XMLwriter os datos que almacenache nel
+  e crear un Arraylist de obxectos product  imprimindo as variables de ditos    obxectos dende o Arraylist
+ */

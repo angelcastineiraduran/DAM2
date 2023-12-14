@@ -1,0 +1,5 @@
+coda=2, noma=pon, nomf=f, superficieafectada=2.0, porcentaxedanos=0.1
+coda=5, noma=poc, nomf=n, superficieafectada=4.0, porcentaxedanos=0.19047619047619047
+coda=5, noma=poc, nomf=f, superficieafectada=12.0, porcentaxedanos=0.5714285714285714
+coda=6, noma=pus, nomf=t, superficieafectada=10.0, porcentaxedanos=1.0
+coda=11, noma=pos, nomf=f, superficieafectada=4.0, porcentaxedanos=0.26666666666666666

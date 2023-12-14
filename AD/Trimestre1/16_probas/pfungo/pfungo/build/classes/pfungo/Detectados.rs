@@ -1,0 +1,1 @@
+pfungos.Detectados
