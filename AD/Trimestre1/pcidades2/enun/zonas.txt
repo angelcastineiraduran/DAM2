@@ -1,0 +1,11 @@
+z1_calvario_2300
+z2_teis_2100
+z3_rosalia_1000
+z4_centro_3000
+z5_principe_4000
+z6_lavadores_2000
+z7_travesia_1000
+z8_traviesas_1600
+z9_navia_1600
+z10_bouzas_3000
+z11_cabral_1400
