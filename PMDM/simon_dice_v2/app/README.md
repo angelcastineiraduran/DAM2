@@ -90,6 +90,9 @@ para mostrar al usuario la secuencia del bot, utilizando un `viewModelScope` par
 
 ![rutina](./imagenes/rutina.png)
 
+_Se observa como se modifica el botón que corresponde al rojo (indicado con la flecha) momentaneamente
+a color gris, para mostrar al usuario la secuencia del bot_
+
 ### MVVM
 En la app el patrón MVVM se aplica eficazmente:
 
