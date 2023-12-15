@@ -36,7 +36,7 @@ class MiViewModel(): ViewModel() {
      * genera secuencia random de 10 elementos tipo MyColor
      */
     fun setBotSecuence(secuencia: MutableList<Int>) {
-        for (i in 0 .. 10) {
+        for (i in 0 .. 20) {
             secuencia.add((1..4).random())
         }
         Log.d(TAG_LOG, "botSecuence: ${(Data.botSecuence)}")
