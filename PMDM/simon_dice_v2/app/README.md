@@ -47,14 +47,6 @@ donde también se instancia `MiViewModel` y se muestra la interfaz.
 ### IU
 Contiene funciones Composables para la interfaz de usuario.
 
-![startContinue](./imagenes/startContinue.png)
-
-_IU cuando se abre la app y aún no se ha iniciado el juego_
-
-![botonera](./imagenes/botonera.png)
-
-_IU cuando el juego está en curso_
-
 - `MiInterfaz` contiene la estructura principal de la IU, 
 con elementos como el contador de rondas y la botonera de colores. 
 Utiliza `Column` y `Row` de Compose para organizar los componentes.
@@ -68,6 +60,17 @@ son botones individuales para iniciar, reiniciar y continuar el juego respectiva
 - `ContadorRonda` **(4)**, muestra el número de la ronda actual.
 
 - La función `prevMostrarNumeros` es una vista previa de la interfaz de usuario.
+
+
+![startContinue](./imagenes/startContinue.png)
+
+_IU cuando se abre la app y aún no se ha iniciado el juego_
+
+-------
+
+![botonera](./imagenes/botonera.png)
+
+_IU cuando el juego está en curso_
 
 ### MiViewModel
 Contiene la lógica principal de la app.
