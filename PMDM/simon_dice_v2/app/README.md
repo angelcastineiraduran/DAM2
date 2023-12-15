@@ -47,13 +47,11 @@ donde también se instancia `MiViewModel` y se muestra la interfaz.
 ### IU
 Contiene funciones Composables para la interfaz de usuario.
 
-
-![botonera](/imagenes/botonera.png)
+![startContinue](./imagenes/startContinue.png)
 
 _IU cuando se abre la app y aún no se ha iniciado el juego_
 
-
-![startContinue](./imagenes/botonera.png)
+![botonera](./imagenes/botonera.png)
 
 _IU cuando el juego está en curso_
 
@@ -61,13 +59,13 @@ _IU cuando el juego está en curso_
 con elementos como el contador de rondas y la botonera de colores. 
 Utiliza `Column` y `Row` de Compose para organizar los componentes.
 
-- `Botonera` crea botones para cada color y permite al usuario agregar 
+- `Botonera` **(5)**, crea botones para cada color y permite al usuario agregar 
 colores a una secuencia mientras el juego está en curso.
 
-- `BotonStart`, `BotonReset` y `BotonContinuar` 
+- `BotonStart` **(1)**, `BotonReset` **(3)** y `BotonContinuar ` **(2)**
 son botones individuales para iniciar, reiniciar y continuar el juego respectivamente.
 
-- `ContadorRonda` muestra el número de la ronda actual.
+- `ContadorRonda` **(4)**, muestra el número de la ronda actual.
 
 - La función `prevMostrarNumeros` es una vista previa de la interfaz de usuario.
 
@@ -89,6 +87,8 @@ mostrar al usuario y compararla con su secuencia, mientras limita la cantidad de
 
 - `modifyColor` cambia momentáneamente el color de los botones 
 para mostrar al usuario la secuencia del bot, utilizando un `viewModelScope` para gestionar el tiempo entre cambios de color.
+
+![rutina](./imagenes/rutina.png)
 
 ### MVVM
 En la app el patrón MVVM se aplica eficazmente:
