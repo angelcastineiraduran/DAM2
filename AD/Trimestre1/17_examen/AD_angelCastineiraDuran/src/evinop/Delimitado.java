@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package pcidades2;
+package evinop;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -12,23 +12,20 @@ import java.util.ArrayList;
 
 /**
  *
- * @author ubuntu
+ * @author dam2
  */
 public class Delimitado {
     String directorioActual = System.getProperty("user.dir");
-    String rutaFicheroLeer = directorioActual + "/../enun/zonas.txt";
+    String rutaFicheroLeer = directorioActual + "/../enun/analisis.txt";
     
-    
-    public ArrayList<String[]> leerZonas () throws FileNotFoundException, IOException {
-        ArrayList<String[]> zonasDatos = new ArrayList();
+    public ArrayList<String[]> leerAnalisis () throws FileNotFoundException, IOException {
+        ArrayList<String[]> analisisDatos = new ArrayList();
         BufferedReader br = new BufferedReader(new FileReader(rutaFicheroLeer));
         String lectura = null;
         while((lectura = br.readLine()) != null) {
-            String[] aux = lectura.split("_");
-            zonasDatos.add(aux);
+            String[] aux = lectura.split(",");
+            analisisDatos.add(aux);
         }
-        return zonasDatos;
+        return analisisDatos;
     }
-    
-    
 }
