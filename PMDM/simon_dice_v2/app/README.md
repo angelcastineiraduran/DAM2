@@ -48,13 +48,12 @@ donde también se instancia `MiViewModel` y se muestra la interfaz.
 Contiene funciones Composables para la interfaz de usuario.
 
 
-![inicioApp](/imagenes/botonera.png)
+![botonera](/imagenes/botonera.png)
 
 _IU cuando se abre la app y aún no se ha iniciado el juego_
 
 
-
-![juegoEnCurso](/imagenes/startContinue.png)
+![startContinue](./imagenes/botonera.png)
 
 _IU cuando el juego está en curso_
 
