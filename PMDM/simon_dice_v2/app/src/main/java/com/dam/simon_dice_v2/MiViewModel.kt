@@ -19,9 +19,15 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import androidx.lifecycle.viewModelScope
 
+/**
+ * Clase que contiene la logica de la app
+ */
 class MiViewModel(): ViewModel() {
     val TAG_LOG = "ViewModel"
 
+    /**
+     * inicializo el ViewModel y lo indicamos en el LogCat con un mensaje
+     */
     init {
         Log.d(TAG_LOG, "Entrando")
     }
@@ -54,6 +60,10 @@ class MiViewModel(): ViewModel() {
         Log.d(TAG_LOG, "isGamerOver=${Data.isGameOver.value}")
     }
 
+    /**
+     * Si el juego ha terminado, porque se falla la secuencia y/o alguien ha pulsado el boton de reset,
+     * se reinicia el juego (secuencias, record, etc)
+     */
     fun answerRequest() {
         if(Data.isGameOver.value == true) {
             isGameOverTrue()
@@ -61,7 +71,11 @@ class MiViewModel(): ViewModel() {
             nextRound()
         }
     }
-    // este funciona
+
+    /**
+     * Funcion que se ejecuta cuando se pulsa el boton de start
+     * Inicializa las secuencias, el record, etc
+     */
     fun isStarted() {
         setBotSecuence(Data.botSecuence)
         Data.isStarted.value = true
@@ -72,22 +86,10 @@ class MiViewModel(): ViewModel() {
         Log.d(TAG_LOG, "isStarted_v2")
     }
 
-    // runBlocking bloquea el hilo principal y detiene la ejecucion de la corrutina hasta que se complete
-    // pero como dentro de modifyColor estas lanzando corrutinas launch que contienen delay, esto esta
-    // tratando de suspender la ejecuccion mientras el hilo principal esta bloqueado, lo que provoca el error
-    /*
-    fun isStarted_v2() = runBlocking{
-        Data.isStarted.value = true
-        Data.isGameOver.value = false
-        Data.record.value = 1
-        setBotSecuenceNow()
-        Log.d(TAG_LOG, "${Data.botSecuenceNow}")
-        Log.d(TAG_LOG, "isStarted_v2")
-        modifyColor()
-    }
-
+    /**
+     * Funcion que se ejecuta cuando lo llama el metodo answerRequest()
+     * Reinicia las secuencias, el record, etc
      */
-
     fun isGameOverTrue() {
         Data.isStarted.value = false
         Data.userSecuence.clear()
@@ -96,6 +98,9 @@ class MiViewModel(): ViewModel() {
         Data.record.value = 1
     }
 
+    /**
+     * Funcion que se ejecuta cuando se pulsa el boton de continuar y se ha acertado la secuencia
+     */
     fun nextRound() {
         Data.record.value++
         Data.userSecuence.clear()
@@ -103,11 +108,22 @@ class MiViewModel(): ViewModel() {
         modifyColor()
     }
 
+    /**
+     * Añade el color seleccionado a la secuencia del bot actual
+     * TODA la secuencia del bot se crea al principio, pero quiero ir seteando botSecuenceNow() poco a poco
+     * para que ir comparando esa secuencia con la del usuario. Lo de record es para ponerle limite a la secuencia del bot
+     * y vaya paulatinamente con la secuencia del usuario
+     */
     fun setBotSecuenceNow() {
             Data.botSecuenceNow.add(Data.botSecuence[Data.record.value-1])
             Log.d(TAG_LOG, "setBotSecuenceNow: ${Data.botSecuenceNow}")
     }
 
+    /**
+     * indica la secuancia del bot de forma visual cambiando momentaneamente el color de los botones.
+     * De esta forma el usuario puede ver la secuencia del bot y repetirla. El delay es para que haya cierto
+     * tiempo entre que indica un elemento de la secuancia y el siguiente.
+     */
     fun modifyColor() {
         Log.d(TAG_LOG, "incrementanto color")
         viewModelScope.launch {

@@ -28,9 +28,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.dam.simon_dice_v2.Data.btnSize
+
 import com.dam.simon_dice_v2.ui.theme.Simon_dice_v2Theme
 
+/**
+ * Funcion que contiene toda la interfaz de usuario
+ * @param miViewModel: MiViewModel el cual contiene la logica de la app
+
+ */
 @Composable
 fun MiInterfaz(miViewModel: MiViewModel) {
     val TAR_LOG: String = "Mensaje IU"
@@ -78,6 +83,11 @@ fun MiInterfaz(miViewModel: MiViewModel) {
     }
 }
 
+/**
+ * Interfaz fráfica de los botones de colores. Si se hace click sobre estos se añade el color a la secuencia del usuario,
+ * @param modifier: Modifier para que se pueda cambiar desde fuera
+ * @param isEnabled: Boolean para habilitar o deshabilitar los botones
+ */
 @Composable
 fun Botonera(
     modifier: Modifier = Modifier,
@@ -128,6 +138,12 @@ fun Botonera(
 
 }
 
+/**
+ * IU del boton que inicia el juego
+ * @param txtStart: Int para el texto del boton se pueda cambiar desde fuera
+ * @param modifier: Modifier para que se pueda cambiar desde fuera
+ * @param clicado: () -> Unit para que se pueda cambiar desde fuera
+ */
 @Composable
 fun BotonStart(
     @StringRes txtStart: Int,
@@ -146,6 +162,12 @@ fun BotonStart(
     }
 }
 
+/**
+ * IU del boton que reinicia el juego
+ * @param txtReset: Int para el texto del boton se pueda cambiar desde fuera
+ * @param modifier: Modifier para que se pueda cambiar desde fuera
+ * @param clicado: () -> Unit para que se pueda cambiar desde fuera
+ */
 @Composable
 fun BotonReset(
     @StringRes txtReset: Int,
@@ -164,6 +186,12 @@ fun BotonReset(
     }
 }
 
+/**
+ * IU del boton que continua el juego
+ * @param modifier: Modifier para que se pueda cambiar desde fuera
+ * @param miViewModel: MiViewModel para que se pueda cambiar desde fuera aunque en este caso
+ * no se utiliza ya que se llama a la funcion desde el propio boton
+ */
 @Composable
 fun BotonContinuar(
     modifier: Modifier = Modifier,
@@ -183,6 +211,10 @@ fun BotonContinuar(
     }
 }
 
+/**
+ * IU del contador de rondas. Aumenta cada vez que se acierta la secuencia.
+ * @param modifier: Modifier para que se pueda cambiar desde fuera. Al final no se utiliza.
+ */
 @Composable
 fun ContadorRonda(
     modifier: Modifier = Modifier
@@ -190,7 +222,9 @@ fun ContadorRonda(
     Text("Ronda: ${Data.record.value}")
 }
 
-
+/**
+ * Para previsualizar la interfaz de usuario
+ */
 @Preview("Prev de mostrarNum")
 @Composable
 fun prevMostrarNumeros() {

@@ -30,7 +30,16 @@ import androidx.core.app.unusedapprestrictions.IUnusedAppRestrictionsBackportCal
 import androidx.lifecycle.ViewModel
 import com.dam.simon_dice_v2.ui.theme.Simon_dice_v2Theme
 
+/**
+ * Clase que inicia todo el proceso de la app
+ *
+ */
 class MainActivity : ComponentActivity() {
+    /**
+     * Funcion que inicia la app, llamando a la funcion MiInterfaz (toda la interfaz de la app) la cual
+     * recibe una instancia de MiViewModel (la logica de la app).
+     * Tambien indico en el surface algunos parametros de la interfaz como el color de fondo.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         var miViewModel: MiViewModel = MiViewModel()
@@ -47,44 +56,9 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-// componente: Button(onClick={/*ACCION*/}){/*TEXTO*/}
-
 /**
- * Visualizo boton por pantalla que al hacer click se muestra texto
+ * Ir viendo como se va a ir mostrando la interfaz
  */
-
-@Composable
-fun miBoton() {
-    var context = LocalContext.current
-    Button(onClick = {
-        Toast.makeText(context, "Has presionado el boton", Toast.LENGTH_LONG).show()
-    }) { Text(text = "Presiona aqui") } // texto del boton
-
-}
-
-@Composable
-fun miEtiqueta() {
-    Surface(color = MaterialTheme.colorScheme.primary) { // color de fondo
-        Row {
-            Column {
-                Text(text = "Hola Mundo")
-                Spacer(
-                    modifier = Modifier
-                        .height(8.dp)
-                )
-                Text(text = "Hola Angel")
-            }
-            Image(
-                painter = painterResource(id = R.drawable.sirenita),
-                contentDescription = "foto de la sirenita",
-                modifier = Modifier
-                    .size(50.dp)
-                    .clip(CircleShape)
-            )
-        }
-    }
-}
-
 @Preview(showBackground = true)
 @Composable
 fun PreviewPrincipal() {
