@@ -1,15 +1,15 @@
-# SIMON DICE
+# SIMÓN DICE
 
 ## Descripción
 El juego consiste en que el usuario debe repetir la secuencia de colores que se le muestra en pantalla, 
-cada vez que el usuario acierte la secuencia se le agregará un color más a la secuencia, 
-si el usuario se equivoca en la secuencia el juego termina.
+cada vez que el usuario acierte se le agregará un color más a la secuencia, 
+si el usuario se equivoca, el juego termina.
 
 ## Explicación del código
 El código está dividido en 4 partes:
-1. Declaracion e iniciación de variables en el `Object Data`.
+1. Declaracion e inicialización de datos en el `Object Data`.
 2. En la clase `MainActivity` iniciamos la app llamando al método `MiInterfaz()` del fichero `IU.kt`.
-3. El método `MiInterfaz()` (archivo `UI.kt`) inicia los componentes de la interfaz de usuario y recibe una instancia `MyViewModel`
+3. El método `MiInterfaz()` inicia los componentes de la interfaz de usuario y recibe una instancia `MyViewModel`
 para poder acceder al funcionamiento de los eventos de los componenetes.
 4. En la clase `MiViewModel` se encuentra la lógica del juego. Contiene todas las funciones 
 que tendrán que hacer internamente los botones una vez se les haga click.
@@ -27,7 +27,7 @@ provocar actualizaciones en la interfaz de usuario cuando su valor se modifica. 
 - `colorSeleccion`, `colorRojo`, `colorAmarillo`, `colorVerde` y `colorAzul` son estados mutables 
 que representan diferentes colores para la interfaz de usuario.
 
-Por otro lado, `mutableListOf<Int>()` se utiliza para crear listas mutables que pueden contener elementos del tipo `Int`. En este código:
+Por otro lado, `mutableListOf<Int>()` se utiliza para crear listas mutables que pueden contener elementos del tipo `Int`. Por ejemplo:
 
 - `userSecuence`, `botSecuence` y `botSecuenceNow` son listas mutables que almacenan secuencias de números para el juego.
 
@@ -35,7 +35,7 @@ Por otro lado, `mutableListOf<Int>()` se utiliza para crear listas mutables que 
 La clase `MainActivity` inicia la aplicación. En su método `onCreate`, instancia un `MiViewModel` 
 y configura la interfaz gráfica mediante Compose.
 
-La función `MiInterfaz` es utilizada para crear la interfaz de usuario, 
+La función `MiInterfaz` es utilizada para crear la interfaz de usuario  
 y recibe una instancia de `MiViewModel` para manejar la lógica de la app.
 
 Se hace uso de estructuras como `Surface` y `MaterialTheme` 
