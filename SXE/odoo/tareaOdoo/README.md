@@ -21,16 +21,19 @@ Busco en [docker hub](https://hub.docker.com/_/odoo) la imagen oficial de Odoo. 
 
 Tengo hasta 4 variables de entorno:
 * `HOST` nombre del contenedor que aloja la base de datos. Por defecto el nombre de la base de datos es "db".
-Por lo tanto, si en el docker-compose no añadimos esta variable y la modificamos, odoo, por defecto
-va a buscar la base de datos como "db". Es decir, si no añado esta variable de entorno
-en el compose en el servicio web de odoo, y luego en el nombre del servicio de la base de datos, en vez
-de ponerle "db" se lo cambiamos, por ejemplo, a "mydb", entonces no funcionaria. Si quiero que funcinoe
-con el nombre "mydb", tengo que añadir
-la variable de entorno `HOST=mydb` para indicarle a odoo que tiene que conectarse a un contenedor que levanta un servicio 
-de base de datos que se llamara "mydb".
+Por lo tanto, si en el docker-compose no añadimos esta variable (`HOST`) y posteriomente
+la modificamos (por ejemplo: `HOST=mydb`), odoo, por defecto,
+va a buscar la base de datos como "db".
 * `PORT` puerto del **gestor de la base de datos**.
 * `USER`
 * `PASSWORD`
+
+Ejemplo: _cambiar nombre de la base de datos a la que se conecta Odoo._
+
+1. Añado variable de entorno
+dentro del compose en la parte del servicio web de Odoo: `HOST=mydb`.
+2. Modifico el nombre del servicio de la base de datos. Por defecto 
+denominado como `db`. Se lo tenemos que cambair a `mydb`.
 
 En todos los **gestores de bases de datos** me tengo que conectar con un usuario y una  contraseña. Siempre que los instalo se crea un usuario por defecto ("postgres").
 
@@ -72,16 +75,17 @@ En mi caso la "DIRECCION_IP" es 10.0.9.19 (localhost).
 
 Checkeamos el demo data para que el Odoo no nos quede demasiado vacío.
 
-En este instalador hay que crear una nueva base de datos, la cual utilizara
-odoo. La anterior bd y las variables de entorno que definimos realmente
-creo que son solo para que odoo pueda conectarse a esa base dae datos con las
-credenciales de superuser y asi crear una base de datos concreta para todo lo
-relacionado con odoo.
+En este instalador hay que crear una nueva base de datos, la cual utilizará
+Odoo. La anterior base de datos y las variables de entorno que definimos anteriormente
+son solo para que Odoo pueda conectarse a esa base de datos con las
+credenciales de "superuser" y así poder crear una base de datos concreta para todo lo
+relacionado con Odoo.
 
 ![odoo](imagenes/myodoo.jpg)
 
-Master pswd: admin
-Database name: sxe
-pswd: 1234
+### Credenciales
+* Master pswd: admin
+* Database name: sxe
+* pswd: 12345
 
 
