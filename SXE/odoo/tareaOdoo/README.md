@@ -1,4 +1,4 @@
-# INTRODUCCION
+# Tarea: Odoo InstalaciónTarefa
 Configura Odoo con docker-compose
 * Usar docker-compose
 * Configura Postgresql y realizas pruebas
