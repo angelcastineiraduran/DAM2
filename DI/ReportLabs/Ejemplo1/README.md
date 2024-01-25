@@ -46,7 +46,7 @@ pswd del documento.
 * si valor = obj de `reportlab.lib.pdfencrypt.StandardEncryption`
 entonces todo el docu sera encriptado.
 
-## The tools: the "draw" operations
+## (2.4) The tools: the "draw" operations
 
 ### Lineas
 
@@ -101,3 +101,46 @@ canvas.clipPath(path, stroke=1, fill=0, fillMode=None)
 ```
 
 ### Imagen
+Necesaria libreria **Python Imaging Library (PIL)**
+para usar imagenes en el paquete ReportLab.
+
+2 metodos:
+
+`drawImage`
+
+* actual
+* se define la imagen una vez y luego la podemos dibujar
+muchas veces.
+* Solo va a ser guardada la primera vez y despues va a ser referenciada.
+
+`drawInLineImage`
+
+* antiguo
+* No eficiente cuando repito la misma imagen varias veces.
+* Eficiente cuando las imagenes son pequeñas y no se repiten.
+
+```python
+canvas.drawInlineImage(self, image, x,y, width=None,height=None) 
+# mask para transparencia imagenes
+canvas.drawImage(self, image, x,y, width=None,height=None,mask=None)
+```
+
+** EN LA .py "Images" NO ME FUNCIONA!! **
+
+## (2.5) The toolbox: the "state change" operations
+Formas/herramientas que tiene el programa para pintar info
+en la pagina usando la interfaz de canvas.
+
+(mirar documento oficial)
+
+## (2.6) Other canvas methods
+
+(mirar documento oficial)
+
+
+## 2.7 Coordinates (default user space)
+El metodo `canvas.translate(x,y)` mueve el pto de origen por 
+defecto.
+
+
+> ME QUEDE EN LA PAGINA 20
