@@ -1,5 +1,9 @@
 # Introduccion
 
+Socket: especie de puente virtual para comunicar cliente-servidor.
+
+![clienteServidor](../imagenes/clienteServidor.png)
+
 TCP
 * orientado a conexion
 * eficiente, respeta orden	
