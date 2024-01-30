@@ -1,1 +1,0 @@
-# NO FINALIZADO, video incompleto!!
