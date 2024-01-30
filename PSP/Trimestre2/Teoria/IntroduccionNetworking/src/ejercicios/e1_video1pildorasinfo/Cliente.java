@@ -7,7 +7,16 @@ import java.awt.GridLayout;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+/**
+ * Curso Java. Sockets I. Vídeo 190
+ * @author ubuntu
+ */
 public class Cliente {
     
     public static void main(String[] args) {
@@ -89,12 +98,26 @@ class MiMarcoCliente extends JFrame {
         btnEnviar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                String txtEnviar = txtCampo.getText();
-                String aux = txtArea.getText();
-                txtArea.setText(aux + '\n' +txtEnviar);
-                txtCampo.setText("");
-                
-                // CREACION DEL SOCKET
+                try {
+                    // para que veamos lo que se va mandando al servidor
+                    String txtEnviar = txtCampo.getText();
+                    String aux = txtArea.getText();
+                    txtArea.setText(aux + '\n' +txtEnviar);
+                    
+                    // CREACION DEL SOCKET = PUENTE
+                    Socket miSocket = new Socket("localhost", 8000);
+                    DataOutputStream flujoSalida = new DataOutputStream(miSocket.getOutputStream());
+                    flujoSalida.writeUTF(lblEscribir.getText());
+                    flujoSalida.close();
+                    
+                    txtCampo.setText("");
+                    
+                    
+                } catch (IOException ex) {
+                    // para que no diga cual ha sido el error: ip mal, puerto ocupado...
+                    System.out.println(ex.getMessage());
+                    ex.printStackTrace();
+                }
                 
             }
             

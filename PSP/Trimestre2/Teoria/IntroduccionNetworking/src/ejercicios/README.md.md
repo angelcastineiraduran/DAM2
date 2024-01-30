@@ -78,7 +78,16 @@ Como lo hacemos? con los **hilos**.
 
 2. Crear hilo 1
 
-Hacer que la clase `MiMarcoServidor` implemente `Runnable`
+Hacer que la clase `MiMarcoServidor` implemente `Runnable`.
+
+El codigo que va a estar a la escucha tiene que ponerse en el metodo `run()` de
+esa clase. 
+
+Despues de escribir el codigo que se ejecute en `run()` creo el hilo. Lo creo 
+en `iniciarInterfaz` abajo de todo.
+
+**EXPLICACION**: Al haber programado esto dentro del marco quiere decir que 
+
 
 
 
