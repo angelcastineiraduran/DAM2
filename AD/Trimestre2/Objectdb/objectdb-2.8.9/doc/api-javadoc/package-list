@@ -1,0 +1,11 @@
+javax.jdo
+javax.jdo.annotations
+javax.jdo.datastore
+javax.jdo.identity
+javax.jdo.listener
+javax.jdo.spi
+javax.persistence
+javax.persistence.criteria
+javax.persistence.metamodel
+javax.persistence.spi
+javax.transaction
