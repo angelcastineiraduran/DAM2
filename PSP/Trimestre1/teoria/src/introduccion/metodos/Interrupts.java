@@ -32,8 +32,8 @@ import java.util.logging.Logger;
  * indicador se encuentra asociado a cada hilo y se utiliza
  * para rastrear si se ha solicitado una interrupcion 
  * en ese hilo.
- * Cunado se invoca el metodo estatico Thrad.interrupt()
- * es un hilo, se establece el indicador de estado 
+ * Cuando se invoca el metodo estatico Thread.interrupt()
+ * en un hilo, se establece el indicador de estado 
  * de interrupcion de ese hilo. Esta invocacion es una forma
  * de solicitar la interrupcion del hilo.
  * 

@@ -13,7 +13,7 @@ Orden leer clases:
 4. `SimpleThreads`
 
 El ejemplo de `SimpleThreads`
-es MUY INTERESANTE ya que pone en pratica
+es MUY INTERESANTE ya que pone en practica
 todas las ejemplos anteriores.
 
 ME QUEDE EN LA SINCRONIZACION

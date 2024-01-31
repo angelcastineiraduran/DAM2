@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  *
  * Permite que un hilo espere a que se complete el otro.
  * 
- * En este caso, con el llamando al join() desde el h1 le estoy
+ * En este caso, llamando al join() desde el h1 le estoy
  * diciendo al hilo principal (el de la main) que pause la ejecucion
  * hasta que el h1 acabe.
  *
