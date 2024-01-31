@@ -1,0 +1,222 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-01-31 13:09:50 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is opened by 2643@debian
+
+[2024-01-31 13:09:50 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-01-31 13:09:50 #3 type] 
+Type tutorial.Point is not enhanced.
+
+[2024-01-31 13:09:50 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is closed by 2643@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-01-31 13:19:43 #1 store.file] 
+readTextFile error.
+
+[2024-01-31 13:19:43 #2 store.file] 
+java.io.FileNotFoundException: /home/postgres/.objectdb/exolorer.xml (Non hai tal ficheiro ou directorio)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:112)
+	at com.objectdb.o.STH.B(STH.java:731)
+	at com.objectdb.o.STH.A(STH.java:715)
+	at com.objectdb.o.CNF.<init>(CNF.java:106)
+	at com.objectdb.o.CNF.<clinit>(CNF.java:32)
+	at com.objectdb.o.MainFrame.init(MainFrame.java:132)
+	at com.objectdb.o.EXA.<init>(EXA.java:77)
+	at com.objectdb.Explorer$1.run(Explorer.java:57)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+[2024-01-31 13:19:43 #3 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is opened by 2737@debian
+
+[2024-01-31 13:19:43 #4 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-01-31 13:19:43 #5 store.file] 
+readTextFile error.
+
+[2024-01-31 13:19:43 #6 store.file] 
+java.io.FileNotFoundException: /home/postgres/.objectdb/exolorer.xml (Non hai tal ficheiro ou directorio)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:112)
+	at com.objectdb.o.STH.B(STH.java:731)
+	at com.objectdb.o.STH.A(STH.java:715)
+	at com.objectdb.o.CNF.<init>(CNF.java:106)
+	at com.objectdb.o.CNF.f(CNF.java:130)
+	at com.objectdb.o.CNC.s(CNC.java:119)
+	at com.objectdb.o.EXA.<init>(EXA.java:87)
+	at com.objectdb.Explorer$1.run(Explorer.java:57)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+[2024-01-31 13:20:16 #7 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is closed by 2737@debian
+
+[2024-01-31 13:20:16 #8 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is opened by 2737@debian
+
+[2024-01-31 13:20:16 #9 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-01-31 13:21:48 #10 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is closed by 2737@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-01-31 14:37:02 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is opened by 3043@debian
+
+[2024-01-31 14:37:02 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-01-31 14:37:02 #3 type] 
+Type tutorial.Point is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-01-31 14:37:08 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' has been recovered (tr. 5-5)
+
+[2024-01-31 14:37:08 #2 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is opened by 3074@debian
+
+[2024-01-31 14:37:08 #3 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-01-31 14:37:08 #4 type] 
+Type tutorial.Point is not enhanced.
+
+[2024-01-31 14:37:08 #5 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is closed by 3074@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-01-31 14:41:43 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is opened by 3123@debian
+
+[2024-01-31 14:41:43 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-01-31 14:41:43 #3 type] 
+Type tutorial.Point is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-01-31 14:50:43 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is opened by 4174@debian
+
+[2024-01-31 14:50:43 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-01-31 14:50:43 #3 type] 
+Type tutorial.Point is not enhanced.
+
+[2024-01-31 14:50:43 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is closed by 4174@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-01-31 14:50:51 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is opened by 4212@debian
+
+[2024-01-31 14:50:51 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-01-31 14:50:51 #3 type] 
+Type tutorial.Point is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-01-31 14:55:41 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is opened by 4332@debian
+
+[2024-01-31 14:55:41 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-01-31 14:55:41 #3 type] 
+Type tutorial.Point is not enhanced.
+
+[2024-01-31 14:55:42 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is closed by 4332@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-01-31 14:55:46 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is opened by 4365@debian
+
+[2024-01-31 14:55:46 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-01-31 14:55:46 #3 type] 
+Type tutorial.Point is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-01-31 14:58:39 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' has been recovered (tr. 5-5)
+
+[2024-01-31 14:58:39 #2 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is opened by 4408@debian
+
+[2024-01-31 14:58:39 #3 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-01-31 14:58:39 #4 type] 
+Type tutorial.Point is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-01-31 14:59:57 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is opened by 4446@debian
+
+[2024-01-31 14:59:57 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-01-31 14:59:57 #3 type] 
+Type tutorial.Point is not enhanced.
+
+[2024-01-31 14:59:57 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is closed by 4446@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-01-31 15:00:01 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is opened by 4478@debian
+
+[2024-01-31 15:00:01 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-01-31 15:00:01 #3 type] 
+Type tutorial.Point is not enhanced.
+
