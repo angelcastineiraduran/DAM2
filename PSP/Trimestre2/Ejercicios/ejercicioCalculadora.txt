@@ -1,0 +1,10 @@
+1. El cliente le envia primer operando al servidor.
+2. El servidor recibe primer operando, lo guarda y lo imprime en local (comprobacion).
+3. El cliente le envia el tipo de operacion al servidor.
+4. El servidor recibe el tipo de operacion, la guarda y la vuelve a imprimir en local.
+5. El cliente le envia al servidor el segundo operando.
+6. El servidor recibe segundo operando, lo guarda y lo vuelve a imprimir.
+7. El servidor calcula el resultado realizando la operacion oportuna.
+8. El servidor le envia el resultado al cliente.
+9. El cliente muestra el resultado enviado por el servidor.
+10. Se cierra la comunicacion cliente-servidor.
