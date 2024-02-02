@@ -112,7 +112,6 @@ class MiMarcoCliente extends JFrame {
         marco.setVisible(true);
     }
 
-
     // creo que clase anonima
     public void configurarLister() {
 
@@ -126,12 +125,37 @@ class MiMarcoCliente extends JFrame {
                     txtArea.setText(aux + " " + txtEnviar);
 
                     // CREACION DEL SOCKET = PUENTE
-                    Socket miSocket = new Socket("192.168.1.192", 8003);
+                    //Socket miSocket = new Socket("192.168.1.192", 8003);
+                    Socket miSocket = new Socket("10.0.9.104", 8003);
                     DataOutputStream flujoSalida = new DataOutputStream(miSocket.getOutputStream());
                     flujoSalida.writeUTF(txtCampo.getText());
-
-                    flujoSalida.close();
+                    //flujoSalida.close();
                     txtCampo.setText("");
+
+                    if (txtEnviar.equals("=")) {
+
+                        ServerSocket serverSocket = new ServerSocket(8004);
+                        System.out.println("Aceptando petis...");
+                        int resultado = -1;
+                        String resultados = null;
+
+                        Socket socket = serverSocket.accept();
+                        DataInputStream in = new DataInputStream(socket.getInputStream());
+                        try {
+                            //resultado = in.readInt();
+                            resultado = in.readInt();
+                        } catch (Exception ex) {
+                            System.out.println("conexion falla por cliente");
+                        }
+                        in.close();
+                        aux = txtArea.getText();
+                        txtArea.setText(aux + " " + resultado);
+                        socket.close();
+                        miSocket.close();
+                        flujoSalida.close();
+                        cerrar();
+
+                    }
 
                 } catch (IOException ex) {
                     // para que no diga cual ha sido el error: ip mal, puerto ocupado...
@@ -174,6 +198,8 @@ class MiMarcoCliente extends JFrame {
         btnResultado.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
+
+                txtCampo.setText("=");
 
             }
         });
