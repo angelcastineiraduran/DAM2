@@ -108,7 +108,7 @@ es **responsable de detectar automaticamente** los cambios
 del objeto entidad  y aplicarlos a la database cuando la
 transaccion es commiteada. 
 
-**RECORDAD** que el `setX()` y el `getX()` es un metodo
+**RECORDAR** que el `setX()` y el `getX()` es un metodo
 del objeto, son getters y setters que hay que tener 
 definidos en la clase `Point`.
 

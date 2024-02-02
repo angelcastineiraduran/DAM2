@@ -32,7 +32,7 @@ public class UpdateDelete {
         // abro transaccion
         em.getTransaction().begin();
         for (Point p : results) {
-            // si es mayor o igual a cien se borra sino se modifica
+            // si es mayor o igual a 100 se borra sino se modifica
             if (p.getX() >= 100) {
                 em.remove(p); // delete entity
             } else {
@@ -40,11 +40,7 @@ public class UpdateDelete {
             }
         }
         em.getTransaction().commit();
-        
-        System.out.println("-- REGISTROS DESPUES MODIFICACION --");
-        for (Point p : results) {
-            System.out.println(p);
-        }
+
     }
 
 }
