@@ -1,0 +1,48 @@
+version: '3.1'
+services:
+  # servicio de la app - python
+  web:
+    # servicio de la app con su version
+    image: odoo:16.0
+    # servicio de la bd que utiliza la app
+    # esta app depende de este servicio
+    # no arrancara hasta que el servicio este elevantado
+    depends_on:
+      - db
+    volumes:
+      - ./extra-addons:/mnt/extra-addons
+    # mapeo de puertos para poder acceder desde mi maquina
+    ports:
+      - "8069:8069"
+    environment:
+      # el nombre o la IP del gestor de la base de datos
+      # tiene que ser el mismo nombre que le pongamos al sevicio de la bd
+      - HOST=db
+
+      # --POR DEFECTO, SI NO SE PONGE NADA ODOO COGE POR DEFECTO "postgres"--
+      # usuario administrador/superusuario del gestor de base de datos
+      # tiene que coincidir con "POSTGRES_USER" de abajo
+      - USER=odoo
+      # constraseña del administrador del gestor de base base de datos
+      # tiene que coincidir con "POSTGRES_PASSWORD" de abajo
+      - PASSWORD=odoo
+  # servicio de la bd - sql
+  db:
+    # servicio de la bd de la app con su version
+    image: postgres:15
+    # variables de entorno de la imagen postgres
+    environment:
+      # nombre de la base de datos
+      - POSTGRES_DB=postgres
+      # contraseña del superusuario
+      # no se puede arrancar el servicio sin un valor
+      # para conectarme al motor de bd me pide la contraseña si estoy fuera de la maquina
+      # si estoy dentro de la maquina, el sistema en confia en mi, por lo que no me pide contraseña
+      - POSTGRES_PASSWORD=odoo
+      # nombre del superusuario
+      # si no pongo nada por defecto pone "postgres"
+      # usuario que coge odoo por defecto para administrar la bd. posteriormente odoo va a coger ese usuario para
+      # crear una base de datos propia que va a ser la que va a utilizar.
+      - POSTGRES_USER=odoo
+    ports:
+      - "5433:5432"
