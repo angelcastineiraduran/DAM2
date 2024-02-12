@@ -4,7 +4,7 @@
 # pueden ser de cualquier tipo y no tienen pq ser todos del mismo tipo.
 # encerrados entre parentesis y separados por comas. Aunque parentesis se pueden omitir.
 
-#--Ejemplos--
+# --Ejemplos--
 # tupla vacia
 vacia = ()
 print(type(vacia)) # ><class 'tuple'>

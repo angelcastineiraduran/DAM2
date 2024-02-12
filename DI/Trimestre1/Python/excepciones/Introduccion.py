@@ -9,5 +9,5 @@
 try:
     numero = "edoiw"
     print("El cuadrado del numero es", numero**2)
-except TypeError:
+except TypeError: # podemos poner simplemente `except:`
     print("La var numero no es un numero entero")
