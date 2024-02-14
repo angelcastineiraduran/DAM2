@@ -18,6 +18,7 @@ from bs4 import BeautifulSoup
 soup = BeautifulSoup(html_doc, 'html.parser')
 
 # -- .contents --
+print("\n -- CONTENTS --")
 # los hijos de una etiqueta son conseguibles en una lista
 # llamando a .contents()
 head_tag = soup.head
@@ -26,6 +27,7 @@ print(head_tag) # > <head><title>The Dormouse's story</title></head>
 print(head_tag.contents) # > [<title>The Dormouse's story</title>]
 tittle_tag = head_tag.contents[0]
 print(tittle_tag) # > <title>The Dormouse's story</title>
+# hijo de la etiqueta tittle_tag es la string:
 print(tittle_tag.contents) # > ["The Dormouse's story"]
 
 # el hijo del obj BeautifulSoup es la etiquete <html>
@@ -40,6 +42,18 @@ print(text) # > The Dormouse's story
 #print(text.contents) # error
 
 # -- .children --
+print(" \n-- CHILDREN --")
 for child in tittle_tag.children:
     print(child) # > The Dormouse's story
+
+
+# -- .descendant --print(" -- CHILDREN --")
+# la etiqueta head SOLO tiene un hijo pero tiene DOS descendientes: la etiqueta `tittle`
+# y el hijo de esa etiqueta, la string `The Dormouse's story`.
+print(" \n-- DESCENDANTS --")
+for child in head_tag.descendants:
+    print(child)
+# > <title>The Dormouse's story</title>
+# > The Dormouse's story
+
 
