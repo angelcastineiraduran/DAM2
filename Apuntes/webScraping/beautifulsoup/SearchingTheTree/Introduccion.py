@@ -46,8 +46,7 @@ list = soup.find_all(["a", "b"])
 for tag in list:
     print(tag)
 
-# imprime todos las etiquetas del documento
-# pero NO imprime el txt de las string
+# con el True consigue todas las etiquetas que pueda
 for tag in soup.find_all(True):
     print(tag.name)
 
@@ -55,12 +54,23 @@ for tag in soup.find_all(True):
 print("\n -- A Function --")
 # la funcion debe retornar True si encuentra algo y False
 # si no encuentra nada
-
-# me quede aqui....
+# NO ENTIENDO MUY BIEN EL METODO:
+# 1. find_all() busca todas las etiquetas que cumplen ciertos criterios
+# 2. la funcion has_class_but_no_id se pasa como arg a find_all() sin ser ejecutada explicitamente.
+# 3. Esto se debe a que find_all() se encarga de llamar a la funcion con cada tag del documento, por
+# lo que find_all() toma cada tag y lo pasa como arg a has_class_but_no_id() y verifica si cumple la condicion.
 def has_class_but_no_id(tag):
     return tag.has_attr('class') and not tag.has_attr('id')
 filtered_tags = soup.find_all(has_class_but_no_id)
 for tag in filtered_tags:
     print(tag)
+# Por lo que NO se imprimiran etiquetas como la de <html> y/o <title>
+
+def not_lacie(href):
+    # devuelve True si href no es nulo (es decir, si existe) y False en caso contrario
+    return href and not re.compile("lacie").search(href)
+# href atributo de una etiqueta que se pasa como arg
+print(soup.find_all(href=not_lacie))
+
 
 

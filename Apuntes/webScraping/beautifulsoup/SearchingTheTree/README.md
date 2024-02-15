@@ -13,7 +13,9 @@ Metodos mas populares:
 * regular expression
 * list
   * `True`
-* function me quede aqui...
+* function
+
+Explicacion?? `re.compile()`???
 
 
 

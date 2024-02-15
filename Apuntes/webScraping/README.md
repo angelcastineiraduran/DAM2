@@ -33,6 +33,8 @@ el protocolo HTTP
 2. Recibe el HTML y lo transforma para que
 quede de una forma visual agradable
 
+![getWeb](imagenes/getWeb.png)
+
 ## Analisis de HTML mediante Beautifulsoup
 Libreria en Python que permite analizar
 documentos HTML y extraer datos de ellos,
@@ -49,7 +51,27 @@ de las etiquetas `a`
 extraer datos de los docus HTML sin tener que
 saber mucho de HTML
 
+1. `ParseandoHTMLConBeautifulSoup`
+2. `WebCrawler`
 
+## Web Scraping con Selenium
+Libreria que permite automatizar
+navegadores web. Existen paginas webs
+que no utilizan unicamente HTML e incluso
+pueden utilizar urls que no varian, que son
+estáticas.
+
+[Hay que instalar un driver para chrome/firefox](https://chromedriver.chromium.org/downloads)
+[Docu oficial Selenium](https://selenium-python.readthedocs.io/)
+
+Ejemplo dd es util. Por ejemplo pag
+web dd hay datos que me interesa extraer
+pero tienes que acceder a un formulario
+para acceder a cada uno de aquellos
+datos que me interesa extraer.
+
+Paginas web:
+https://eportal.mapa.gob.es/websiar/SeleccionParametrosMap.aspx?dst=1
 
 ## Bibliografia
 
