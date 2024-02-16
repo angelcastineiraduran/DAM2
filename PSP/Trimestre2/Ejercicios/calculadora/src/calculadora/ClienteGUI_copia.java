@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  *
  * @author ubuntu
  */
-public class ClienteGUI {
+public class ClienteGUI_copia {
 
     public static void main(String[] args) throws IOException {
         MiMarcoCliente miMarcoCliente = new MiMarcoCliente();
@@ -85,7 +85,7 @@ class MiMarcoCliente extends JFrame {
     }
 
     public void iniciar() {
-        marco = new JFrame("Cliente 1");
+        marco = new JFrame("Cliente 2");
         panelChat = new JPanel();
         panelBotones = new JPanel();
         panelTxt = new JPanel();
@@ -171,7 +171,7 @@ class MiMarcoCliente extends JFrame {
 
             // CREACION DEL SOCKET = PUENTE
             //Socket miSocket = new Socket("192.168.1.192", 8003);
-            Socket miSocket = new Socket("10.0.9.104", 8003);
+            Socket miSocket = new Socket("10.0.9.104", 8005);
             DataOutputStream flujoSalida = new DataOutputStream(miSocket.getOutputStream());
             flujoSalida.writeUTF(operacion);
             //flujoSalida.close();
@@ -179,7 +179,7 @@ class MiMarcoCliente extends JFrame {
 
             if (txtEnviar.equals("=")) {
 
-                ServerSocket serverSocket = new ServerSocket(8004);
+                ServerSocket serverSocket = new ServerSocket(8006);
                 System.out.println("Aceptando petis...");
                 int resultado = -1;
                 String resultados = null;
