@@ -30,14 +30,14 @@ time.sleep(2)
 # lo hago con la estacion que me aparece por defecto para no enrollarme
 seleccionar_estacion = driver.find_element(By.NAME, 'ctl00$ContentPlaceHolder1$ButtonAgregar').click()
 
-time.sleep(1)
+time.sleep(2)
 consultar_datos = driver.find_element(By.ID, 'ContentPlaceHolder1_btnConsultar').click()
 
 # paso a la otra ventana que se genera 
-time.sleep(2)
+time.sleep(4)
 driver.switch_to.window(driver.window_handles[1])
 print("paso a la ventana 2")
-time.sleep(2)
+time.sleep(4)
 exportar_csv_link = driver.find_element(By.ID, 'ContentPlaceHolder1_ExportarCSV')
 descargar_csv = exportar_csv_link.click()
 print("csv descargado")
