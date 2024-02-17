@@ -30,6 +30,7 @@ class MainWindow(QMainWindow):
         # deberia imprimir True o False dependiendo de si esta marcada o no respectivamente
         # sin embargo solo imprime False ya que imprime la cadena "Qt.CheckState.Checked" y no el int correspondiente (2)?¿
         print(state == Qt.CheckState.Checked)
+        print(Qt.CheckState.Checked)
         print("estado", state)
 
 

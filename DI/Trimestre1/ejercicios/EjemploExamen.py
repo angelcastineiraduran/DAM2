@@ -193,6 +193,7 @@ class MiVentanaPrincipal(QMainWindow):
         cancionIndice = self.miLista.row(cancion)
         print(f"Has bajado la cancion {cancion.text()} en la lista")
         self.miLista.takeItem(cancionIndice)
+        # deberia quedarse en la ultima fila pero sube a la primera
         self.miLista.insertItem(-1, cancion)
 
     def boton_eliminar_clicked(self):

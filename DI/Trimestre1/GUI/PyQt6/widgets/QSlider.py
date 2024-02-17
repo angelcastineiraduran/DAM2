@@ -37,6 +37,11 @@ class MainWindow(QMainWindow):
     def valores_cambiados(self, i):
         print("Cambiados los valores, ", i)
 
+# para recoger el valor desde el obj
+# valur = self.miSlider.value
+# para reiniciar:
+# self.sliderVolume.setSliderPosition(0)
+
 app = QApplication(sys.argv)
 w = MainWindow()
 w.show()

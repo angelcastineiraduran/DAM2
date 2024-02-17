@@ -133,7 +133,7 @@ class MiVentanaPrincipal(QMainWindow):
         miWidgetLT.setContentsMargins(0,0,100,0)
         miWidgetLT.setLayout(miLayoutTercero)
 
-        # --4. CUARTO LAYOUT
+        # -- 4. CUARTO LAYOUT --
         miBotonCancelar = QPushButton("Cancelar")
         miBotonCancelar.clicked.connect(self.boton_cancelar_clicked)
         miBotonAceptar = QPushButton("Aceptar")

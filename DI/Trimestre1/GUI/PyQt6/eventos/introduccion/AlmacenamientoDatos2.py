@@ -21,7 +21,7 @@ class MainWindow(QMainWindow):
 
         self.setCentralWidget(self.miBoton)
 
-    # este metodo es en caso de que el widget SI qUe DEVUELVE su ESTADO ACTUAL
+    # este metodo es en caso de que el widget SI que DEVUELVE su ESTADO ACTUAL
     #def btn_fue_alternado(self, checked):
     #    self.btn_esta_checked = checked
     #    print("Checked?:", self.btn_esta_checked)

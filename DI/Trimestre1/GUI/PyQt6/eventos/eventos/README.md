@@ -43,10 +43,10 @@ Eventos de tipo: `QMouseEvent`
 
 #### Proceso
 1. Hago un click en un widget.
-2. Se envía el evento: `QMouseEvent` al *controlador
-de eventos*.
+2. Se envía el evento: `QMouseEvent` al **controlador
+de eventos**.
 3. Este controlador (`mousePressEvent`) puede usar el 
-*objeto del evento* para encontrar información
+**objeto del evento** para encontrar información
 sobre lo sucedido.
 4. Manejamos la información del objeto. Filtramos, 
 clasificamos, podemos usar `super()`...
@@ -65,8 +65,8 @@ en cuestión.
 > `QMouseEvent` es la clase que contiene info sobre un 
 > evento del ratón específico.
 
-*Conclusión*. Método estilo `mouseMoveEvent` son métodos 
-de manejo de eventos en los *widgets*, mientras que los 
+**Conclusión**. Método estilo `mouseMoveEvent` son métodos 
+de manejo de eventos en los **widgets**, mientras que los 
 métodos estilo `.button()` son métodos para obtener 
 información sobre un evento del ratón específico.
 

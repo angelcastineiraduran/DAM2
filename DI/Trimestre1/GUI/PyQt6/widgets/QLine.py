@@ -20,7 +20,8 @@ class MainWindow(QMainWindow):
 
         # cuando presiono el enter
         widget.returnPressed.connect(self.return_pressed)
-        # cd cambio todo el txt, o un conjunto?
+        # cd cambio todo el txt, o un conjunto? -> NO, solo me notifica cd hago una nueva seleccion
+        # con el raton
         widget.selectionChanged.connect(self.selection_changed)
         widget.textChanged.connect(self.text_changed)
         # cuando usuario edita txt

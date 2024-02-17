@@ -13,7 +13,7 @@ class MainWindow(QMainWindow):
         widget.addItems(["One", "Two", "Three"])
 
         widget.currentItemChanged.connect(self.index_changed)
-        widget.currentTextChanged.connect(self.text_changed)
+        #widget.currentTextChanged.connect(self.text_changed)
 
         self.setCentralWidget(widget)
 
