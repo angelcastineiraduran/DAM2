@@ -7,7 +7,7 @@ import sys
 # le pasamos una python list que contienen los argumentos de la linea de comando pasados
 # a la app
 miApp = QApplication(sys.argv)
-# se se sabe que no se va a usar los arg de la linea de comandos, podemos usar lista vacia
+# si se sabe que no se va a usar los arg de la linea de comandos, podemos usar lista vacia
 #miApp = QApplication([])
 # creo un widget vacio, es la clase base para el resto de widgets
 miVentana = QWidget()

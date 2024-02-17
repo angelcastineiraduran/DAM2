@@ -16,7 +16,7 @@ class MiVentanaPrincipal(QMainWindow): # herencia
         miBoton = QPushButton("Presioname")
 
         # tamanio se gestiona mediante el obj QSize el cual acepta ancho y largo
-        # tamanio fijo, si intento cambiar tamanio, no funciona!
+        # tamanio fijo, funcion: si intento cambiar tamanio, no me dejaria
         #self.setFixedSize(QSize(400, 300))
         self.setMinimumSize(QSize(200,100))
         self.setMaximumSize(QSize(600,400))

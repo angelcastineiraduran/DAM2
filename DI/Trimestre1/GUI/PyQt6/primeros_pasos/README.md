@@ -3,8 +3,10 @@
 y contienen el bucle de eventos principal.
 
 `QWidget` es la clase base para todos los 
-objetos de le IU
+objetos de le IU.
+
 ![esquema](../imagenes/esquema.png)
+
 Cada widget de PyQt que deriva de `QObject`
 esta diseñado para emitir `signal` en respuesta
 a uno o más eventos. La señal por si sola no realiza
@@ -48,4 +50,5 @@ esta ventana principal y otros se colocan en el
 area central de widgets utilizando varios
 administradores de diseño (se refiere al los
 layout?¿)
+
 ![ventanaPrincipal](../imagenes/ventanaPrincipal.png)
