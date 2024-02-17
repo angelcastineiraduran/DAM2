@@ -1,6 +1,6 @@
 # PyQt6
 
-1. [introduccion](/primeros_pasos)
+1. [introduccion](./primeros_pasos)
 2. [eventos](/eventos)
    1. [Introduccion](/eventos/introduccion)
       1. Introduccion 
