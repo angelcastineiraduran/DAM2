@@ -19,6 +19,24 @@ y el ViewModel.
 * View pide datos al Model y desplega
 la info en el Widget.
 
+3 Formas de representar los datos (data):
+
+1. List Model
+2. Table Model
+3. Tree Model
+
+![dataWays](./imagenes/dataWays.png)
+
+La clase que sea Model tiene que tener **como mínimo** 2 metodos:
+* `rowCount()` le permite saber a View items tiene que desplegar/mostrar.
+* `data()` el metodo que utiliza View cuando hay que mostrat algo.
+
+Otros metodos:
+* `setData()` metodo que usa View para enviar datos del editor mientras estamos editando algo
+* `headerData()` metodo que permite desplegar algo en el header de la tabla
+* `flags()` metodo que le permite a la View saber como deberia tratar cada item. Como por ejemplo si puede ser
+editable, seleccionable, habilitad...
+
 > Tipos de roles en el libro pag 309 (ej: `Qt.DisplayRole`)
 
 ## Conpectos Python

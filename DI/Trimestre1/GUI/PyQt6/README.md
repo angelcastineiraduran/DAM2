@@ -11,5 +11,6 @@
    4. [menu contextual](./eventos/menu_contextual)
 3. [widgets](./widgets)
 4. [disenios](./disenios)
+5. [ModelViewArchitecture](./ModelViewArchitecture)
 
 > [Documentacion oficial PyQt6](https://www.pythonguis.com/pyqt6-tutorial/)
