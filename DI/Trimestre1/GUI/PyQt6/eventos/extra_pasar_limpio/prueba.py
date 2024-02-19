@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QMainWindow #QApp..=controlador; QWid...=widget GUI basico
+from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QMainWindow #QApp..=controlador; QWid...=widget gui basico
 
 # Only needed for access to command line arguments
 import sys
