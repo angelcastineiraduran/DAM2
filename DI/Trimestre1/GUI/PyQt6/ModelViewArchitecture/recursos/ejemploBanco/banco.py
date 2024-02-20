@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QApplication
 
-from ModelViewArchitecture.DB.ejemploBanco.gui.login import Login
+from ModelViewArchitecture.recursos.ejemploBanco.gui.login import Login
 
 
 # aqui tengo que hacer la app
