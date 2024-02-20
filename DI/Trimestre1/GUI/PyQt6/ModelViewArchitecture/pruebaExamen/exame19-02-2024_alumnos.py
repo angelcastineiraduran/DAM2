@@ -145,7 +145,6 @@ class FiestraPrincipal (QMainWindow):
             self.model.removeRows(position=row, rows=1)
             # Paso 3: Eliminar la fila de la base de datos
             if self.conexion.eliminarUsuario(id_usuario):
-            if self.conexion.eliminarUsuario(id_usuario):
                 print("Usuario eliminado de la BD")
             else:
                 print("Error al eliminar el usuario de la BD")
