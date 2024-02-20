@@ -85,8 +85,9 @@ class FiestraPrincipal (QMainWindow):
         # =====================
         #         DATA
         # =====================
-        self.conexion = ConexionBD(
-            "/home/ubuntu/DAM2/DI/Trimestre1/GUI/PyQt6/ModelViewArchitecture/pruebaExamen/perfisUsuarios.bd")
+        """self.conexion = ConexionBD(
+            "/home/ubuntu/DAM2/DI/Trimestre1/GUI/PyQt6/ModelViewArchitecture/pruebaExamen/perfisUsuarios.bd")"""
+        self.conexion = ConexionBD("/home/dam2/DAM2/DI/Trimestre1/GUI/PyQt6/ModelViewArchitecture/pruebaExamen/perfisUsuarios.bd")
         self.conexion.conectaBD()
         self.conexion.creaCursor()
         registros = self.conexion.consultaSenParametros("SELECT t.* FROM usuarios t")
@@ -143,6 +144,7 @@ class FiestraPrincipal (QMainWindow):
             # Paso 2: Eliminar la fila del modelo
             self.model.removeRows(position=row, rows=1)
             # Paso 3: Eliminar la fila de la base de datos
+            if self.conexion.eliminarUsuario(id_usuario):
             if self.conexion.eliminarUsuario(id_usuario):
                 print("Usuario eliminado de la BD")
             else:
