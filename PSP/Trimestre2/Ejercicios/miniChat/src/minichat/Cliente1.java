@@ -9,6 +9,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.Scanner;
 
 /**
  *
@@ -16,11 +17,14 @@ import java.net.Socket;
  */
 public class Cliente1 {
     public static void main(String[] args) {
-        final String HOST = "127.0.0.1";
+        final String HOST = "10.0.9.104";
         final int PUERTO = 5000;
         
         DataInputStream lectura;
         DataOutputStream escritura;
+        
+        Scanner scanner = new Scanner(System.in);
+
         
         try {
             Socket socket = new Socket(HOST, PUERTO);
@@ -28,11 +32,16 @@ public class Cliente1 {
             System.out.println("Conectando " +  Cliente1.class.getName());
             lectura = new DataInputStream(socket.getInputStream());
             escritura = new DataOutputStream(socket.getOutputStream());
+            System.out.print("Por favor, ingrese un mensaje: ");
+            String msjSend = scanner.nextLine();
             
-            escritura.writeUTF("Hola desde " +  Cliente1.class.getName());
+            // Cliente 1 envia el primer mensja al Cliente2
+            System.out.println("Enviando msj del " + Cliente1.class.getName() + ": " + msjSend);
+            escritura.writeUTF(msjSend);
             
-            //String msj = lectura.readUTF();
-            //System.out.println("msj = " + msj);
+            System.out.println("Recibiendo msj de " + Cliente1.class.getName());
+            String msjRecieved = lectura.readUTF();
+            System.out.println("msj = " + msjRecieved);
             socket.close();
             
         } catch(IOException ex) {
