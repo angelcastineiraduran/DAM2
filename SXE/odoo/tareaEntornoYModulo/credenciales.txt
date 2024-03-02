@@ -1,0 +1,4 @@
+master pswd: master
+db name: midb
+pswd: 1234
+email: acastineiraduran@danielcastelao.org
