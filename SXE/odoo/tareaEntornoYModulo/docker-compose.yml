@@ -9,9 +9,9 @@ services:
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
-      - ./addons:/mnt/extra-addons
+      - ./extra-addons:/mnt/extra-addons
   db:
-    image: postgres:15
+    image: postgres:15.0
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=odoo

@@ -7,104 +7,225 @@
 
 Entrega repositorio con el módulo y un readme
 
-## Primeros pasos
+## Docker con Odoo + PostgreSQL
 
-Lanzamos los contenedores del servicio de base de datos y web mediante
-un fichero yaml con `docker compose up -d`.
+### PostgreSQL
 
-## Conexion contenedor mediante SSH
-
-> solo hace falta hacer lo siguiente en el contenedor de bd??
-
-Entramos como root en los contenedores `$ docker exec -u root -it tareaentornoymodulo-db-1 bash` y: 
-
-1. Instalamos SSH
+Creamos el docker compose. En mi caso tengo que desconectar
+el servicio que esté utilizando el puerto 5432 para poder mapearlo
+desde el compose.
 
 ```bash
-$ apt install openssh-server
+# info del servicio que esta utilizando el puerto: PID, nombre servicio...
+$ sudo lsof -i :5432
+# mato el servicio que esté utilizando ese puerto
+sudo kill PID_del_proceso
+```
+A continuación ya podría mapear los puertos `5432:5432` en el compose.
+
+> Otra manera sería mapearlos hacia un puerto de mi host que no
+> se esté utilizando como
+> por ejemplo  `5234:5432`
+
+Lanzamos los contenedores del servicio de base de datos y web 
+con `docker compose up -d`.
+
+#### Conexión db - PyCharm
+
+Nos conectamos desde PyCharm al contenedor de bd:
+![conn_postgres](./imagenes/postgresql_conn.png)
+
+Rellenamos los campos del usuario y contraseña de la bd recurriendo
+a las variables de entorno del docker compose.
+
+### Odoo
+
+Para comprobar que el servicio web esté funcionando buscamos
+en el navegador `http://localhost:8069`. 
+
+Cubrimos los datos del formulario y continuamos (las credenciales
+importantes están en este ubicación en un fichero llamado "credenciales.txt").
+
+Checkeamos la opcion de "Create Demo Data" para configuraciones
+por defecto
+
+> [!WARNING]
+>  En el apartado Database Name tendras que poner otro 
+> nombre que no sea el de la base de datos de postgres 
+> del docker compose, ya que si no te dara un error.
+
+Comprobamos que se ha creado la nueva base de datos en el IDE:
+
+![webdb](./imagenes/webdb.png)
+
+## Módulos
+
+### Contenido del módulo
+
+#### `__manifest__.py`
+
+El fichero
+[manifiesto](https://vauxoo.github.io/odoo/reference/module.html#reference-module-manifest). Este fichero se sitúa
+contiene un único diccionario de Python 
+en donde cada key especifica un metadato
+del módulo.
+
+#### `__init__.py`
+
+Contiene instrucciones de importación de varios archivos 
+de Python en dicho módulo.
+
+Por ejemplo, si un módulo tiene un solo archivo `mymodule.py`
+, el archivo `__init__.py` podría contener
+
+```python
+from . import mymodule
 ```
 
-2. Cambiamos contraseña usuario
+----
+
+### Creación módulo
+
+En el contenedor web de Odoo creamos un nuevo módulo.
 
 ```bash
-# --OPCION 1: mala practica--
-# Cambiamos contraseña del usuario `root` para conectarnos al servicio 
-desde este.
-$ passwd
+# entramos en la terminal del contenedor odoo
+# tenemos que entrar como root ya que si no no nos deja hacer
+# cambios en los directorios
+$ docker exec -u root -it tareaentornoymodulo-web-1 /bin/bash
 
-# --OPCION 2: buena practica--
-# Creamos un nuevo usuario para conectarnos al servicio
-$ useradd -m angel
-$ passwd angel
+# nos dirigimos a la carpeta de las addons
+$ cd /mnt/extra-addons/
+
+# creamos modulo
+$ odoo scaffold openacademy/
+
+# modificamos permisos para poder modificar el modulo
+# asi tambien podremos editar archivos desde el host con el IDE
+$ chmod -R 777 openacademy/
 ```
+> `scaffold` crea un montón de archivos estándar para dicho módulo.
+> La mayoría de ellos contienen sólo código comentado o XML.
 
-> contraseña root: 1234
-
-Si hago un nuevo usuario para conectarme, le tengo que dar todos 
-privilegios (en este caso le daria todos aunque no fuese recomendable):
-
-```
-# instalo vim y sudo para poder utilizar `visudo` y darle todos los privilegios a el nuevo usu
-$ apt-get install vim & apt-get install sudo
-$ visudo
-```
-
-En el fichero modificar:
-
-```vim
-# User privilege specification
-root    ALL=(ALL:ALL) ALL
-angel   ALL=(ALL:ALL) ALL
-```
-
-Reiniciamos SSH: `$ service ssh restart`
-
-3. Permitimos acceso por SSH -- NO SE SI ES NECESARIO ESTE PASO
+Ahora le tenemos que decir a odoo que voy a crear una carpeta
+de addons donde iré poniendo mis addons custom.
 
 ```bash
-$ apt-get install vim
-$ vim /etc/ssh/sshd_config
+# creamos el fichero odoo.conf en es ubica
+$ nano /etc/odoo/odoo.conf
+# añadimos lo siguiente:
+[options]
+addons_path=/mnt/extra-addons # ubica dd guardaromos los custom addons
+
+# comprobamos
+$ cat /etc/odoo/odoo.conf 
+[options]
+addons_path=/mnt/extra-addons
 ```
 
-Descomentar y modificar linea: `PermitRootLogin yes`
+Salimos de los contenedores y los reiniciamos con `restart`.
 
-Reiniciamos SSH: `$ service ssh restart`
+Para comprobar que se han realizado los cambios introducimos
+`$ docker logs tareaentornoymodulo-web-1` en el bash y si 
+nos aparece la siguiente linea esque lo hemos hecho correctemente:
 
-4. Arranco ssh
+![extraaddons](./imagenes/extraaddons.png)
 
-```bash
-$ service ssh start
-# compruebo si esta levantado
-$ service --status-all
+> Esa linea indica que se ha añadido esa ubicación señadala
+> a las ubicaciones donde están los addons. En mi caso, si no
+> hacía este último proceso, no me aparecería el addon custom
+> cuando lo buscaba en odoo.
+
+**Comprobación**
+
+1. Entramos en la web de odoo
+2. Instalamos el modo desarrollador con assets
+   1. Activando cualquier app para que nos apaezca el menu de 
+   _Setting -> general settings -> Activate the developer mode (with tests assets)_
+   2. Añadiendo extensión Odoo Debug en navegador.
+   3. En la url añadir `?debug=1` en http://localhost:8069/web?debug=1#...
+3. Actualizamos lista apps: _App -> Update App List_ 
+4. En el buscador de odoo buscamos el nombre de nuestra app.
+
+![resultado](./imagenes/resultado.png)
+
+### Modificación del módulo
+
+> Las siguientes modificaciones del código ya 
+> las podemos hacer directamente desde mi máquina HOST
+> con el IDE, ya que dimos todos los permisos previamente
+> `$ chmod -R 777 openacademy/`
+
+![metadatos](./imagenes/moduleinfo.png)
+
+Para modificar los metadatos nos dirigimos a `__manifest__.py`:
+
+```python
+ 'name': "miPrimerModulo",
+
+ 'summary': """
+     Este va a ser un modulo personalizado que hace un muchas cosas""",
+
+ 'description': """
+     modulo personalizado
+ """,
+
+ 'author': "angel",
+ 'website': "https://www.danielcastelao.org",
 ```
 
-Cada vez que el servidor se vuelva a iniciar tenemos que arrancar el servicio de ssh. 
-Para que cada vez que se levante el contenedor inicie el servicio ssh `systemctl enable ssh`
+>[!WARNING]
+> Cada vez que hagamos un cambio en el addon hay que 
+> reiniciar los contenedores `$ docker restart tareaentornoymodulo-web-1 tareaentornoymodulo-db-1`
+> y actualizar la lista de app en el odoo.
 
-5. Nos conectamos a contenedor mediante la bash
+### Creación de modelo o tabla
 
-Averigurar ip contnedor
+Nos dirigimos a `models/models.py` y creamos la tabla
 
-```bash
-# nos dice solo la ip
-$ docker inspect -f "{{ .NetworkSettings.IPAddress }}" [container-name-or-id]
+```python
+from odoo import fields, models
 
-# toda la info de red en bruto
-$ docker inspect [container-name-or-id]
+class TestModel(models.Model):
+    _name = "test_model"
+    _description = "Modelo de prueba"
 
-# nos aseguramos de que ponemos establecer conexion
-$ ping -c 3 172.23.0.2
+    name = fields.Char(string="Nombre")
+    description = fields.Text(string="Descripcion")
 ```
 
-Conexion ssh
+#### Datos tabla
 
-```bash
-#$ ssh angel@localhost -p 5435 # no me funciona por el firewall creo
-$ ssh -L 5435:localhost:5432 angel@172.23.0.2
+Los datos del módulo son declarados vía Archivos de Datos,
+archivos XML con elementos `<record>`. Cada elemento
+`<record>` crea o actualiza registros en la bd.
+
+Creamos `/extra-addons/openacademy/data/datos.xml` y pegamos:
+
+```xml
+<odoo>
+    <data>
+        <record model="test_model" id="openacademy.nombres">
+            <field name="name">Pepe</field> <!-- El nombre debe ser el mismo que la variable del modelo -->
+            <field name="description">50</field> <!--El nombre debe ser el mismo que la variable del modelo-->
+        </record>
+    </data>
+</odoo>
 ```
 
-Nos conectamos a postgres desde el puente de ssh creado `$ psql postgres odoo` (
-creadenciales en el docker compose).
+Añadimos el archivo al `__manifest__.py`:
 
-6. Nos conectamos a contenedor mediante IDE
+```xml
+'data': [
+  ...,
+  'data/datos.xml',
+],
+```
+
+Reiniciamos mas contenedores y actualizamos las app de odoo
+y veriamos los datos en la tabla
+
+
+
+
 
