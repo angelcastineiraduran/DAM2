@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99f62b5d-d8e1-456a-88cd-0123ccd0e6f4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/08ea91d8-ef87-4181-9167-8e7dbd920c98.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/08ea91d8-ef87-4181-9167-8e7dbd920c98.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/08ea91d8-ef87-4181-9167-8e7dbd920c98/storage_v2/_src_/database/mydb.Kl8zAA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/08ea91d8-ef87-4181-9167-8e7dbd920c98/storage_v2/_src_/database/mydb.Kl8zAA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extra-addons/openacademy/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra-addons/openacademy/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extra-addons/openacademy/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra-addons/openacademy/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extra-addons/openacademy/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra-addons/openacademy/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extra-addons/openacademy/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/extra-addons/openacademy/security/ir.model.access.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extra-addons/openacademy/views/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/extra-addons/openacademy/views/views.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1709497841867</updated>
       <workItem from="1709497842895" duration="7024000" />
-      <workItem from="1709560378613" duration="9996000" />
+      <workItem from="1709560378613" duration="13083000" />
     </task>
     <servers />
   </component>

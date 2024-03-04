@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <record model="usuarios" id="openacademy.usuarios">
+            <field name="name">Angel</field>
+            <field name="edad">23</field>
+            <field name="direccion">Rua Finca</field>
+        </record>
+    </data>
+</odoo>

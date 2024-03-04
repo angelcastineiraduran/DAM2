@@ -293,6 +293,19 @@ Para esto nos dirigimos al archivo `views/views.xml`.
 ```xml
 <odoo>
    <data>
+      
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="openacademy.list1">
+      <field name="name">openacademy list</field>
+      <field name="model">test_model</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+      
       <!-- actions opening views on models -->
       <!-- debe declararse ANTES de declararse el menu correspondiente -->
       <!-- los archivos de datos se ejecutar secuencialmente 
@@ -408,6 +421,135 @@ Creación de nuestra segunda tabla/model en Odoo
 
 #### 1. Creación tabla
 
+> Buena práctica: por cada tabla una clase distinta. Hay que
+> importarlas en el `__init__` del paquete.
+
+Dentro del paquete `models` deberíamos cambiamos el nombre 
+del fichero `models.py` a `tabla1.py` (pero esto no lo vamos a hacer)
+y creamos un nuevo
+fichero en esa ubicación que se llame `usuario.py`.
+
+```python
+from odoo import fields, models
+
+class TestModel(models.Model):
+    _name = "usuarios"
+    _description = "Tabla que que recopila los usuarios de la app"
+
+    name = fields.Char(string="Nombre")
+    edad = fields.Integer(string="Edad")
+    direccion = fields.Text(string="Direccion")
+```
+
+En el `__init__`:
+
+```python
+from . import models, usuario
+```
+
+Reiniciamos contenedores + actualizamos módulo.
+
+Revisamos en postgres que se ha creado una
+nueva tabla.
+
 #### 2. Inserción datos
 
+Creamos un nuevo fichero `/data/usuario.xml`
+
+```xml
+<odoo>
+    <data>
+        <record model="usuarios" id="openacademy.usuarios">
+            <field name="name">Angel</field>
+            <field name="edad">23</field>
+            <field name="direccion">Rua Finca</field>
+        </record>
+    </data>
+</odoo>
+```
+
+En el `__manifest__.py`:
+
+```python
+ 'data': [
+     'security/ir.model.access.csv',
+     'views/views.xml',
+     'views/templates.xml',
+     'data/datos.xml',
+     'data/usuario.xml',
+ ],
+```
+
 #### 3. Visualización en Odoo
+
+```xml
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="openacademy.list1">
+      <field name="name">openacademy list</field>
+      <field name="model">test_model</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="openacademy.list2">
+      <field name="name">usuarios list</field>
+      <field name="model">usuarios</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="edad"/>
+          <field name="direccion"/>
+        </tree>
+      </field>
+    </record>
+
+     
+    <record model="ir.actions.act_window" id="openacademy.action_window">
+      <field name="name">openacademy window</field>
+      <field name="res_model">test_model</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="openacademy.action_window2">
+      <field name="name">usuarios list</field>
+      <field name="res_model">usuarios</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="openacademy" id="openacademy.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="Menu 1" id="openacademy.menu_1" parent="openacademy.menu_root"/>
+    <!--
+    <menuitem name="Menu 2" id="openacademy.menu_2" parent="openacademy.menu_root"/>
+    -->
+
+    <!-- actions -->
+    <menuitem name="List" id="openacademy.menu_1_list" parent="openacademy.menu_1"
+              action="openacademy.action_window"/>
+
+    <menuitem name="List2" id="openacademy.menu_1_list2" parent="openacademy.menu_1"
+              action="openacademy.action_window2"/>
+     
+  </data>
+</odoo>
+```
+
+:rotating_light: Añadir en `security/ir.model.access.csv`:
+
+![security2](./imagenes/security2.png)
+
+----
+
+### Modelo tabla :three:
+
+Mostrar la tabla pero ahora botones en vez de con 
+menús.
+

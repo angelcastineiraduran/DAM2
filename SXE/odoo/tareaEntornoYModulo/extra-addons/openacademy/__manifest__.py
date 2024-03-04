@@ -27,6 +27,7 @@
         'views/views.xml',
         'views/templates.xml',
         'data/datos.xml',
+        'data/usuario.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -5,7 +5,7 @@ from odoo import fields, models
 class TestModel(models.Model):
     # atributo mas importante
     # define el nombre para el modelo en el sist de odoo
-    _name = "test_model"
+    _name = "test_model" # mejor practica: separar con . en vez de _ o -
     _description = "Modelo de prueba"
 
     # **CAMPOS QUE TIENE LA TABLA**
