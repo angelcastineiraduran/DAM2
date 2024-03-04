@@ -7,7 +7,6 @@
     <list default="true" id="99f62b5d-d8e1-456a-88cd-0123ccd0e6f4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extra-addons/openacademy/views/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/extra-addons/openacademy/views/views.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1709497841867</updated>
       <workItem from="1709497842895" duration="7024000" />
-      <workItem from="1709560378613" duration="13622000" />
+      <workItem from="1709560378613" duration="14295000" />
     </task>
     <servers />
   </component>

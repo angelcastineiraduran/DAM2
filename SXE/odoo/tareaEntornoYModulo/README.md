@@ -193,7 +193,7 @@ module info):
 
 ![upgrade](./imagenes/upgrade.png)
 
-### Modelo o tabla :one:
+### :one: Modelos/Tablas - Tabla 1 con menú 
 
 Creación de nuestra primera tabla/model en Odoo
 
@@ -415,7 +415,7 @@ Comprobamos en la bd de Postgres:
 
 ----
 
-### Modelo tabla :two:
+### :two: Modelos/Tablas - Tabla 2 con menú
 
 Creación de nuestra segunda tabla/model en Odoo
 
@@ -554,7 +554,7 @@ Comprobacion :white_check_mark:
 
 ----
 
-### Modelo tabla :three:
+### :three: Modelos/tablas - Tabla 2 con botón
 
 Mostrar la tabla pero ahora en vez de con 
 menús, mostrarla al presionar un botón.
