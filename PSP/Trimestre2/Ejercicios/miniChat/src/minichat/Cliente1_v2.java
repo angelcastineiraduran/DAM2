@@ -39,7 +39,8 @@ public class Cliente1_v2 {
 
         boolean first_msj_send = true;
         boolean first_msj_received = true;
-        final String HOST = "10.0.9.104";
+        //final String HOST = "10.0.9.104";
+        final String HOST = "localhost";
         final int PUERTO = 5000;
         Socket socket = new Socket(HOST, PUERTO);
 
@@ -62,6 +63,11 @@ public class Cliente1_v2 {
         // logica
         System.out.println("Usuario creado!");
         Usuario usuario = new Usuario(miMarcoUsuario);
+
+        // espero 1 segundo para que se acaben de crear todos los componentes del this.miMarcoClient
+        // ya que corren en otro hilo
+        Thread.sleep(1000);
+
         Thread n0 = new Thread(usuario);
         n0.start();
         n0.join();
@@ -110,11 +116,11 @@ class HiloEscribir implements Runnable {
 
         try {
             DataOutputStream escritura = new DataOutputStream(socket.getOutputStream());
-            //System.out.print("Yo: ");
             String txtConnected = "Usuario " + usuario.getUsuario() + " conectado";
             if (first_conn) {
-                miMarcoCliente.txtSend = txtConnected;
-                miMarcoCliente.txtArea.append(miMarcoCliente.txtSend);
+                System.out.println("Primera conexion del usuario" + usuario.getUsuario());
+                //miMarcoCliente.txtSend = txtConnected;
+                //miMarcoCliente.txtArea.append(miMarcoCliente.txtSend);
                 escritura.writeUTF(txtConnected);
                 first_conn = false;
             }
@@ -126,7 +132,17 @@ class HiloEscribir implements Runnable {
                     miMarcoCliente.txtArea.append("\n" + "Yo: " + miMarcoCliente.txtSend);
                     miMarcoCliente.txtCampo.setText("");
                     try {
-                        escritura.writeUTF(usuario.getUsuario() + ": " + miMarcoCliente.txtSend);
+                        if (miMarcoCliente.txtSend.equalsIgnoreCase("/q")) {
+                            // Enviar mensaje de desconexión al servidor
+                            //escritura.writeUTF(usuario.getUsuario() + "," +"/q");
+                            escritura.writeUTF("/q");
+                            // Cerrar el socket y finalizar la aplicación
+                            socket.close();
+                            System.exit(0);
+                        } else {
+                            // Enviar mensaje normal al servidor
+                            escritura.writeUTF(usuario.getUsuario() + ": " + miMarcoCliente.txtSend);
+                        }
                     } catch (IOException ex) {
                         System.out.println("**Error escribiendo**");
                         ex.printStackTrace();
@@ -150,7 +166,7 @@ class HiloLeer implements Runnable {
     MiMarcoUsuario miMarcoUsuario;
     boolean first_msj_received;
 
-    public HiloLeer(Socket socket, Usuario usuario, MiMarcoCliente miMarcoCliente,boolean first_msj_received) {
+    public HiloLeer(Socket socket, Usuario usuario, MiMarcoCliente miMarcoCliente, boolean first_msj_received) {
         this.socket = socket;
         this.usuario = usuario;
         this.miMarcoCliente = miMarcoCliente;
@@ -161,16 +177,22 @@ class HiloLeer implements Runnable {
     public void run() {
 
         try {
-            if (first_msj_received) {
-                miMarcoCliente.txtArea.append(miMarcoCliente.txtSend);
-                first_msj_received = false;
-            }
             while (true) {
                 DataInputStream lectura = new DataInputStream(socket.getInputStream());
                 String msjRecieved = lectura.readUTF();
                 //System.out.println(msjRecieved);
-                miMarcoCliente.txtSend = msjRecieved;
-                miMarcoCliente.txtArea.append("\n" + miMarcoCliente.txtSend);
+                if (msjRecieved.equals("/q")) {
+                    System.out.println("Algun usuario ha enviado el /q");
+                } else if (first_msj_received) {
+                    // en el caso de que sea el primer mensaje para que no 
+                    // me mande de primeras \n que queda mal
+                    miMarcoCliente.txtSend = msjRecieved;
+                    miMarcoCliente.txtArea.append(miMarcoCliente.txtSend);
+                    first_msj_received = false;
+                } else {
+                    miMarcoCliente.txtSend = msjRecieved;
+                    miMarcoCliente.txtArea.append("\n" + miMarcoCliente.txtSend);
+                }
             }
             //socket.close();
 

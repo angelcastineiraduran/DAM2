@@ -4,21 +4,26 @@
  */
 package minichat;
 
-import java.awt.List;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 /**
  *
  * @author dam2
  */
 public class Servidor_v2 {
+    
+    // Utiliza una lista para almacenar los sockets de los usuarios conectados
+    //private static final List<Socket> sockets = new ArrayList<>();
+    
 
     /**
      * @param args the command line arguments
@@ -46,7 +51,7 @@ public class Servidor_v2 {
                 escritura1 = new DataOutputStream(socket1.getOutputStream());
                 escritura2 = new DataOutputStream(socket2.getOutputStream());
 
-                Thread h1 = new Thread(new Leer(lectura1, escritura2));
+                Thread h1 = new Thread(new Leer(lectura1, escritura2, socket2));
                 Thread h2 = new Thread(new Escribir(escritura1, lectura2));
                 h1.start();
                 h2.start();
@@ -68,14 +73,16 @@ public class Servidor_v2 {
 }
 
 class Leer implements Runnable {
+
     DataInputStream lectura1;
     DataOutputStream escritura2;
+    Socket socket2;
 
-    public Leer(DataInputStream lectura1, DataOutputStream escritura2) {
+    public Leer(DataInputStream lectura1, DataOutputStream escritura2, Socket socket2) {
         this.lectura1 = lectura1;
         this.escritura2 = escritura2;
     }
-    
+
     @Override
     public void run() {
         try {
@@ -84,6 +91,7 @@ class Leer implements Runnable {
 
                 String msj = lectura1.readUTF();
                 System.out.println("msj = " + msj);
+                
                 escritura2.writeUTF(msj);
             }
 
@@ -92,9 +100,11 @@ class Leer implements Runnable {
             ex.printStackTrace();
         }
     }
+
 }
 
 class Escribir implements Runnable {
+
     DataOutputStream escritura1;
     DataInputStream lectura2;
 
@@ -102,13 +112,13 @@ class Escribir implements Runnable {
         this.escritura1 = escritura1;
         this.lectura2 = lectura2;
     }
-    
+
     @Override
     public void run() {
         try {
             while (true) {
                 System.out.println("Servidor iniciado (esc), a la escucha");
-                String msj2 = lectura2.readUTF();
+                String msj2 = lectura2.readUTF(); 
                 System.out.println("msj2 = " + msj2);
                 escritura1.writeUTF(msj2);
             }
@@ -118,4 +128,29 @@ class Escribir implements Runnable {
             ex.printStackTrace();
         }
     }
+    
+    public String desconectarUsuario(String msj) {
+        String[] partes = separarNombreUsuarioYTexto(msj);
+        String texto = null;
+        String nombreUsuario = null;
+
+        if (partes != null && partes.length == 2) {
+            nombreUsuario = partes[0];
+            texto = partes[1];
+        }
+
+        if (texto.equals("/q")) {
+            msj = ("Usuario " + nombreUsuario + " desconectado");
+            return msj;
+        } else {
+            return msj;
+        }
+    }
+
+    public String[] separarNombreUsuarioYTexto(String cadena) {
+        // Utilizar el método split para separar el string en 2 partes
+        // elimina los espacios entre medias
+        return cadena.split(":\\s", 2);
+    }
+    
 }

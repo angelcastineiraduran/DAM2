@@ -70,10 +70,10 @@ class MiMarcoUsuario extends JFrame {
             public void actionPerformed(ActionEvent ae) {
                 nombreUsuario = txtCampoNombreUsuario.getText();
                 if(nombreUsuario != null) {
-                miMarcoCliente.iniciarComponentes();
-                miMarcoCliente.marco.setTitle(nombreUsuario);
-                //miMarcoCliente.txtArea.append("Usuario " + nombreUsuario + " conectado!");
-                marco.dispose();
+                    miMarcoCliente.iniciarComponentes();
+                    miMarcoCliente.marco.setTitle(nombreUsuario);
+                    //miMarcoCliente.txtArea.append("Usuario " + nombreUsuario + " conectado!");
+                    marco.dispose();
                 }
             }
         });
