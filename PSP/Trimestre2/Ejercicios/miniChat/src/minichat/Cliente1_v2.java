@@ -6,15 +6,14 @@ package minichat;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.DataInput;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import static java.lang.Math.round;
 import java.net.Socket;
-import java.util.Scanner;
-import java.util.concurrent.CountDownLatch;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,32 +21,74 @@ import java.util.logging.Logger;
  */
 public class Cliente1_v2 {
 
+    // espera x segundos para que me identifique
+    static final double SEGUNDOS_ESPERA = 10; // 10s
+    static final int RESPUESTA_INDEFINIDA = -1;
+
     public static void main(String[] args) throws InterruptedException, IOException {
-        
+
         MiMarcoCliente miMarcoCliente = new MiMarcoCliente();
         MiMarcoUsuario miMarcoUsuario = new MiMarcoUsuario(miMarcoCliente);
         miMarcoUsuario.iniciarComponentes();
-        //miMarcoCliente.iniciarComponentes();
-        
+
+        long tiempoInicio = System.nanoTime();
+//
+//        Thread hIU = new Thread(new hiloInterfaz(miMarcoUsuario));
+//        hIU.start();
+//        hIU.join();
+
+        boolean first_msj_send = true;
+        boolean first_msj_received = true;
         final String HOST = "10.0.9.104";
         final int PUERTO = 5000;
         Socket socket = new Socket(HOST, PUERTO);
-        //Usuario usuario = new Usuario(miMarcoCliente);
-        
-        while(miMarcoUsuario.nombreUsuario == null) {
-            System.out.println("Introuce usu");
+
+        //int respuesta = JOptionPane.NO_OPTION;
+        //System.out.println((System.nanoTime() - tiempoInicio) / 1e9);
+        System.out.println("Iniciando app");
+        int segundosAnteriores = -1; // Inicializar con un valor que no se pueda obtener naturalmente
+        while (miMarcoUsuario.nombreUsuario == null) {
+
+            // imprime segundos
+            long tiempoTranscurridoNano = System.nanoTime() - tiempoInicio;
+            int segundosTranscurridos = (int) (tiempoTranscurridoNano / 1_000_000_000); // Convertir nanosegundos a segundos
+
+            if (segundosTranscurridos != segundosAnteriores) {
+                System.out.println("Tiempo: " + segundosTranscurridos + " segundos");
+                segundosAnteriores = segundosTranscurridos;
+            }
         }
+
+        // logica
+        System.out.println("Usuario creado!");
         Usuario usuario = new Usuario(miMarcoUsuario);
         Thread n0 = new Thread(usuario);
         n0.start();
         n0.join();
-        Thread h1 = new Thread(new HiloEscribir(socket, usuario, miMarcoCliente));
-        Thread h2 = new Thread(new HiloLeer(socket, usuario, miMarcoCliente));
+        System.out.println("Conectandome al chat...");
+        Thread h1 = new Thread(new HiloEscribir(socket, usuario, miMarcoCliente, first_msj_send));
+        Thread h2 = new Thread(new HiloLeer(socket, usuario, miMarcoCliente, first_msj_received));
         h1.start();
         h2.start();
-        
 
     }
+//        
+//        if (SEGUNDOS_ESPERA < ((System.nanoTime() - tiempoInicio) / 1e9)) {
+//            miMarcoUsuario.marco.dispose();
+//            respuesta = JOptionPane.showConfirmDialog(null, "Has tardado mucho tiempo"
+//                    + "en introducir el usuario ¿Quieres continuar?", "Pregunta", JOptionPane.YES_NO_OPTION);
+//            if (respuesta == JOptionPane.YES_OPTION) {
+//                // volvemos a inciiar en caso de que quiera introducir el usuario
+//                tiempoInicio = System.nanoTime();
+//                System.out.println("El usuario seleccionó Sí.");
+//                miMarcoUsuario.iniciarComponentes();
+//            } else {
+//                System.out.println("El usuario seleccionó No.");
+//                // cerramos todo
+//                miMarcoUsuario.marco.dispose();
+//            }
+//        }
+
 }
 
 class HiloEscribir implements Runnable {
@@ -55,23 +96,29 @@ class HiloEscribir implements Runnable {
     Socket socket;
     Usuario usuario;
     MiMarcoCliente miMarcoCliente;
+    boolean first_conn;
 
-    public HiloEscribir(Socket socket, Usuario usuario, MiMarcoCliente miMarcoCliente) {
+    public HiloEscribir(Socket socket, Usuario usuario, MiMarcoCliente miMarcoCliente, boolean first_conn) {
         this.socket = socket;
         this.usuario = usuario;
         this.miMarcoCliente = miMarcoCliente;
+        this.first_conn = first_conn;
     }
 
     @Override
     public void run() {
 
         try {
-            //while (true) {
-            //Scanner scanner = new Scanner(System.in);
             DataOutputStream escritura = new DataOutputStream(socket.getOutputStream());
-            System.out.print("Yo: ");
-            //String msjSend = scanner.nextLine();
-            //escritura.writeUTF(usuario.getUsuario() + ": " + msjSend);
+            //System.out.print("Yo: ");
+            String txtConnected = "Usuario " + usuario.getUsuario() + " conectado";
+            if (first_conn) {
+                miMarcoCliente.txtSend = txtConnected;
+                miMarcoCliente.txtArea.append(miMarcoCliente.txtSend);
+                escritura.writeUTF(txtConnected);
+                first_conn = false;
+            }
+
             miMarcoCliente.btnEnviar.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -87,9 +134,6 @@ class HiloEscribir implements Runnable {
 
                 }
             });
-
-            //escritura.close();
-            //}
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -104,17 +148,23 @@ class HiloLeer implements Runnable {
     Usuario usuario;
     MiMarcoCliente miMarcoCliente;
     MiMarcoUsuario miMarcoUsuario;
+    boolean first_msj_received;
 
-    public HiloLeer(Socket socket, Usuario usuario, MiMarcoCliente miMarcoCliente) {
+    public HiloLeer(Socket socket, Usuario usuario, MiMarcoCliente miMarcoCliente,boolean first_msj_received) {
         this.socket = socket;
         this.usuario = usuario;
         this.miMarcoCliente = miMarcoCliente;
+        this.first_msj_received = first_msj_received;
     }
 
     @Override
     public void run() {
 
         try {
+            if (first_msj_received) {
+                miMarcoCliente.txtArea.append(miMarcoCliente.txtSend);
+                first_msj_received = false;
+            }
             while (true) {
                 DataInputStream lectura = new DataInputStream(socket.getInputStream());
                 String msjRecieved = lectura.readUTF();
@@ -138,16 +188,11 @@ class Usuario implements Runnable {
     String msjBienvenida = "Bienvenido al chat " + usuario + ", estas listo para chatear!";
 
     public Usuario(MiMarcoUsuario miMarcoUsuario) {
-        //this.miMarcoCliente = miMarcoCliente;
         this.usuario = miMarcoUsuario.nombreUsuario;
     }
 
     @Override
     public void run() {
-        System.out.println("Introduce el nombre de usuario: ");
-
-        //Scanner sc = new Scanner(System.in);
-        //usuario = sc.nextLine();
         this.usuario = usuario;
         System.out.println(msjBienvenida);
     }
