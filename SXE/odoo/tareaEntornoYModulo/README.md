@@ -1,11 +1,16 @@
 # Tarea: Entorno de desarrollo en Odoo y creación de módulo
 
+_Enunciado ejercicio:_
+
 * Docker con Odoo + PostgreSQL
 * Acceso a la Base de Datos desde PyCharm
 * Creación de tablas
 * Edición de datos en formulario
 
 Entrega repositorio con el módulo y un readme
+
+------
+------
 
 ## Docker con Odoo + PostgreSQL
 
@@ -55,6 +60,9 @@ por defecto.
 Comprobamos que se ha creado la nueva base de datos en el IDE:
 
 ![webdb](./imagenes/webdb.png)
+
+----
+----
 
 ## Módulos
 
