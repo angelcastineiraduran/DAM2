@@ -9,7 +9,7 @@ Entrega repositorio con el módulo y un readme
 
 ## Docker con Odoo + PostgreSQL
 
-### PostgreSQL
+### PostgreSQL :file_folder:
 
 Creamos el docker compose. En mi caso tengo que desconectar
 el servicio que esté utilizando el puerto 5432 para poder mapearlo
@@ -19,7 +19,7 @@ desde el compose.
 # info del servicio que esta utilizando el puerto: PID, nombre servicio...
 $ sudo lsof -i :5432
 # mato el servicio que esté utilizando ese puerto
-sudo kill PID_del_proceso
+$ sudo kill PID_del_proceso
 ```
 A continuación ya podría mapear los puertos `5432:5432` en el compose.
 
@@ -30,24 +30,22 @@ A continuación ya podría mapear los puertos `5432:5432` en el compose.
 Lanzamos los contenedores del servicio de base de datos y web 
 con `docker compose up -d`.
 
-#### Conexión db - PyCharm
-
-Nos conectamos desde PyCharm al contenedor de bd:
+A continuación nos conectamos desde PyCharm al contenedor de bd:
 ![conn_postgres](./imagenes/postgresql_conn.png)
 
 Rellenamos los campos del usuario y contraseña de la bd recurriendo
 a las variables de entorno del docker compose.
 
-### Odoo
+### Odoo :globe_with_meridians:
 
 Para comprobar que el servicio web esté funcionando buscamos
 en el navegador `http://localhost:8069`. 
 
-Cubrimos los datos del formulario y continuamos (las credenciales
-importantes están en este ubicación en un fichero llamado "credenciales.txt").
+Cubrimos los datos del formulario y continuamos
+`./credenciales.txt`.
 
 Checkeamos la opcion de "Create Demo Data" para configuraciones
-por defecto
+por defecto.
 
 > [!WARNING]
 >  En el apartado Database Name tendras que poner otro 
@@ -60,17 +58,19 @@ Comprobamos que se ha creado la nueva base de datos en el IDE:
 
 ## Módulos
 
-### Contenido del módulo
+### Contenido del módulo  :briefcase:
 
-#### `__manifest__.py`
+Ficheros **fundamentales**:
+
+#### a. `__manifest__.py` 
 
 El fichero
-[manifiesto](https://vauxoo.github.io/odoo/reference/module.html#reference-module-manifest). Este fichero se sitúa
+[manifiesto](https://vauxoo.github.io/odoo/reference/module.html#reference-module-manifest). Este fichero
 contiene un único diccionario de Python 
 en donde cada key especifica un metadato
 del módulo.
 
-#### `__init__.py`
+#### b. `__init__.py`
 
 Contiene instrucciones de importación de varios archivos 
 de Python en dicho módulo.
@@ -84,7 +84,7 @@ from . import mymodule
 
 ----
 
-### Creación módulo
+### Creación módulo :new:
 
 En el contenedor web de Odoo creamos un nuevo módulo.
 
@@ -108,7 +108,7 @@ $ chmod -R 777 openacademy/
 > La mayoría de ellos contienen sólo código comentado o XML.
 
 Ahora le tenemos que decir a odoo que voy a crear una carpeta
-de addons donde iré poniendo mis addons custom.
+de addons donde iré poniendo mis addons customizados.
 
 ```bash
 # creamos el fichero odoo.conf en es ubica
@@ -136,36 +136,30 @@ nos aparece la siguiente linea esque lo hemos hecho correctemente:
 > hacía este último proceso, no me aparecería el addon custom
 > cuando lo buscaba en odoo.
 
-**Comprobación** :white_check_mark:
+Comprobación :white_check_mark:
 
 1. Entramos en la web de odoo
-2. Instalamos el modo desarrollador con assets
-   1. Activando cualquier app para que nos apaezca el menu de 
-   _Setting -> general settings -> Activate the developer mode (with tests assets)_
-   2. Añadiendo extensión Odoo Debug en navegador.
+2. Nos pasamos a modo desarrollador mediante:
+   1. Activando cualquier app para que nos aparezca el menu de 
+   _Setting -> general settings -> Activate the developer mode_
+   2. Añadiendo extensión "Odoo Debug" en navegador.
    3. En la url añadir `?debug=1` en http://localhost:8069/web?debug=1#...
-3. Actualizamos lista apps: _App -> Update App List_ 
+3. Actualizamos lista apps: _Apps -> Update App List_ 
 4. En el buscador de odoo buscamos el nombre de nuestra app.
 
 ![resultado](./imagenes/resultado.png)
 
-### Modificación del módulo
+### Modificación del módulo :memo:
 
->[!WARNING]
-> Cada vez que hagamos un cambio en el addon hay que 
-> reiniciar los contenedores `$ docker restart tareaentornoymodulo-web-1 tareaentornoymodulo-db-1`
-> y **actualizar el modulo**
+Vamos a modificar los metadatos del modulo, que podemos
+encontrar en:
 
-**Para actualizar el modulo:** En module info...
-
-![upgrade](./imagenes/upgrade.png)
+![metadatos](./imagenes/moduleinfo.png)
 
 Las siguientes modificaciones del código ya 
 las podemos hacer directamente desde mi máquina HOST
 con el IDE, ya que dimos todos los permisos previamente
 `$ chmod -R 777 openacademy/`
-
-![metadatos](./imagenes/moduleinfo.png)
 
 Para modificar los metadatos nos dirigimos a `__manifest__.py`:
 
@@ -183,11 +177,21 @@ Para modificar los metadatos nos dirigimos a `__manifest__.py`:
  'website': "https://www.danielcastelao.org",
 ```
 
+>[!WARNING]
+> Cada vez que hagamos un cambio en el addon (como este) hay que 
+> reiniciar los contenedores `$ docker restart tareaentornoymodulo-web-1 tareaentornoymodulo-db-1`
+> y **actualizar el modulo**
+
+:rotating_light: Para actualizar el modulo (dentro de
+module info):
+
+![upgrade](./imagenes/upgrade.png)
+
 ### Modelo o tabla :one:
 
 Creación de nuestra primera tabla/model en Odoo
 
-#### Creación tabla
+#### 1. Creación tabla
 
 Nos dirigimos a `models/models.py` y creamos la tabla
 
@@ -204,7 +208,7 @@ class TestModel(models.Model):
 
 Reiniciamos contenedores + actualizamos módulo
 
-**Comprobación:** :white_check_mark:
+Comprobación: :white_check_mark:
 
 En la siguiente ubicación deberíamos encontrar la nueva tabla creada con
 el nombre "test_model".
@@ -213,7 +217,7 @@ el nombre "test_model".
 
 ![test_model](./imagenes/test_model.png)
 
-#### Inserción datos
+#### 2. Inserción datos
 
 La tabla se crea sin datos por defecto. Para añadirlos:
 
@@ -245,8 +249,8 @@ Creamos `/extra-addons/openacademy/data/datos.xml` y pegamos:
 
 Añadimos el archivo al `__manifest__.py` para que puedan
 cargarse estos datos, estos pueden ir cargados en las listas:
-* `'data'` --> siempre se carga.
-* `'demo'` --> se cargará solo cd el modo demostración esté habilitado.
+* `'data'` = siempre se carga.
+* `'demo'` = se cargará solo cd el modo demostración esté habilitado.
 
 ```xml
 'data': [
@@ -255,13 +259,13 @@ cargarse estos datos, estos pueden ir cargados en las listas:
 ],
 ```
 
-Reinicimoas contenedores + actualizamos modulo:
+Reiniciamos contenedores + actualizamos modulo:
 
-**Comprobación:** :white_check_mark:
+Comprobación: :white_check_mark:
 
 ![datos](./imagenes/test_model_datos.png)
 
-#### Visualización en Odoo
+#### 3. Visualización en Odoo
 
 La creación de la tabla **no significa la visualización** de 
 la misma en la web de odoo. Para mostrarlas tenemos que recurrir
@@ -332,9 +336,9 @@ _Antiguamente: "openacademy.openacademy"_
 
 Reiniciamos contenedores + actualizamos módulo
 
-**Comprobación** :white_check_mark:
+Comprobación :white_check_mark:
 
-Menú "openacademy":
+A. Menú "openacademy"
 
 ![menu open aca](./imagenes/menuoa.png)
 
@@ -345,6 +349,8 @@ En `views.xml`:
 ```
 
 -----
+
+B. Dentro del modulo
 
 ![menuinfo](./imagenes/menuinfo.png)
 
@@ -366,6 +372,8 @@ En `views.xml`:
 
 -----
 
+C. Tablas
+
 Como sólo hay una tabla nos la muestra directamente, pero si tuvieramos
 varias, tendríamos que escoger cual queremos que nos muestre en:
 
@@ -378,9 +386,7 @@ En `views.xml`:
         action="openacademy.action_window"/>
 ```
 
-----
-
-#### Modificación datos desde Odoo
+#### 4. Modificación datos desde Odoo
 
 ![new](./imagenes/new.png)
 
@@ -392,14 +398,15 @@ Comprobamos en la bd de Postgres:
 
 ![sqlAngel](./imagenes/sqlAngel.png)
 
------
+----
+----
 
 ### Modelo tabla :two:
 
 Creación de nuestra segunda tabla/model en Odoo
 
-#### Creación tabla
+#### 1. Creación tabla
 
-#### Inserción datos
+#### 2. Inserción datos
 
-#### Visualización en Odoo
+#### 3. Visualización en Odoo
