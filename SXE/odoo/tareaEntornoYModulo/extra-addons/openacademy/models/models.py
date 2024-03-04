@@ -3,13 +3,15 @@
 from odoo import fields, models
 
 class TestModel(models.Model):
-    # con solo esto ya bastaria
+    # atributo mas importante
     # define el nombre para el modelo en el sist de odoo
-    _name = "test.model"
+    _name = "test_model"
     _description = "Modelo de prueba"
 
-    # --Campos--
+    # **CAMPOS QUE TIENE LA TABLA**
     # para definir lo que puede almacenar el modelo y dd
+    # los campos se definen como atributos en el modelo
+    # Nombre y Descripcion son los nombres de los rotulos que se muestran
     name = fields.Char(string="Nombre")
     description = fields.Text(string="Descripcion")
 

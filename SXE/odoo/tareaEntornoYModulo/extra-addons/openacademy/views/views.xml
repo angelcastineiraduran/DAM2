@@ -2,7 +2,7 @@
   <data>
     <!-- explicit list view definition -->
 <!--
-    <record model="ir.ui.view" id="openacademy.list">
+    <record model="ir.ui.view" id="openacademy.list1">
       <field name="name">openacademy list</field>
       <field name="model">openacademy.openacademy</field>
       <field name="arch" type="xml">
@@ -13,16 +13,22 @@
         </tree>
       </field>
     </record>
--->
 
+-->
     <!-- actions opening views on models -->
-<!--
+    <!-- debe declararse ANTES de declararse el menu correspondiente -->
+    <!-- los archivos de datos se ejecutar secuencialmente
+      por lo que el id de la accion debe estar presente en la bd ANTES de que
+      se pueda crear el menu -->
     <record model="ir.actions.act_window" id="openacademy.action_window">
+      <!-- nombre que aparece como titulo cd voy al menu de openacademy -->
       <field name="name">openacademy window</field>
-      <field name="res_model">openacademy.openacademy</field>
+      <!-- Nombre de la tabla, antiguamente ponia: openacademy.openacademy,
+      que es el nombre que tambien hay que cambiar en el security -->
+      <field name="res_model">test_model</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
+
 
     <!-- server action to the one above -->
 <!--
@@ -41,18 +47,19 @@
 -->
 
     <!-- Top menu item -->
-<!--
     <menuitem name="openacademy" id="openacademy.menu_root"/>
--->
+
     <!-- menu categories -->
-<!--
     <menuitem name="Menu 1" id="openacademy.menu_1" parent="openacademy.menu_root"/>
+    <!--
     <menuitem name="Menu 2" id="openacademy.menu_2" parent="openacademy.menu_root"/>
--->
+    -->
+
     <!-- actions -->
-<!--
     <menuitem name="List" id="openacademy.menu_1_list" parent="openacademy.menu_1"
               action="openacademy.action_window"/>
+
+<!--
     <menuitem name="Server to list" id="openacademy" parent="openacademy.menu_2"
               action="openacademy.action_server"/>
 -->

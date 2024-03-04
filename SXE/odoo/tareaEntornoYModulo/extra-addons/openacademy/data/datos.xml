@@ -1,6 +1,15 @@
 <odoo>
     <data>
+        <!--
+        test_model: nombre de la tabla de model, es el nombre para un registro en el modelo de Odoo.
+        id: para hacer ref del registro pero como no le voy a hacer ref, le puedo poner nombre que quiera
+        -->
         <record model="test_model" id="openacademy.nombres">
+            <!--
+            *CAMPOS QUE TIENE LA TABLA*
+            "name" y "description" hacen ref a los nombres de los campos
+            que hemos puesto en el model
+            -->
             <field name="name">Pepe</field> <!-- El nombre debe ser el mismo que la variable del modelo -->
             <field name="description">50</field> <!--El nombre debe ser el mismo que la variable del modelo-->
         </record>

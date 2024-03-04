@@ -4,7 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99f62b5d-d8e1-456a-88cd-0123ccd0e6f4" name="Changes" comment="" />
+    <list default="true" id="99f62b5d-d8e1-456a-88cd-0123ccd0e6f4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0b5f318-5346-450e-9ca9-cb8174bee99e.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0b5f318-5346-450e-9ca9-cb8174bee99e/storage_v2/_src_/database/mydb.Kl8zAA/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0b5f318-5346-450e-9ca9-cb8174bee99e/storage_v2/_src_/database/mydb.Kl8zAA/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0b5f318-5346-450e-9ca9-cb8174bee99e/storage_v2/_src_/database/mydb.Kl8zAA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0b5f318-5346-450e-9ca9-cb8174bee99e/storage_v2/_src_/database/mydb.Kl8zAA/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0b5f318-5346-450e-9ca9-cb8174bee99e/storage_v2/_src_/database/mydb.Kl8zAA/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0b5f318-5346-450e-9ca9-cb8174bee99e/storage_v2/_src_/database/mydb.Kl8zAA/schema/public.abK9xQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0b5f318-5346-450e-9ca9-cb8174bee99e/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0b5f318-5346-450e-9ca9-cb8174bee99e/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0b5f318-5346-450e-9ca9-cb8174bee99e/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0b5f318-5346-450e-9ca9-cb8174bee99e/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0b5f318-5346-450e-9ca9-cb8174bee99e/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extra-addons/openacademy/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra-addons/openacademy/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extra-addons/openacademy/data/datos.xml" beforeDir="false" afterPath="$PROJECT_DIR$/extra-addons/openacademy/data/datos.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extra-addons/openacademy/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra-addons/openacademy/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extra-addons/openacademy/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/extra-addons/openacademy/security/ir.model.access.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extra-addons/openacademy/views/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/extra-addons/openacademy/views/views.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tareaEntornoYModulo_v2/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tareaEntornoYModulo_v2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tareaEntornoYModulo_v2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tareaEntornoYModulo_v2/.idea/tareaEntornoYModulo_v2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tareaEntornoYModulo_v2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tareaEntornoYModulo_v2/.idea/workspace.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,13 +47,16 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2dC2fJYvCHpgQ6dCRw9YdbHWwMv" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,6 +66,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/ubuntu/DAM2/SXE/odoo/tareaEntornoYModulo",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -64,6 +99,7 @@
       <option name="presentableId" value="Default" />
       <updated>1709497841867</updated>
       <workItem from="1709497842895" duration="7024000" />
+      <workItem from="1709560378613" duration="7401000" />
     </task>
     <servers />
   </component>

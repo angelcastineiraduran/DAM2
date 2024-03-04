@@ -136,7 +136,7 @@ nos aparece la siguiente linea esque lo hemos hecho correctemente:
 > hacía este último proceso, no me aparecería el addon custom
 > cuando lo buscaba en odoo.
 
-**Comprobación**
+**Comprobación** :white_check_mark:
 
 1. Entramos en la web de odoo
 2. Instalamos el modo desarrollador con assets
@@ -151,10 +151,19 @@ nos aparece la siguiente linea esque lo hemos hecho correctemente:
 
 ### Modificación del módulo
 
-> Las siguientes modificaciones del código ya 
-> las podemos hacer directamente desde mi máquina HOST
-> con el IDE, ya que dimos todos los permisos previamente
-> `$ chmod -R 777 openacademy/`
+>[!WARNING]
+> Cada vez que hagamos un cambio en el addon hay que 
+> reiniciar los contenedores `$ docker restart tareaentornoymodulo-web-1 tareaentornoymodulo-db-1`
+> y **actualizar el modulo**
+
+**Para actualizar el modulo:** En module info...
+
+![upgrade](./imagenes/upgrade.png)
+
+Las siguientes modificaciones del código ya 
+las podemos hacer directamente desde mi máquina HOST
+con el IDE, ya que dimos todos los permisos previamente
+`$ chmod -R 777 openacademy/`
 
 ![metadatos](./imagenes/moduleinfo.png)
 
@@ -174,12 +183,11 @@ Para modificar los metadatos nos dirigimos a `__manifest__.py`:
  'website': "https://www.danielcastelao.org",
 ```
 
->[!WARNING]
-> Cada vez que hagamos un cambio en el addon hay que 
-> reiniciar los contenedores `$ docker restart tareaentornoymodulo-web-1 tareaentornoymodulo-db-1`
-> y actualizar la lista de app en el odoo.
+### Modelo o tabla :one:
 
-### Creación de modelo o tabla
+Creación de nuestra primera tabla/model en Odoo
+
+#### Creación tabla
 
 Nos dirigimos a `models/models.py` y creamos la tabla
 
@@ -194,7 +202,20 @@ class TestModel(models.Model):
     description = fields.Text(string="Descripcion")
 ```
 
-#### Datos tabla
+Reiniciamos contenedores + actualizamos módulo
+
+**Comprobación:** :white_check_mark:
+
+En la siguiente ubicación deberíamos encontrar la nueva tabla creada con
+el nombre "test_model".
+
+![ubica](./imagenes/ubicaTable.png)
+
+![test_model](./imagenes/test_model.png)
+
+#### Inserción datos
+
+La tabla se crea sin datos por defecto. Para añadirlos:
 
 Los datos del módulo son declarados vía Archivos de Datos,
 archivos XML con elementos `<record>`. Cada elemento
@@ -205,7 +226,16 @@ Creamos `/extra-addons/openacademy/data/datos.xml` y pegamos:
 ```xml
 <odoo>
     <data>
+        <!--
+        test_model: nombre de la tabla de model,
+        id: no le voy a hacer ref, le puedo poner nombre que quiera
+        -->
         <record model="test_model" id="openacademy.nombres">
+            <!--
+            *CAMPOS QUE TIENE LA TABLA*
+            "name" y "description" hacen ref a los elementos
+            que hemos puesto en el model
+            -->
             <field name="name">Pepe</field> <!-- El nombre debe ser el mismo que la variable del modelo -->
             <field name="description">50</field> <!--El nombre debe ser el mismo que la variable del modelo-->
         </record>
@@ -213,7 +243,10 @@ Creamos `/extra-addons/openacademy/data/datos.xml` y pegamos:
 </odoo>
 ```
 
-Añadimos el archivo al `__manifest__.py`:
+Añadimos el archivo al `__manifest__.py` para que puedan
+cargarse estos datos, estos pueden ir cargados en las listas:
+* `'data'` --> siempre se carga.
+* `'demo'` --> se cargará solo cd el modo demostración esté habilitado.
 
 ```xml
 'data': [
@@ -222,10 +255,151 @@ Añadimos el archivo al `__manifest__.py`:
 ],
 ```
 
-Reiniciamos mas contenedores y actualizamos las app de odoo
-y veriamos los datos en la tabla
+Reinicimoas contenedores + actualizamos modulo:
 
+**Comprobación:** :white_check_mark:
 
+![datos](./imagenes/test_model_datos.png)
 
+#### Visualización en Odoo
 
+La creación de la tabla **no significa la visualización** de 
+la misma en la web de odoo. Para mostrarlas tenemos que recurrir
+a acciones y menús.
 
+Las acciones y los menús son registros regulares en la bd, usualmente
+a traves de archivos de datos. Las acciones pueden ser disparadas de 3 formas:
+
+* Haciendo click en los menús (enlazados a una accion específica).
+* Haciendo click en los botones en las vistas (si estos están conectados a acciones).
+* Como acciones contextuales en el objeto.
+
+Ya que los menús son complejos de declarar, hay un acceso directo 
+`<menuitem>` para declarar un `ir.ui.menu` y así enlazarlo con mayor 
+facilidad a la acción correspondiente.
+
+Para esto nos dirigimos al archivo `views/views.xml`.
+
+```xml
+<odoo>
+   <data>
+      <!-- actions opening views on models -->
+      <!-- debe declararse ANTES de declararse el menu correspondiente -->
+      <!-- los archivos de datos se ejecutar secuencialmente 
+      por lo que el id de la accion debe estar presente en la bd ANTES de que 
+      se pueda crear el menu -->
+       <record model="ir.actions.act_window" id="openacademy.action_window">
+         <field name="name">openacademy window</field>
+         <!-- Nombre de la tabla, antiguamente ponia: openacademy.openacademy,
+         que es el nombre que tambien hay que cambiar en el security -->
+         <field name="res_model">test_model</field>
+         <field name="view_mode">tree,form</field>
+       </record>
+      
+      <!-- Top menu item -->
+       <menuitem name="openacademy" id="openacademy.menu_root"/>
+      
+       <!-- menu categories -->
+       <menuitem name="Menu 1" id="openacademy.menu_1" parent="openacademy.menu_root"/>
+       <!--<menuitem name="Menu 2" id="openacademy.menu_2" parent="openacademy.menu_root"/>-->
+      
+       <!-- actions -->
+       <menuitem name="List" id="openacademy.menu_1_list" parent="openacademy.menu_1"
+                 action="openacademy.action_window"/>
+   </data>
+</odoo>
+```
+
+Para visualizar tabla descomentar el apartado de `'security...'` en `__manifest__.py`:
+
+```python
+'data': [
+  'security/ir.model.access.csv',
+  'views/views.xml',
+  'views/templates.xml',
+  'data/datos.xml',
+],
+```
+
+Para acceder a este archivo, nos ubicamos en `/security/ir.model.access.csv`
+y modificamos nombre del modelo y grupo al que pertenece:
+
+_Antiguamente: "openacademy.openacademy"_
+
+![security](./imagenes/security.png)
+
+> No se ha modificado el grupo al que pertenece, pq?
+
+Reiniciamos contenedores + actualizamos módulo
+
+**Comprobación** :white_check_mark:
+
+Menú "openacademy":
+
+![menu open aca](./imagenes/menuoa.png)
+
+En `views.xml`:
+```xml
+<!-- Top menu item -->
+<menuitem name="openacademy" id="openacademy.menu_root"/>
+```
+
+-----
+
+![menuinfo](./imagenes/menuinfo.png)
+
+En `views.xml`:
+```xml
+<!-- actions opening views on models -->
+<record model="ir.actions.act_window" id="openacademy.action_window">
+   <field name="name">openacademy window</field> <!-- 2 -->
+   <field name="res_model">test_model</field>
+   <field name="view_mode">tree,form</field>
+</record>
+
+<!-- Top menu item -->
+<menuitem name="openacademy" id="openacademy.menu_root"/> <!-- 1 -->
+
+<!-- menu categories -->
+<menuitem name="Menu 1" id="openacademy.menu_1" parent="openacademy.menu_root"/> <!-- 3 -->
+```
+
+-----
+
+Como sólo hay una tabla nos la muestra directamente, pero si tuvieramos
+varias, tendríamos que escoger cual queremos que nos muestre en:
+
+![list](./imagenes/list.png)
+
+En `views.xml`:
+```xml    
+<!-- actions -->
+<menuitem name="List" id="openacademy.menu_1_list" parent="openacademy.menu_1"
+        action="openacademy.action_window"/>
+```
+
+----
+
+#### Modificación datos desde Odoo
+
+![new](./imagenes/new.png)
+
+Rellenamos datos y le volvemos a dar al "New" de arriba a la derecha
+
+![newAngel](./imagenes/newAngel.png)
+
+Comprobamos en la bd de Postgres:
+
+![sqlAngel](./imagenes/sqlAngel.png)
+
+-----
+
+### Modelo tabla :two:
+
+Creación de nuestra segunda tabla/model en Odoo
+
+#### Creación tabla
+
+#### Inserción datos
+
+#### Visualización en Odoo
