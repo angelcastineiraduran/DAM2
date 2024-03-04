@@ -90,8 +90,6 @@ Por ejemplo, si un módulo tiene un solo archivo `mymodule.py`
 from . import mymodule
 ```
 
-----
-
 ### Creación módulo :new:
 
 En el contenedor web de Odoo creamos un nuevo módulo.
@@ -356,8 +354,6 @@ En `views.xml`:
 <menuitem name="openacademy" id="openacademy.menu_root"/>
 ```
 
------
-
 B. Dentro del modulo
 
 ![menuinfo](./imagenes/menuinfo.png)
@@ -377,8 +373,6 @@ En `views.xml`:
 <!-- menu categories -->
 <menuitem name="Menu 1" id="openacademy.menu_1" parent="openacademy.menu_root"/> <!-- 3 -->
 ```
-
------
 
 C. Tablas
 
@@ -406,7 +400,6 @@ Comprobamos en la bd de Postgres:
 
 ![sqlAngel](./imagenes/sqlAngel.png)
 
-----
 ----
 
 ### Modelo tabla :two:
