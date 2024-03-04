@@ -71,6 +71,10 @@
     <menuitem name="Menu 2" id="openacademy.menu_2" parent="openacademy.menu_root"/>
     -->
 
+    <!-- creamos un boton -->
+    <!-- cd yo pulso el bton con el action me va a mostrar directamente la tabla -->
+    <menuitem name="Boton 1" id="openacademy.boton_1" parent="openacademy.menu_root" action="openacademy.action_window2" />
+
     <!-- actions -->
     <menuitem name="List" id="openacademy.menu_1_list" parent="openacademy.menu_1"
               action="openacademy.action_window"/>

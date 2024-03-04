@@ -546,10 +546,33 @@ En el `__manifest__.py`:
 
 ![security2](./imagenes/security2.png)
 
+Comprobacion :white_check_mark:
+
+![tabla2menu](./imagenes/tabla2menu.png)
+
+![tabla2](./imagenes/tabla2.png)
+
 ----
 
 ### Modelo tabla :three:
 
 Mostrar la tabla pero ahora botones en vez de con 
 menús.
+
+Para esto sólo tenemos que agregar en 
+`views/views.xml`:
+
+```xml
+<!-- creamos un boton -->
+<!-- cd yo pulso el bton con el action me va a mostrar directamente la tabla -->
+<menuitem name="Boton 1" id="openacademy.boton_1" parent="openacademy.menu_root" action="openacademy.action_window2" />
+```
+
+Cuando le temos al botón mostrará la tabla
+de usuarios ya que viene identificada con 
+`id="openacademy.action_window2`
+
+Comprobacion :white_check_mark:
+
+![btnTabla](./imagenes/btnTabla.png)
 
