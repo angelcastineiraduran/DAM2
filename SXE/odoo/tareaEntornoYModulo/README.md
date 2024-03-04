@@ -556,8 +556,8 @@ Comprobacion :white_check_mark:
 
 ### Modelo tabla :three:
 
-Mostrar la tabla pero ahora botones en vez de con 
-menús.
+Mostrar la tabla pero ahora en vez de con 
+menús, mostrarla al presionar un botón.
 
 Para esto sólo tenemos que agregar en 
 `views/views.xml`:
@@ -568,9 +568,9 @@ Para esto sólo tenemos que agregar en
 <menuitem name="Boton 1" id="openacademy.boton_1" parent="openacademy.menu_root" action="openacademy.action_window2" />
 ```
 
-Cuando le temos al botón mostrará la tabla
+Cuando le damos al botón se mostrará la tabla
 de usuarios ya que viene identificada con 
-`id="openacademy.action_window2`
+`id="openacademy.action_window2"`
 
 Comprobacion :white_check_mark:
 
