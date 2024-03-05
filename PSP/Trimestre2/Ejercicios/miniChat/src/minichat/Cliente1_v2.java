@@ -134,8 +134,9 @@ class HiloEscribir implements Runnable {
                     try {
                         if (miMarcoCliente.txtSend.equalsIgnoreCase("/q")) {
                             // Enviar mensaje de desconexión al servidor
-                            //escritura.writeUTF(usuario.getUsuario() + "," +"/q");
-                            escritura.writeUTF("/q");
+                            // ej: alberto:/q
+                            escritura.writeUTF(usuario.getUsuario() + "," + "/q");
+                            //escritura.writeUTF("/q");
                             // Cerrar el socket y finalizar la aplicación
                             socket.close();
                             System.exit(0);
@@ -180,16 +181,32 @@ class HiloLeer implements Runnable {
             while (true) {
                 DataInputStream lectura = new DataInputStream(socket.getInputStream());
                 String msjRecieved = lectura.readUTF();
-                //System.out.println(msjRecieved);
+
                 if (msjRecieved.equals("/q")) {
                     System.out.println("Algun usuario ha enviado el /q");
+                    
                 } else if (first_msj_received) {
                     // en el caso de que sea el primer mensaje para que no 
                     // me mande de primeras \n que queda mal
                     miMarcoCliente.txtSend = msjRecieved;
                     miMarcoCliente.txtArea.append(miMarcoCliente.txtSend);
                     first_msj_received = false;
+                    
+                    // en el caso de que el primer msj recibido de indicando que el chat esta ocupado
+                    if(msjRecieved.equalsIgnoreCase("El chat está lleno. Por favor, inténtelo más tarde.")) {
+                        // en el caso de que el msj sea de que el chat esta ocupado
+                        System.out.println("Chat ocupado...");
+                        miMarcoCliente.btnEnviar.setEnabled(false);
+                    }
+                    
+                    System.out.println("Mensaje bienvenida recibido");
+                } else if(msjRecieved.equals("**El servidor se ha desconectado**")) {
+                    miMarcoCliente.txtSend = msjRecieved;
+                    miMarcoCliente.txtArea.append("\n" + miMarcoCliente.txtSend);
+                    System.out.println("Servidor desconectado!");
+                    miMarcoCliente.btnEnviar.setEnabled(false);
                 } else {
+                    // en el caso de que sea un msj normal y corriento lo muestro en el area
                     miMarcoCliente.txtSend = msjRecieved;
                     miMarcoCliente.txtArea.append("\n" + miMarcoCliente.txtSend);
                 }
