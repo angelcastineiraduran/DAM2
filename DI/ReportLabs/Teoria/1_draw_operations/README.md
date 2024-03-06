@@ -67,7 +67,7 @@ canvas.circle(x_cen, y_cen, r, stroke=1, fill=0)
 canvas.roundRect(x, y, width, height, radius, stroke=1, fill=0)
 ```
 
-### String 📃
+### String :thread:
 
 ```python
 canvas.drawString(x, y, text):
@@ -75,7 +75,7 @@ canvas.drawRightString(x, y, text)
 canvas.drawCentredString(x, y, text)
 ```
 
-### Objetos de txt
+### Objetos de txt :book:
 
 Para cambiar formatos de txt que no son 
 soportados directamente por la interfaz
@@ -86,7 +86,7 @@ textobject = canvas.beginText(x, y)
 canvas.drawText(textobject)
 ```
 
-### Objetos de ruta
+### Objetos de ruta :book: :heavy_plus_sign:
 
 Similar a obj de txt, opciones no soportadas
 directamente por la inter de canvas.
@@ -99,7 +99,7 @@ canvas.drawPath(path, stroke=1, fill=0, fillMode=None)
 canvas.clipPath(path, stroke=1, fill=0, fillMode=None) 
 ```
 
-### Imagen
+### Imagen :camera_flash:
 Necesaria libreria **Python Imaging Library (PIL)**
 para usar imagenes en el paquete ReportLab.
 
@@ -112,6 +112,11 @@ para usar imagenes en el paquete ReportLab.
 muchas veces.
 * Solo va a ser guardada la primera vez y despues va a ser referenciada.
 
+```python
+# mask para hacer transparente la imagen
+canvas.drawImage(self, image, x,y, width=None,height=None,mask=None)
+```
+
 `drawInLineImage`
 
 * antiguo
@@ -119,27 +124,63 @@ muchas veces.
 * Eficiente cuando las imagenes son pequeñas y no se repiten.
 
 ```python
-canvas.drawInlineImage(self, image, x,y, width=None,height=None) 
-# mask para transparencia imagenes
-canvas.drawImage(self, image, x,y, width=None,height=None,mask=None)
+canvas.drawInlineImage(self, image, x,y, width=None,height=None)
 ```
 
-** EN LA .py "Images" NO ME FUNCIONA!! **
+## The toolbox: the "state change" operations
 
-## (2.5) The toolbox: the "state change" operations
-Formas/herramientas que tiene el programa para pintar info
-en la pagina usando la interfaz de canvas.
+### State Control
+
+```python
+# marca el estado de los graficos (fuente, tranformacion, estilos...)
+canvas.saveState()
+# restuaracion del estado guardado MAS RECIENTE 
+# que AUN NO SE HA RESTAURADO
+canvas.restoreState()
+```
+> Estos metodos NO funcionan entre distintas páginas.
+
+## Other canvas methods
+
+```python
+# establece el nombre del autor del docu
+canvas.setAuthor()
+# indices con enlaces
+canvas.addOutlineEntry(title, key, level=0, closed=None)
+# titulo docu
+canvas.setTitle(title)
+# si la pag actual tiene contenido devulve true
+canvas.pageHasData()
+# muestra el indice 
+# previamente se tiene que haber utilizado el .addOutlineEntry()
+canvas.showOutline()
+# marcador/enlace interno
+canvas.bookmarkPage(name)
+# lo mismo que lo anterior pero horizonal
+canvas.bookmarkHorizontalAbsolute(name, yhorizontal)
+# los siguientes tienen que ver con formularios...
+canvas.doForm()
+canvas.beginForm(name, lowerx=0, lowery=0, upperx=None, uppery=None)
+canvas.endForm()
+# esta en src ejemplo - pero NO me funciona!!
+canvas.linkAbsolute(contents, destinationname, Rect=None, addtopage=1, name=None, **kw)
+# TAMPOCO me funciona
+canvas.linkRect(contents, destinationname, Rect=None, addtopage=1, relative=1, name=None, **kw)
+canvas.getPageNumber()
+canvas.getAvailableFonts()
+canvas.stringWidth(self, text, fontName, fontSize, encoding=None)
+# activar (1) o no (0) la compresion
+canvas.setPageCompression(onoff=1)
+canvas.setPageTransition(self, effectname=None, duration=1,
+                    direction=0,dimension='H',motion='I')
+```
 
 (mirar documento oficial)
 
-## (2.6) Other canvas methods
 
-(mirar documento oficial)
+## Coordinates (default user space)
 
-
-## 2.7 Coordinates (default user space)
 El metodo `canvas.translate(x,y)` mueve el pto de origen por 
 defecto.
 
-
-> ME QUEDE EN LA PAGINA 20
+ME QUEDE AL PRINCIPIO DE ESTE PUNTO!!!!

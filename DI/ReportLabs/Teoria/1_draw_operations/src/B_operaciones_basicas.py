@@ -1,6 +1,7 @@
 from reportlab import rl_config
 from reportlab.lib.pagesizes import letter, A4
 
+# Recomandable mirar mejor clase de `drawing_operations` para entenerlo mejor
 
 class Canvas:
     def __init__(self,
@@ -15,7 +16,7 @@ class Canvas:
         print("Creado con el archivo")
 
 #myCanvas = Canvas("myfile.pdf", pagesize=A4)
-myCanvas = Canvas("myfile.pdf", pagesize=letter)
+myCanvas = Canvas("../pdfs/myfile.pdf", pagesize=letter)
 
 # extraemos el ancho y el alto ya que en algunos documento diseñamos el contenido
 # en base al ancho y alto de la pagina, por eso extraemos esos parametros en una variable

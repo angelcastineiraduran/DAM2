@@ -11,9 +11,12 @@ def hello(c):
  c.setStrokeColorRGB(0.2, 0.5, 0.3)
  c.setFillColorRGB(1, 0, 1)
  # para dibujar las lineas desde el pto origen
+ # (x1, y1, x2, y2) > (100, 100, 200, 100) Linea horizontal
+ # (100, 100, 100, 200) Linea vertical
  c.line(0, 0, 0, 1.7*inch)
  c.line(0, 0, 1*inch, 0)
  # dibuja un rectangulo, activo el relleno (fill=1)
+ # (x, y, width, height)
  c.rect(0.2*inch, 0.2*inch, 1*inch, 1.5*inch, fill=1)
  # rota lienzo en sentido de las agujas del reloj
  c.rotate(90)
@@ -23,7 +26,7 @@ def hello(c):
  c.drawString(0.3*inch, -inch, 'Hello World!')
 
 
-c = canvas.Canvas('../drawingOperations.pdf')
+c = canvas.Canvas('../pdfs/drawingOperations.pdf')
 hello(c)
 c.showPage()
 c.save()

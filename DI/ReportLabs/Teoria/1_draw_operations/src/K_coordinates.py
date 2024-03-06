@@ -9,7 +9,6 @@ def scale(canvas):
  canvas.scale(0.75, 0.5)
 
 def hello(c):
- from reportlab.lib.units import inch
  c.translate(inch, inch)
  c.setFont('Helvetica', 14)
  c.setStrokeColorRGB(0.2, 0.5, 0.3)
