@@ -1,4 +1,4 @@
-# Introduccion
+# Introduccion 
 
 Las coordenadas (0, 0) se identifican
 abajo de todo a la izquierda en el documento.
@@ -9,11 +9,10 @@ abajo de todo a la izquierda en el documento.
 * Cambia el sistema de Coordenadas. Algunos
 framework ponen el origen en vez de abajo
 a la izq, lo poner arriba a la izquierda.
-* Este paramtro esta en desuso, suele ser re
-comendado suprimirlo.
+* Este param esta en desuso, recomendado suprimirlo.
 
 `pageCompression`
-* La opción pageCompression determina si se 
+* Determina si se 
 comprime el flujo de operaciones de PDF 
 para cada página.
 * por defecto paginas no comprimidas porque
@@ -30,7 +29,7 @@ afecta a el txt y el vectores graficos.
 de MacRoman y no en Winansi.
 
 `verbosity`
-* determina cuanta informacion de registro 
+* me manda msj de cuanta informacion de registro 
 se imprime.
 * por defecto es cero para ayudar a las app
 que desean capturar PDF a partir de una
@@ -68,7 +67,7 @@ canvas.circle(x_cen, y_cen, r, stroke=1, fill=0)
 canvas.roundRect(x, y, width, height, radius, stroke=1, fill=0)
 ```
 
-### Strings
+### String 📃
 
 ```python
 canvas.drawString(x, y, text):
