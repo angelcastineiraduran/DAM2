@@ -42,7 +42,7 @@ public class Cliente1_v2 {
         //final String HOST = "10.0.9.104";
         final String HOST = "localhost";
         final int PUERTO = 5000;
-        Socket socket = new Socket(HOST, PUERTO);
+        //Socket socket = new Socket(HOST, PUERTO);
 
         //int respuesta = JOptionPane.NO_OPTION;
         //System.out.println((System.nanoTime() - tiempoInicio) / 1e9);
@@ -59,9 +59,9 @@ public class Cliente1_v2 {
                 segundosAnteriores = segundosTranscurridos;
             }
         }
-
         // logica
         System.out.println("Usuario creado!");
+        Socket socket = new Socket(HOST, miMarcoUsuario.puerto);
         Usuario usuario = new Usuario(miMarcoUsuario);
 
         // espero 1 segundo para que se acaben de crear todos los componentes del this.miMarcoClient
@@ -118,7 +118,7 @@ class HiloEscribir implements Runnable {
             DataOutputStream escritura = new DataOutputStream(socket.getOutputStream());
             String txtConnected = "Usuario " + usuario.getUsuario() + " conectado";
             if (first_conn) {
-                System.out.println("Primera conexion del usuario" + usuario.getUsuario());
+                System.out.println("PRIMERA CONEXION: \n- usuario=" + usuario.getUsuario());
                 //miMarcoCliente.txtSend = txtConnected;
                 //miMarcoCliente.txtArea.append(miMarcoCliente.txtSend);
                 escritura.writeUTF(txtConnected);
@@ -223,16 +223,19 @@ class HiloLeer implements Runnable {
 class Usuario implements Runnable {
 
     private String usuario;
+    private int puerto;
     //MiMarcoCliente miMarcoCliente;
     String msjBienvenida = "Bienvenido al chat " + usuario + ", estas listo para chatear!";
 
     public Usuario(MiMarcoUsuario miMarcoUsuario) {
         this.usuario = miMarcoUsuario.nombreUsuario;
+        this.puerto = miMarcoUsuario.puerto;
     }
 
     @Override
     public void run() {
         this.usuario = usuario;
+        this.puerto = puerto;
         System.out.println(msjBienvenida);
     }
 
@@ -243,5 +246,15 @@ class Usuario implements Runnable {
     public String getUsuario() {
         return usuario;
     }
+
+    public int getPuerto() {
+        return puerto;
+    }
+
+    public void setPuerto(int puerto) {
+        this.puerto = puerto;
+    }
+    
+    
 
 }

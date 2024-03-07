@@ -26,20 +26,28 @@ public class Servidor_v3 {
     // Utiliza una lista para almacenar los sockets de los usuarios conectados
     private static final List<Socket> sockets = new ArrayList<>();
     // limitar numero de clientes
-    private static final int MAX_CLIENTES = 2;
+    private static final int MAX_CLIENTES = 5;
     private static final long TIEMPO_ESPERA = 30000; // 30 segundos
+    private int numUsuariosConectados = sockets.size();
+    private static List<String> historialMensajes = new ArrayList<>();
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws InterruptedException {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Proporciona el puerto en el que quieres estar escuchando: ");
+        final int PUERTO = sc.nextInt();
 
         ServerSocket serverSocket = null;
-        final int PUERTO = 5000;
+        //final int PUERTO = 5000;
 
         try {
             serverSocket = new ServerSocket(PUERTO);
             System.out.println("Servidor iniciado, a la escucha");
+            System.out.println(InformacionServidor.contarUsuariosConectados(sockets.size()));
             
             // Inicia el hilo para manejar los mensajes del servidor desde la consola
             Thread hiloServidor = new Thread(new MensajesAlServidor(false, sockets));
@@ -54,6 +62,9 @@ public class Servidor_v3 {
                     DataOutputStream escritura = new DataOutputStream(nuevoSocket.getOutputStream());
                     // Envia mensaje de bienvenida al nuevo cliente
                     escritura.writeUTF("Bienvenido al chat!");
+                    System.out.println(InformacionServidor.contarUsuariosConectados(sockets.size()));
+                    
+                    
                     // Crea un nuevo hilo para manejar la comunicación con el cliente
                     Thread hiloCliente = new Thread(new ManejarCliente(nuevoSocket, sockets));
                     hiloCliente.start();
@@ -74,6 +85,8 @@ public class Servidor_v3 {
     }
 
 }
+
+
 
 class ManejarCliente implements Runnable {
 
@@ -103,24 +116,25 @@ class ManejarCliente implements Runnable {
 
             while (true) {
                 String mensaje = lectura.readUTF();
-                System.out.println("Mensaje recibido: " + mensaje);
+                System.out.println(mensaje);
+                
 
                 // cd se desconecta, el cliente manada: "nombreUsuario,/q"
                 if (buscarCaracter(',', mensaje)) {
-                    String[] nombres = mensaje.split(",");
+                    String[] usuarioYMensaje = mensaje.split(",");
                     // Verificar si el cliente se desconectó
 
-                    if (nombres[1].equalsIgnoreCase("/q")) {
-                        System.out.println("--El tamanio del array es: " + sockets.size() + "--");
+                    if (usuarioYMensaje[1].equalsIgnoreCase("/q")) {
                         sockets.remove(socket);
                         // Enviar mensaje de desconexión a los demás clientes
-                        enviarMensajeDesconexion(nombres[0]);
+                        enviarMensajeDesconexion(usuarioYMensaje[0]);
                         System.out.println("Cliente desconectado.");
-                        System.out.println("--El tamanio del array es: " + sockets.size() + "--");
+                        System.out.println(
+                                InformacionServidor.contarUsuariosConectados(
+                                sockets.size()));
                         break;
-                    } else {
-                        System.out.println("Ha mandado un mensaje con coma, pero no se quiere desconectar!");
-                    }
+                    } 
+                    
                 } else { // si no se quiere desconectar, se manda un msj a todos los sockets
                     for (Socket clienteSocket : sockets) {
                         if (clienteSocket != socket) {
@@ -201,5 +215,26 @@ class MensajesAlServidor implements Runnable {
         }
         sockets.clear(); // Limpia la lista de sockets
     }
+}
+
+class InformacionServidor {
+    
+    public static String contarUsuariosConectados(int numeroUsuarios) throws IOException {
+        // -1 pq el que recibe el msj conectadosno cuenta
+        String conectados = "(usuarios conectados: " + numeroUsuarios + ")";
+        String ningunoConectado = ("(actualmente no hay ningun usuario conectado)");
+        if(numeroUsuarios == 0) {
+            return ningunoConectado;
+        } else {
+            return conectados;
+        }
+    }
+    
+        
+    static void enviarHistorialMensajes(Socket socket, List<String> historialMensajes) {
+        
+    }
+
+    
 }
 

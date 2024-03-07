@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -34,6 +35,7 @@ class MiMarcoUsuario extends JFrame {
     
     MiMarcoCliente miMarcoCliente;
     String nombreUsuario;
+    int puerto = -1; // si imrpime -1 es que no se ha cogido el puerto
 
     public MiMarcoUsuario(MiMarcoCliente miMarcoCliente) {
         this.miMarcoCliente = miMarcoCliente;
@@ -43,8 +45,10 @@ class MiMarcoUsuario extends JFrame {
     JLabel lblIntroducirUsuario;
     JTextField txtCampoNombreUsuario;
     JButton btnAceptar, btnCancelar;
-    JPanel panelBotones, panelUsuario;
+    JPanel panelBotones, panelUsuario, panelPuerto;
     JPanel panelPrincipal;
+    JLabel lblIntroducirPuerto;
+    JTextField txtCampoPuerto;
 
     public void iniciarComponentes() {
 
@@ -53,6 +57,10 @@ class MiMarcoUsuario extends JFrame {
         panelUsuario.setLayout(new BoxLayout(panelUsuario, BoxLayout.Y_AXIS));
         panelUsuario.add(lblIntroducirUsuario);
         panelUsuario.add(txtCampoNombreUsuario);
+        
+        panelPuerto.setLayout(new BoxLayout(panelPuerto, BoxLayout.Y_AXIS));
+        panelPuerto.add(lblIntroducirPuerto);
+        panelPuerto.add(txtCampoPuerto);
 
         panelBotones.setLayout(new FlowLayout());
         panelBotones.add(btnCancelar);
@@ -69,7 +77,9 @@ class MiMarcoUsuario extends JFrame {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 nombreUsuario = txtCampoNombreUsuario.getText();
-                if(nombreUsuario != null) {
+                puerto = Integer.parseInt(txtCampoPuerto.getText());
+                
+                if(nombreUsuario != null && puerto != -1) {
                     miMarcoCliente.iniciarComponentes();
                     miMarcoCliente.marco.setTitle(nombreUsuario);
                     //miMarcoCliente.txtArea.append("Usuario " + nombreUsuario + " conectado!");
@@ -77,9 +87,18 @@ class MiMarcoUsuario extends JFrame {
                 }
             }
         });
+        
+        // Utiliza JSplitPane para separar los paneles
+        JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, panelUsuario, panelPuerto);
+        JSplitPane splitPane2 = new JSplitPane(JSplitPane.VERTICAL_SPLIT, panelPuerto, panelBotones);
+        splitPane.setDividerLocation(50); // Ajusta la posición del divisor según tus necesidades
+        splitPane2.setDividerLocation(100); // Ajusta la posición del divisor según tus necesidades
 
         panelPrincipal.setLayout(new BoxLayout(panelPrincipal, BoxLayout.Y_AXIS));
         panelPrincipal.add(panelUsuario);
+        panelPrincipal.add(splitPane, BorderLayout.CENTER);
+        panelPrincipal.add(panelPuerto);
+        panelPrincipal.add(splitPane2, BorderLayout.CENTER);
         panelPrincipal.add(panelBotones);
 
         marco.setLayout(new FlowLayout());
@@ -93,14 +112,18 @@ class MiMarcoUsuario extends JFrame {
 
         lblIntroducirUsuario = new JLabel("Introduzca un nombre de usuario");
         txtCampoNombreUsuario = new JTextField();
+        lblIntroducirPuerto = new JLabel("Introduzca el puerto desde el que desea conectarse");
+        txtCampoPuerto = new JTextField();
+        
         btnAceptar = new JButton("Aceptar");
         btnCancelar = new JButton("Cancelar");
         panelBotones = new JPanel();
+        panelPuerto = new JPanel();
 
         panelPrincipal = new JPanel();
         panelUsuario = new JPanel();
 
-        marco.setSize(500, 130);
+        marco.setSize(500, 180);
     }
 
     public void cerrar() {

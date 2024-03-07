@@ -38,7 +38,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/ubuntu/DAM2/SXE/odoo/tareaEntornoYModulo",
+    "last_opened_file_path": "/home/ubuntu/DAM2/DI/ReportLabs",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -70,6 +70,7 @@
       <updated>1709497841867</updated>
       <workItem from="1709497842895" duration="7024000" />
       <workItem from="1709560378613" duration="14351000" />
+      <workItem from="1709726169603" duration="105000" />
     </task>
     <servers />
   </component>
