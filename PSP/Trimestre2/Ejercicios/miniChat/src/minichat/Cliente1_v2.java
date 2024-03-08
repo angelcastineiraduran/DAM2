@@ -30,12 +30,16 @@ public class Cliente1_v2 {
         MiMarcoCliente miMarcoCliente = new MiMarcoCliente();
         MiMarcoUsuario miMarcoUsuario = new MiMarcoUsuario(miMarcoCliente);
         miMarcoUsuario.iniciarComponentes();
-
+        
+        
         long tiempoInicio = System.nanoTime();
 //
 //        Thread hIU = new Thread(new hiloInterfaz(miMarcoUsuario));
 //        hIU.start();
 //        hIU.join();
+
+
+        
 
         boolean first_msj_send = true;
         boolean first_msj_received = true;
@@ -49,7 +53,6 @@ public class Cliente1_v2 {
         System.out.println("Iniciando app");
         int segundosAnteriores = -1; // Inicializar con un valor que no se pueda obtener naturalmente
         while (miMarcoUsuario.nombreUsuario == null) {
-
             // imprime segundos
             long tiempoTranscurridoNano = System.nanoTime() - tiempoInicio;
             int segundosTranscurridos = (int) (tiempoTranscurridoNano / 1_000_000_000); // Convertir nanosegundos a segundos
