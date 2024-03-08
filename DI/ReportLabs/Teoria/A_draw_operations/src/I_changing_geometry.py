@@ -2,6 +2,7 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch
 def hello(c):
  c.translate(inch, inch)
+ # (posicion X, posicion Y, tamanio X, tamanio Y)
  c.rect(0, 0, inch, inch, fill=1)
 
  # como si rotates el lienzo 10 grandos (sentido antihorario) y lo solapases con el lienzo normal.

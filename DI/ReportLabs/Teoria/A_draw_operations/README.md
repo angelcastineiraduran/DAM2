@@ -180,7 +180,3 @@ canvas.setPageTransition(self, effectname=None, duration=1,
 
 ## Coordinates (default user space)
 
-El metodo `canvas.translate(x,y)` mueve el pto de origen por 
-defecto.
-
-ME QUEDE AL PRINCIPIO DE ESTE PUNTO!!!!
