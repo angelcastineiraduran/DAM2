@@ -36,6 +36,7 @@ class MiMarcoUsuario extends JFrame {
     MiMarcoCliente miMarcoCliente;
     String nombreUsuario;
     int puerto = -1; // si imrpime -1 es que no se ha cogido el puerto
+    String IP = null; // si imrpime null es que no se ha cogido el IP
 
     public MiMarcoUsuario(MiMarcoCliente miMarcoCliente) {
         this.miMarcoCliente = miMarcoCliente;
@@ -45,10 +46,14 @@ class MiMarcoUsuario extends JFrame {
     JLabel lblIntroducirUsuario;
     JTextField txtCampoNombreUsuario;
     JButton btnAceptar, btnCancelar;
-    JPanel panelBotones, panelUsuario, panelPuerto;
+    JPanel panelBotones, panelUsuario, panelConexionRed;
     JPanel panelPrincipal;
     JLabel lblIntroducirPuerto;
     JTextField txtCampoPuerto;
+    JLabel lblIntroducirIp;
+    JTextField txtCampoIp;
+    JPanel panelPuerto;
+    JPanel panelIP;
 
     public void iniciarComponentes() {
 
@@ -58,9 +63,15 @@ class MiMarcoUsuario extends JFrame {
         panelUsuario.add(lblIntroducirUsuario);
         panelUsuario.add(txtCampoNombreUsuario);
         
+        panelIP.setLayout(new BoxLayout(panelIP, BoxLayout.Y_AXIS));
+        panelIP.add(lblIntroducirIp);
+        panelIP.add(txtCampoIp);
         panelPuerto.setLayout(new BoxLayout(panelPuerto, BoxLayout.Y_AXIS));
         panelPuerto.add(lblIntroducirPuerto);
         panelPuerto.add(txtCampoPuerto);
+        panelConexionRed.setLayout(new FlowLayout());
+        panelConexionRed.add(panelIP);
+        panelConexionRed.add(panelPuerto);
 
         panelBotones.setLayout(new FlowLayout());
         panelBotones.add(btnCancelar);
@@ -78,8 +89,9 @@ class MiMarcoUsuario extends JFrame {
             public void actionPerformed(ActionEvent ae) {
                 nombreUsuario = txtCampoNombreUsuario.getText();
                 puerto = Integer.parseInt(txtCampoPuerto.getText());
+                IP = txtCampoIp.getText(); 
                 
-                if(nombreUsuario != null && puerto != -1) {
+                if(nombreUsuario != null && puerto != -1 && IP != null) {
                     miMarcoCliente.iniciarComponentes();
                     miMarcoCliente.marco.setTitle(nombreUsuario);
                     //miMarcoCliente.txtArea.append("Usuario " + nombreUsuario + " conectado!");
@@ -89,15 +101,15 @@ class MiMarcoUsuario extends JFrame {
         });
         
         // Utiliza JSplitPane para separar los paneles
-        JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, panelUsuario, panelPuerto);
-        JSplitPane splitPane2 = new JSplitPane(JSplitPane.VERTICAL_SPLIT, panelPuerto, panelBotones);
+        JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, panelUsuario, panelConexionRed);
+        JSplitPane splitPane2 = new JSplitPane(JSplitPane.VERTICAL_SPLIT, panelConexionRed, panelBotones);
         splitPane.setDividerLocation(50); // Ajusta la posición del divisor según tus necesidades
         splitPane2.setDividerLocation(100); // Ajusta la posición del divisor según tus necesidades
 
         panelPrincipal.setLayout(new BoxLayout(panelPrincipal, BoxLayout.Y_AXIS));
         panelPrincipal.add(panelUsuario);
         panelPrincipal.add(splitPane, BorderLayout.CENTER);
-        panelPrincipal.add(panelPuerto);
+        panelPrincipal.add(panelConexionRed);
         panelPrincipal.add(splitPane2, BorderLayout.CENTER);
         panelPrincipal.add(panelBotones);
 
@@ -112,18 +124,23 @@ class MiMarcoUsuario extends JFrame {
 
         lblIntroducirUsuario = new JLabel("Introduzca un nombre de usuario");
         txtCampoNombreUsuario = new JTextField();
-        lblIntroducirPuerto = new JLabel("Introduzca el puerto desde el que desea conectarse");
+        lblIntroducirPuerto = new JLabel("PUERTO");
         txtCampoPuerto = new JTextField();
+        lblIntroducirIp = new JLabel("Direccion IP");
+        txtCampoIp = new JTextField();
+        panelPuerto = new JPanel();
+        panelIP = new JPanel();
+        panelConexionRed = new JPanel();
         
         btnAceptar = new JButton("Aceptar");
         btnCancelar = new JButton("Cancelar");
         panelBotones = new JPanel();
-        panelPuerto = new JPanel();
+        
 
         panelPrincipal = new JPanel();
         panelUsuario = new JPanel();
 
-        marco.setSize(500, 180);
+        marco.setSize(300, 180);
     }
 
     public void cerrar() {

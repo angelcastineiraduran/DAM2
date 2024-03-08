@@ -26,7 +26,7 @@ public class Servidor_v3 {
     // Utiliza una lista para almacenar los sockets de los usuarios conectados
     private static final List<Socket> sockets = new ArrayList<>();
     // limitar numero de clientes
-    private static final int MAX_CLIENTES = 5;
+    private static final int MAX_CLIENTES = 2;
     private static final long TIEMPO_ESPERA = 30000; // 30 segundos
     private int numUsuariosConectados = sockets.size();
     private static List<String> historialMensajes = new ArrayList<>();
@@ -124,7 +124,7 @@ class ManejarCliente implements Runnable {
                     String[] usuarioYMensaje = mensaje.split(",");
                     // Verificar si el cliente se desconectó
 
-                    if (usuarioYMensaje[1].equalsIgnoreCase("/q")) {
+                    if ((usuarioYMensaje[1].equalsIgnoreCase("/q")) | Boolean.parseBoolean(usuarioYMensaje[2])) {
                         sockets.remove(socket);
                         // Enviar mensaje de desconexión a los demás clientes
                         enviarMensajeDesconexion(usuarioYMensaje[0]);
@@ -230,10 +230,6 @@ class InformacionServidor {
         }
     }
     
-        
-    static void enviarHistorialMensajes(Socket socket, List<String> historialMensajes) {
-        
-    }
 
     
 }

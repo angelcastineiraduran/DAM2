@@ -30,22 +30,18 @@ public class Cliente1_v2 {
         MiMarcoCliente miMarcoCliente = new MiMarcoCliente();
         MiMarcoUsuario miMarcoUsuario = new MiMarcoUsuario(miMarcoCliente);
         miMarcoUsuario.iniciarComponentes();
-        
-        
+
         long tiempoInicio = System.nanoTime();
 //
 //        Thread hIU = new Thread(new hiloInterfaz(miMarcoUsuario));
 //        hIU.start();
 //        hIU.join();
 
-
-        
-
         boolean first_msj_send = true;
         boolean first_msj_received = true;
         //final String HOST = "10.0.9.104";
-        final String HOST = "localhost";
-        final int PUERTO = 5000;
+        String HOST = "localhost";
+        //final int PUERTO = 5000;
         //Socket socket = new Socket(HOST, PUERTO);
 
         //int respuesta = JOptionPane.NO_OPTION;
@@ -64,8 +60,9 @@ public class Cliente1_v2 {
         }
         // logica
         System.out.println("Usuario creado!");
-        Socket socket = new Socket(HOST, miMarcoUsuario.puerto);
+        //Socket socket = new Socket(HOST, miMarcoUsuario.puerto);
         Usuario usuario = new Usuario(miMarcoUsuario);
+        Socket socket = new Socket(usuario.getIP(), usuario.getPuerto());
 
         // espero 1 segundo para que se acaben de crear todos los componentes del this.miMarcoClient
         // ya que corren en otro hilo
@@ -75,7 +72,7 @@ public class Cliente1_v2 {
         n0.start();
         n0.join();
         System.out.println("Conectandome al chat...");
-        Thread h1 = new Thread(new HiloEscribir(socket, usuario, miMarcoCliente, first_msj_send));
+        Thread h1 = new Thread(new HiloEscribir(socket, usuario, miMarcoCliente, first_msj_send, miMarcoUsuario));
         Thread h2 = new Thread(new HiloLeer(socket, usuario, miMarcoCliente, first_msj_received));
         h1.start();
         h2.start();
@@ -106,12 +103,14 @@ class HiloEscribir implements Runnable {
     Usuario usuario;
     MiMarcoCliente miMarcoCliente;
     boolean first_conn;
+    MiMarcoUsuario miMarcoUsuario;
 
-    public HiloEscribir(Socket socket, Usuario usuario, MiMarcoCliente miMarcoCliente, boolean first_conn) {
+    public HiloEscribir(Socket socket, Usuario usuario, MiMarcoCliente miMarcoCliente, boolean first_conn, MiMarcoUsuario miMarcoUsuario) {
         this.socket = socket;
         this.usuario = usuario;
         this.miMarcoCliente = miMarcoCliente;
         this.first_conn = first_conn;
+        this.miMarcoUsuario = miMarcoUsuario;
     }
 
     @Override
@@ -137,12 +136,16 @@ class HiloEscribir implements Runnable {
                     try {
                         if (miMarcoCliente.txtSend.equalsIgnoreCase("/q")) {
                             // Enviar mensaje de desconexión al servidor
-                            // ej: alberto:/q
-                            escritura.writeUTF(usuario.getUsuario() + "," + "/q");
-                            //escritura.writeUTF("/q");
+                            // ej: alberto,/q
+                            escritura.writeUTF(usuario.getUsuario() + "," + "/q" + "," + miMarcoCliente.cerrarVentanaInesperado);
                             // Cerrar el socket y finalizar la aplicación
                             socket.close();
+                            //System.exit(0);
+                            miMarcoCliente.marco.dispose();
+                            JOptionPane.showMessageDialog(null, "Has salido del chat");
                             System.exit(0);
+
+
                         } else {
                             // Enviar mensaje normal al servidor
                             escritura.writeUTF(usuario.getUsuario() + ": " + miMarcoCliente.txtSend);
@@ -187,23 +190,23 @@ class HiloLeer implements Runnable {
 
                 if (msjRecieved.equals("/q")) {
                     System.out.println("Algun usuario ha enviado el /q");
-                    
+
                 } else if (first_msj_received) {
                     // en el caso de que sea el primer mensaje para que no 
                     // me mande de primeras \n que queda mal
                     miMarcoCliente.txtSend = msjRecieved;
                     miMarcoCliente.txtArea.append(miMarcoCliente.txtSend);
                     first_msj_received = false;
-                    
+
                     // en el caso de que el primer msj recibido de indicando que el chat esta ocupado
-                    if(msjRecieved.equalsIgnoreCase("El chat está lleno. Por favor, inténtelo más tarde.")) {
+                    if (msjRecieved.equalsIgnoreCase("El chat está lleno. Por favor, inténtelo más tarde.")) {
                         // en el caso de que el msj sea de que el chat esta ocupado
                         System.out.println("Chat ocupado...");
                         miMarcoCliente.btnEnviar.setEnabled(false);
                     }
-                    
+
                     System.out.println("Mensaje bienvenida recibido");
-                } else if(msjRecieved.equals("**El servidor se ha desconectado**")) {
+                } else if (msjRecieved.equals("**El servidor se ha desconectado**")) {
                     miMarcoCliente.txtSend = msjRecieved;
                     miMarcoCliente.txtArea.append("\n" + miMarcoCliente.txtSend);
                     System.out.println("Servidor desconectado!");
@@ -227,19 +230,20 @@ class Usuario implements Runnable {
 
     private String usuario;
     private int puerto;
+    private String IP;
     //MiMarcoCliente miMarcoCliente;
-    String msjBienvenida = "Bienvenido al chat " + usuario + ", estas listo para chatear!";
 
     public Usuario(MiMarcoUsuario miMarcoUsuario) {
         this.usuario = miMarcoUsuario.nombreUsuario;
         this.puerto = miMarcoUsuario.puerto;
+        this.IP = miMarcoUsuario.IP;
     }
 
     @Override
     public void run() {
         this.usuario = usuario;
         this.puerto = puerto;
-        System.out.println(msjBienvenida);
+        this.IP = IP;
     }
 
     public void setUsuario(String usuario) {
@@ -257,7 +261,13 @@ class Usuario implements Runnable {
     public void setPuerto(int puerto) {
         this.puerto = puerto;
     }
-    
-    
+
+    public String getIP() {
+        return IP;
+    }
+
+    public void setIP(String IP) {
+        this.IP = IP;
+    }
 
 }

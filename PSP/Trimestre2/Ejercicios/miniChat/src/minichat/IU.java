@@ -31,6 +31,7 @@ public class IU {
 class MiMarcoCliente extends JFrame {
     
     //MiMarcoUsuario miMarcoUsuario;
+    boolean cerrarVentanaInesperado = false;
 
     JFrame marco;
     JPanel panelChat;
