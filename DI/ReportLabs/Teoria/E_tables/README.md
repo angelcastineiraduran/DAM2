@@ -36,6 +36,7 @@ Table(data,
 # siempre este formato independientemente de lo que
 # sea i (str, flowables etc)
 # esta es una tabla de solo una fila y una columna
+# La lista es una lista de listas.
 data=[[i]]
 ```
 
@@ -59,4 +60,50 @@ instancia de `TableStyle` a la instancia de `Table`.
 Si se usa varias vecer este metodo, los posteriores
 anulan a los anteriores.
 
-## Clase `TableStyle`
+## Clase `TableStyle` :art:
+
+La instancia de esta clase contendrá los
+estilos que queremos aplicar a la tabla.
+
+```python
+Table.setStyle(TableStyle([
+  ("TEXTCOLOR", (1,1), (-2,-2), colors.red), # (*1)
+  ("BACKGROUND", (1,1), (-2,-2), colors.green)
+  ...
+]))
+
+# (*1) FORMATO:
+(PROPIEDAD, celdaInicio, celdaFinal, caracPropiedad)
+```
+
+### :one: Cell Formating Commands (propiedades) 
+* `"FONT"` fontname, optional fontsize, optional leading
+* `"FONTNAME"` or `"FACE"` takes fontname
+* `"FONTSIZE"` or `"SIZE"` takes fontsize in points
+* `"LEADING"` takes leading in points
+* `"TEXTCOLOR"` takes color name or RGB tuple
+* `"ALIGMENT"` or `"ALIGN"` takes one of: `"LEFT"`,
+`"RIGHT"`, `"CENTRE"` (or `"CENTER"`) or `"DECIMAL"`.
+* `"LEFTPADDING"` takes an integer (default: 6).
+* `"RIGHTPADDING"` takes an integer (default: 6).
+* `"BOTTOMPADDING"` takes an integer (default: 3).
+* `"TOPPADDING"` takes an integer (default: 3).
+* `"BACKGROUND"` takes a color defined by an object, string name or numeric tuple/list, 
+or takes a list/tuple describing a desired gradient fill which should
+contain three elements of the form [DIRECTION, startColor, endColor]
+where DIRECTION is either VERTICAL or HORIZONTAL.
+* `"ROWBACKGROUNDS"` takes a list of colors to be used cyclically.
+* `"COLBACKGROUNDS"` takes a list of colors to be used cyclically.
+* `"VALIGN"` takes one of `"TOP"`, `"MIDDLE"` or the default `"BOTTOM"`.
+
+### :two: Line commands
+* `"INNERGRID"` por dentro. coge grosor en ptos y color
+* `"BOX"` or `"OUTLINE"` lo que envuelve. coge grosor en ptos y color
+* `"GRID"` es el quivalente de aplicar `"BOX"` + `"INNERGRID"`
+* `"LINEBELOW"`
+* `"LINEABOVE"`
+* `"LINEBEFORE"`
+* `"LINEAFTER"`
+
+> [WARNING] Causan problemas cuando la tabla se splitea
+

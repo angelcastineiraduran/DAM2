@@ -4,7 +4,7 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.platypus import Paragraph, Frame, Table
 
-c = canvas.Canvas("../pdfs/A_tables.pdf")
+c = canvas.Canvas("../pdfs/A_introduccion.pdf")
 styles = getSampleStyleSheet()
 c.translate(inch, inch * 10)
 

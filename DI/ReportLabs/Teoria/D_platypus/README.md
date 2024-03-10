@@ -38,6 +38,73 @@ ocurre cd se empieza a usar un frame por primera vez.
 
 ## :two: Tipo capa: `Flowables`
 
+La clase `Flowable` es una clase abstacta para cosas
+que pueden ser dibujadas. Cada instancia de la misma
+conoce su tamaño, tiene su propio sistema de coords (pero 
+esto requiere que la API base proporcione un sist de coords
+absolutas cd se llama al metodo `Flowable.draw`).
+
+> Es importante destacar que
+> la clase `Flowable` es una clase abstracta y normalmente
+> usada SOLO como una **clase base**.
+
+Para utilizar un `Flowable` hay que importar:
+```python
+# Flowable puede ser: Paragraph, Table...
+from reportlab.platypus import Flowable
+```
+
+### Ejemplos de `Flowables` :family_man_woman_boy_boy:
+
+* `Paragraph(text, width, height` 
+
+(no se si el widht y height son obligatorios).
+
+* `Image(filename, width=None, height=None)`
+
+
+* `Spacer(width, height)` 
+
+genera espacio en blanco dentro del story.
+
+* `PageBreak()` 
+
+salto de pagina. Util para docs donde haya 
+**un Frame unico**. En el caso de que haya varios Frames
+actúa como un salto hacia el siguiente Frame.
+
+* `CondPageBreak(height)`
+
+Evalua si hay espacio suficiente en el marco
+actual para continuar con el contenido. Si no 
+hay espacio vertical suficiente, se produce
+un quiebre de marco y el contenido restante se mueve
+al siguiente marco o a una nueva paginas si no
+hay más marcos disponibles
+
+* `KeepTogether(flowables)`
+
+Toma lista de flowables y trata de mantenerlos juntos 
+en el mismo Frame. Si la lista de flowables supera
+el espacio actual del Frame, entonces se utiliza
+todo el espacio y se fuerza un quiebre de Frame.
+
+
+* `TableOfContents()`
+
+No vi mucho...
+
+* `SimpleIndex()`
+
+Los terminos que esten dentro de la etiqueta
+`<index>` se agregan al indice.
+
+```python
+from reportlab.platypus.tableofcontents import SimpleIndex
+```
+
+
+
 ### Metodos de `Flowables` :hammer_and_wrench:
 
 Los `Flowables` son cosas que pueden ser dibujadas y las cuales 
@@ -112,30 +179,47 @@ para tablas, imagenes, u otros objetos que son más
 pequeños que el ancho del marco, esto **determina
 su colocación horizontal**.
 
----
+Ejemplo de esto en `BA_flowables`
 
-La clase `Flowable` es una clase abstacta para cosas
-que pueden ser dibujadas. Cada instancia de la misma
-conoce su tamaño, tiene su propio sistema de coords (pero 
-esto requiere que la API base proporcione un sist de coords
-absolutas cd se llama al metodo `Flowable.draw`).
-
-> Es importante destacar que
-> la clase `Flowable` es una clase abstracta y normalmente
-> usada SOLO como una **clase base**.
-
-### Platypus Story
+### "Platypus Story"
 
 Consiste en una secuencia de elementos
 basicos `Flowables` y esos elementos conducen los datos
 conducidos por el motor de formateo de Platypus.
+
+```python
+# 0. Creamos el "Platypus Story"
+elements = []
+
+# 1. Elemento Flowable = Table
+data= [['00', '01', '02', '03', '04'],
+       ['10', '11', '12', '13', '14'],
+       ['20', '21', '22', '23', '24'],
+       ['30', '31', '32', '33', '34']]
+
+t = Table(data=data)
+
+# 2. Elemento Flowable = Paragraph
+styles = getSampleStyleSheet()
+style = styles['BodyText']
+P = Paragraph("Esto es un pequeño ejemplo", style)
+
+# 3. Añadimos los ele flowables al story
+elements.append(t)
+elements.append(P)
+```
+
+> Realmente el "Platypus Story" es simplemente
+> una lista pychon (`[]`) donde se meten 
+> varios elementos flowables. Esto es a lo que le 
+> llama Reportlab "Platypus Story", pero basicamente
+> es eso, una lista.
 
 Para modificar el comportamiento del motor
 existe un tipo espcecial de `Flowable` llamado
 `ActionFlowables` le dice al diseño del motor que, por ejemplo,
 salte a la siguiente columna o se cambie a otro
 `PageTemplate`.
-
 
 ## :three: Tipo capa: `Frame`
 

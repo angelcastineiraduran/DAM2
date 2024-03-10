@@ -1,4 +1,4 @@
-# Haciendo modificaciones visuales - Tuning
+# Colors, Fonts and Path
 
 ## Colors
 
