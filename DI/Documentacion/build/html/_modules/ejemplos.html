@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ejemplos &#8212; documentación de pruebaSphinx - </title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
+    <script src="../_static/documentation_options.js?v=e2bb6099"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=efdbd0b9"></script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Código fuente para ejemplos</h1><div class="highlight"><pre>
+<span></span>
+
+<div class="viewcode-block" id="promedio">
+<a class="viewcode-back" href="../ejemplos.html#ejemplos.promedio">[documentos]</a>
+<span class="k">def</span> <span class="nf">promedio</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="s1">&#39;Calcula el promedio de dos números.&#39;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span></div>
+
+
+
+<span class="c1"># CADENA MULTILINEAS</span>
+<div class="viewcode-block" id="formula_cuadratica">
+<a class="viewcode-back" href="../ejemplos.html#ejemplos.formula_cuadratica">[documentos]</a>
+<span class="k">def</span> <span class="nf">formula_cuadratica</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Resuelve una ecuación cuadrática.</span>
+
+<span class="sd">    Devuelve en una tupla las dos raíces que resuelven la</span>
+<span class="sd">    ecuación cuadrática:</span>
+
+<span class="sd">        ax^2 + bx + c = 0.</span>
+
+<span class="sd">    Utiliza la fórmula general (también conocida</span>
+<span class="sd">    coloquialmente como el &quot;chicharronero&quot;).</span>
+
+<span class="sd">    Parámetros:</span>
+<span class="sd">    a -- coeficiente cuadrático (debe ser distinto de 0)</span>
+<span class="sd">    b -- coeficiente lineal</span>
+<span class="sd">    c -- término independiente</span>
+
+<span class="sd">    Excepciones:</span>
+<span class="sd">    ValueError -- Si (a == 0)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s1">&#39;Coeficiente cuadrático no debe ser 0.&#39;</span><span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">cmath</span> <span class="kn">import</span> <span class="n">sqrt</span>
+    <span class="n">discriminante</span> <span class="o">=</span> <span class="n">b</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">discriminante</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">discriminante</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span></div>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">promedio</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span> <span class="c1"># &gt; Calcula el promedio de dos números.</span>
+<span class="n">promedio</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="s2">&quot;cambio el comentario de esta func&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">promedio</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">promedio</span><span class="p">)</span>
+<span class="c1"># &gt; promedio(a, b)</span>
+<span class="c1"># &gt;     cambio el comentario de esta func</span>
+
+
+<div class="viewcode-block" id="probandoSphinx">
+<a class="viewcode-back" href="../ejemplos.html#ejemplos.probandoSphinx">[documentos]</a>
+<span class="k">def</span> <span class="nf">probandoSphinx</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Esto es una prueba.</span>
+
+<span class="sd">    **bold** and *italics**</span>
+
+<span class="sd">    Listas:</span>
+<span class="sd">    * primera linea</span>
+<span class="sd">    * segunda linea</span>
+
+<span class="sd">    or</span>
+<span class="sd">    1. Item1</span>
+<span class="sd">    2. Item2</span>
+<span class="sd">    3. Item3</span>
+
+<span class="sd">    H1 -- Top of Page Header</span>
+<span class="sd">    ************************</span>
+<span class="sd">    There should only be one of these per page and this will also -- when</span>
+<span class="sd">    converting to pdf -- be used for the chapters.</span>
+
+<span class="sd">    H2 -- Page Sections</span>
+<span class="sd">    ===================</span>
+
+<span class="sd">    H3 -- Subsection</span>
+<span class="sd">    ----------------</span>
+
+<span class="sd">    H4 -- Subsubsection</span>
+<span class="sd">    +++++++++++++++++++</span>
+
+<span class="sd">    A Subpoint</span>
+<span class="sd">    ----------</span>
+<span class="sd">    This is my idea.</span>
+
+<span class="sd">    A subsubpoint</span>
+<span class="sd">    +++++++++++++</span>
+<span class="sd">    This is a smaller idea.</span>
+
+<span class="sd">    COMPLEX TABLE:</span>
+
+<span class="sd">    +------------+------------+-----------+</span>
+<span class="sd">    | Header 1   | Header 2   | Header 3  |</span>
+<span class="sd">    +============+============+===========+</span>
+<span class="sd">    | body row 1 | column 2   | column 3  |</span>
+<span class="sd">    +------------+------------+-----------+</span>
+<span class="sd">    | body row 2 | Cells may span columns.|</span>
+<span class="sd">    +------------+------------+-----------+</span>
+<span class="sd">    | body row 3 | Cells may  | - Cells   |</span>
+<span class="sd">    +------------+ span rows. | - contain |</span>
+<span class="sd">    | body row 4 |            | - blocks. |</span>
+<span class="sd">    +------------+------------+-----------+</span>
+
+<span class="sd">    SIMPLE TABLE:</span>
+
+<span class="sd">    =====  =====  ======</span>
+<span class="sd">    Inputs     Output</span>
+<span class="sd">    ------------  ------</span>
+<span class="sd">    A      B    A or B</span>
+<span class="sd">    =====  =====  ======</span>
+<span class="sd">    False  False  False</span>
+<span class="sd">    True   False  True</span>
+<span class="sd">    False  True   True</span>
+<span class="sd">    True   True   True</span>
+<span class="sd">    =====  =====  ======</span>
+
+
+<span class="sd">    `Docs for this project &lt;http://packages.python.org/an_example_pypi_project/&gt;`_</span>
+
+<span class="sd">    .. figure::  images/sweat.jpg</span>
+<span class="sd">    :align:   center</span>
+
+<span class="sd">    Proof that getting rich is mostly luck.</span>
+
+<span class="sd">    :download:`An Example Pypi Project&lt;docs/examplepypi.pdf&gt;`</span>
+
+<span class="sd">    .. |doctest| replace:: :mod:`doctest`</span>
+
+<span class="sd">    I really like |doctest|.</span>
+
+<span class="sd">    **PARAGRAFOS**</span>
+
+<span class="sd">    This is a statement.</span>
+
+<span class="sd">    .. warning::</span>
+
+<span class="sd">       Never, ever, use this code!</span>
+
+<span class="sd">    .. versionadded:: 0.0.1</span>
+
+<span class="sd">    It&#39;s okay to use this code.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">pruebaSphinx</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Código de módulo</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, angel.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

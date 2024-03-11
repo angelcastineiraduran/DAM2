@@ -16,7 +16,7 @@ def hello(c):
  # +control, +smallpdf, +fasterrender (mejor que muchos metodos drawStrings)
  c.translate(inch*3, 0)
  textobject = c.beginText()
- textobject.setTextOrigin(0, inch*2)
+ # Mueve el cursor a una posición dada por las coordenadas (x,y). textobject.setTextOrigin(0, inch*2)
  textobject.setFont('Times-Roman', 12) # (psfontname='Times-Roman', size=12, leading=None)
  # añade un txt y de seguido agrega un salto de linea
  textobject.textLine("Primera linea")

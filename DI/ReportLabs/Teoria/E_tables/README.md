@@ -107,3 +107,6 @@ where DIRECTION is either VERTICAL or HORIZONTAL.
 
 > [WARNING] Causan problemas cuando la tabla se splitea
 
+## Repasar !!
+
+COMO COMBINAR CELDAS??

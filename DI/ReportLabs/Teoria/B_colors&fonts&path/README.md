@@ -33,4 +33,21 @@ no lo soportan.
 
 ## Fonts & Text Objects
 
-![fonts](media/fonts.png)
+14 tipos de letra estándar siempre están disponibles:
+
+```python
+standardFonts = ( 'Courier', 
+                  'Courier-Bold', 
+                  'Courier-Oblique', 
+                  'Courier-BoldOblique', 
+                  'Helvetica', 
+                  'Helvetica-Bold', 
+                  'Helvetica-Oblique', 
+                  'Helvetica-BoldOblique', 
+                  'Times-Roman', 
+                  'Times-Bold', 
+                  'Times-Italic', 
+                  'Times-BoldItalic', 
+                  'Symbol',
+                  'ZapfDingbats')
+```

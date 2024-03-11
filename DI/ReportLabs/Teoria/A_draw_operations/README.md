@@ -1,7 +1,34 @@
 # Introduccion 
 
-Las coordenadas (0, 0) se identifican
-abajo de todo a la izquierda en el documento.
+## Canvas
+
+El paquete `pdfgen` es el nivel más bajo
+para generar documentos pdf. Un programa
+pdfgen en realidad es un conjunto de 
+instrucciones para dibujar un documento.
+
+La interfaz que provee de opereaciones de 
+dibujo es el objeto `Canvas`.
+
+El `Canvas` hay que verlo como una hoja de 
+papel en blanco dd tenemos coordenadas cartesianas
+(x, y) y el origen (0, 0) que se encuentra abajo
+de todo a la izquierda.
+
+```python
+from reportlab.pdfgen import canvas
+```
+
+Algunos métodos:
+
+```python
+canvas = canvas.Canvas("hello.pdf")
+# finaliza la pintura de la página actual.
+# todo el dibujo adicional se hará en la siguiente pag.
+canvas.showPage()
+```
+
+----
 
 ## Parametros
 
@@ -82,9 +109,12 @@ soportados directamente por la interfaz
 de canvas.
 
 ```python
+# instancia el objeto txt
 textobject = canvas.beginText(x, y)
+# dibuja el texto del objeto
 canvas.drawText(textobject)
 ```
+Para más info ver el repo de `B_colors&fonts&path`
 
 ### Objetos de ruta :book: :heavy_plus_sign:
 
