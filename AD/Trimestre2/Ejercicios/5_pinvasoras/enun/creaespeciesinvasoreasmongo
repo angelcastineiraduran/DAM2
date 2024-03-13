@@ -1,0 +1,29 @@
+// conecto a mongo dende un terminal  :mongo
+// vou crear colecion empretodos dentro da base test
+// COPIAR e PEGAR no TERMINAL  cliente de MONGO DENDE AQUI ata o seguinte comentario
+
+use test
+db.especiesinvasoras.remove({})
+var especiesinvasoras=
+[
+{_id:1,nomei:"a",tempbarrera:23},
+{_id:2,nomei:"b",tempbarrera:25},
+{_id:3,nomei:"c",tempbarrera:25},
+{_id:4,nomei:"d",tempbarrera:26},
+{_id:5,nomei:"f",tempbarrera:17},
+{_id:6,nomei:"g",tempbarrera:24},
+{_id:7,nomei:"h",tempbarrera:20},
+{_id:8,nomei:"i",tempbarrera:19},
+{_id:9,nomei:"k",tempbarrera:22},
+{_id:10,nomei:"j",tempbarrera:23},
+{_id:11,nomei:"m",tempbarrera:24},
+{_id:12,nomei:"n",tempbarrera:18},
+{_id:13,nomei:"t",tempbarrera:18},
+{_id:14,nomei:"p",tempbarrera:19},
+{_id:15,nomei:"q",tempbarrera:20}
+]
+db.especiesinvasoras.insert(especiesinvasoras)
+
+//ATA AQUI
+// observacions:
+// lembra que cando leas dende java   datos numericos creados en mongo debes lelos como Double , e decir que neste caso _id e tempbarrera: deben ser lidos como Double.
