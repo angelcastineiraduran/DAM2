@@ -35,43 +35,35 @@ public class Main {
 
     public static void main(String[] args) {
         
-        // -- MONGOCLIENT --
-        // para comunicarte con mongodb usamos la clase MongoClient
-        // creo el constructor de MongoClient
-        MongoClient mongoClient = mongoClient = MongoClients.create();
-        //MongoDatabase db = mongoClient.getDatabase("test");
-        //MongoCollection<Document> coll = db.getCollection("")
         
-        
-        // -- CONNECTION URL --
-        // esta url de conexion la utiliza el driver para conectarse a MongoDb
-        String connectionURL = "mongodb://postgres:debian@localhost:27017/?maxPoolSize=20&w=majorirty";
-        
-        
-        MongoDatabase database = mongoClient.getDatabase("test");
-        try {
-            // mando un ping para comprobar conexion
-            Bson command = new BsonDocument("ping", new BsonInt64(1));
-            Document commandResult = database.runCommand(command);
-            System.out.println("Has hecho un PING a Mongodb correctamente!");
-        } catch (MongoException me) {
-            System.err.print(me);
-        }
-        
-        // Obtener la colección "uvas"
-        MongoCollection<Document> uvasCollection = database.getCollection("uvas");
+//        MongoDatabase database = mongoClient.getDatabase("test");
+//        try {
+//            // mando un ping para comprobar conexion
+//            Bson command = new BsonDocument("ping", new BsonInt64(1));
+//            Document commandResult = database.runCommand(command);
+//            System.out.println("Has hecho un PING a Mongodb correctamente!");
+//        } catch (MongoException me) {
+//            System.err.print(me);
+//        }
+//        
+//        // -- CONSULTAS --
+//        // Obtener la colección "uvas"
+//        MongoCollection<Document> uvasCollection = database.getCollection("uvas");
+//
+//        // Realizar una consulta (find) en la colección "uvas"
+//        FindIterable<Document> uvasDocuments = uvasCollection.find();
+//
+//        // Iterar sobre los documentos resultantes
+//        for (Document document : uvasDocuments) {
+//            System.out.println(document.toJson());
+//        }
+//        
+//        // limpiar recursos utilizados
+//        mongoClient.close();
 
-        // Realizar una consulta (find) en la colección "uvas"
-        FindIterable<Document> uvasDocuments = uvasCollection.find();
-
-        // Iterar sobre los documentos resultantes
-        for (Document document : uvasDocuments) {
-            System.out.println(document.toJson());
-        }
-        
-        
-        // limpiar recursos utilizados
-        mongoClient.close();
-        
+        Metodos m = new Metodos();
+        m.connectDatabase("test");
+        m.getAnalisis();
+        m.closeClient();
     }
 }

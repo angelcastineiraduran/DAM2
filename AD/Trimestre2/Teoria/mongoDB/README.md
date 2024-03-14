@@ -348,6 +348,7 @@ test> db.people.find()
   { _id: ObjectId('65f24b7c7a134e6af0517f5c'), name: 'Jones', age: 50 }
 ]
 // modifico
+// creo que el equivalente seria updateMany()
 test> db.people.update(  {}, {"$set" : {"numero":2}}, {multi:true} )
 DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
 {
@@ -376,6 +377,17 @@ test> db.people.find()
   }
 ]
 
+```
+
+Incrementar/Decrementar valores
+(si no los encuentra, los crea).
+```javascript
+// incrementar
+db.people.update({_id:1}, {"$inc":{"stock":1}})
+// decrementar
+db.people.update({_id:1}, {"$inc":{"stock":-1}})
+
+// creo que $inc puede ir o no entre comillas
 ```
 
 ### :four: Consultar
@@ -483,6 +495,12 @@ db.persoas.find({nome:{$regex:"l$"}})
 
 // listar documentos que comenzen por “f” ou teñan o campo “enderezo”
 db.persoas.find({$or:[  {nome:{$regex:”^f”}}, {enderezo: {$exists:true} } ]  } )
+```
+
+#### Consultas complejas/combinadas
+  
+```javascript
+
 ```
 
 ### Ejemplos :test_tube:
