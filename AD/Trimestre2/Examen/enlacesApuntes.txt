@@ -1,0 +1,13 @@
+https://github.com/angelcastineira/DAM2/blob/main/AD/Trimestre2/Ejercicios/1_evinopmongo/AD_angelcastineira/src/ad_angelcastineira/Metodos.java
+
+https://github.com/angelcastineira/DAM2/blob/main/AD/Trimestre2/Ejercicios/3_evinopobjectdb/evinopobjectdb/src/evinopobjectdb/Metodos.java
+
+https://github.com/angelcastineira/DAM2/blob/main/AD/Trimestre2/Ejercicios/4_datosestructuradospostgres/produtosjava/src/produtosjava/Test.java
+
+https://github.com/angelcastineira/DAM2/tree/main/AD/Trimestre2/Teoria/datosEstructurados/src/datosestructurados
+
+https://github.com/angelcastineira/DAM2/tree/main/AD/Trimestre2/Teoria/mongoDB
+
+https://github.com/angelcastineira/DAM2/tree/main/AD/Trimestre2/Teoria/Objectdb/Tutorial/src/tutorial
+
+
