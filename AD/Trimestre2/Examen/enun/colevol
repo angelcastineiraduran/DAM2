@@ -1,0 +1,18 @@
+use test
+db.evolucion.drop()
+var evolu=
+[
+{_id:"361a",maxcolesterol: 0.0,novo:0.0,evoluci:"n"},
+{_id:"362b",maxcolesterol: 0.0,novo:0.0,evoluci:"n"},
+{_id:"363c",maxcolesterol: 0.0,novo:0.0,evoluci:"n"},
+{_id:"364d",maxcolesterol: 0.0,novo:0.0,evoluci:"n"},
+{_id:"365e",maxcolesterol: 0.0,novo:0.0,evoluci:"n"},
+{_id:"366f",maxcolesterol: 0.0,novo:0.0,evoluci:"n"},
+{_id:"367g",maxcolesterol: 0.0,novo:0.0,evoluci:"n"}
+]
+
+db.evolucion.insert(evolu)
+
+
+
+
