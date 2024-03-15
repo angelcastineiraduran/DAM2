@@ -31,21 +31,14 @@ import java.util.List;
  */
 public class Pinvasoras {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         
-        MongoClient mongoClient = MongoClients.create();
-        MongoDatabase database = mongoClient.getDatabase("test");
+        Metodos m = new Metodos();
+        m.setConnectionObjectDB("/home/ubuntu/DAM2/AD/Trimestre2/Ejercicios/5_pinvasoras/pinvasoras/src/pinvasoras/encontradasezonas.odb");
         
-        MongoCollection<Document> coll = database.getCollection("especiesinvasoras");
-        Bson eq = eq("_id", 1);
-        FindIterable<Document> preResult = coll.find(eq);
-        MongoCursor<Document> result = preResult.iterator();
-        Document doc = result.next();
-        String nomei = doc.getString("nomei");
-        Integer tempbarrera = doc.getInteger("tempbarrera");
-        System.out.println("nomei = " + nomei);
-        System.out.println("tempbarrera = " + tempbarrera);
+        m.getEncontradas();
         
+        m.closeConnectionObjectDB();
     }
     
 }
