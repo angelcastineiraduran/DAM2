@@ -1,0 +1,34 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-28 13:16:51 #1 store] 
+Database '/media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/db/p2.odb' is opened by 3331@debian
+
+[2024-02-28 13:16:51 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-02-28 13:16:51 #3 type] 
+Type tutorial.Point is not enhanced.
+
+[2024-02-28 13:16:52 #4 store] 
+Database '/media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/db/p2.odb' is closed by 3331@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-28 13:53:33 #1 store] 
+Database '/home/postgres/programas/objectdb-2.8.8/db/ejemplo1.odb' is opened by 4033@debian
+
+[2024-02-28 13:53:33 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-02-28 13:54:18 #3 store] 
+Database '/home/postgres/programas/objectdb-2.8.8/db/ejemplo1.odb' is closed by 4033@debian
+
+[2024-02-28 13:54:18 #4 store] 
+Database '/media/sf_AD/Trimestre2/Ejercicios/3_evinopobjectdb/enun/traballos.odb' is opened by 4033@debian
+
+[2024-02-28 13:54:18 #5 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-02-28 13:58:04 #6 store] 
+Database '/media/sf_AD/Trimestre2/Ejercicios/3_evinopobjectdb/enun/traballos.odb' is closed by 4033@debian
+

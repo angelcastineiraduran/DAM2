@@ -1,0 +1,430 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 13:14:50 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is opened by 2407@debian
+
+[2024-02-02 13:14:50 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 13:14:50 #3 type] 
+Type tutorial.Point is not enhanced.
+
+[2024-02-02 13:14:50 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is closed by 2407@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 13:15:58 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is opened by 2454@debian
+
+[2024-02-02 13:15:58 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 13:24:17 #3 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is closed by 2454@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 13:24:21 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is opened by 2599@debian
+
+[2024-02-02 13:24:21 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 13:24:21 #3 type] 
+Type tutorial.Point is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 13:24:31 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' has been recovered (tr. 5-5)
+
+[2024-02-02 13:24:31 #2 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is opened by 2627@debian
+
+[2024-02-02 13:24:31 #3 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 13:24:44 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is closed by 2627@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 13:25:20 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is opened by 2670@debian
+
+[2024-02-02 13:25:20 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 13:25:20 #3 type] 
+Type tutorial.Point is not enhanced.
+
+[2024-02-02 13:25:20 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/p2.odb' is closed by 2670@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 13:33:48 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 2849@debian
+
+[2024-02-02 13:33:48 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 13:34:34 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' has been recovered (tr. 1-3)
+
+[2024-02-02 13:34:34 #2 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 2885@debian
+
+[2024-02-02 13:34:34 #3 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 13:35:28 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 2946@debian
+
+[2024-02-02 13:35:28 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 13:45:31 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' has been recovered (tr. 1-3)
+
+[2024-02-02 13:45:31 #2 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3044@debian
+
+[2024-02-02 13:45:31 #3 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 13:45:31 #4 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+[2024-02-02 13:45:31 #5 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is closed by 3044@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 13:53:53 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3101@debian
+
+[2024-02-02 13:53:53 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 13:53:53 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+[2024-02-02 13:53:53 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is closed by 3101@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 13:59:02 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3154@debian
+
+[2024-02-02 13:59:02 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 13:59:02 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+[2024-02-02 13:59:02 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is closed by 3154@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:02:14 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3193@debian
+
+[2024-02-02 14:02:14 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:02:14 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+[2024-02-02 14:02:14 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is closed by 3193@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:02:34 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3226@debian
+
+[2024-02-02 14:02:34 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:02:34 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+[2024-02-02 14:02:34 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is closed by 3226@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:02:55 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3254@debian
+
+[2024-02-02 14:02:55 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:02:55 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+[2024-02-02 14:02:55 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is closed by 3254@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:04:15 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3285@debian
+
+[2024-02-02 14:04:15 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:04:41 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3322@debian
+
+[2024-02-02 14:04:41 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:04:54 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' has been recovered (tr. 1-3)
+
+[2024-02-02 14:04:54 #2 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3353@debian
+
+[2024-02-02 14:04:54 #3 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:06:26 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3386@debian
+
+[2024-02-02 14:06:26 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:06:26 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+[2024-02-02 14:06:26 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is closed by 3386@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:07:02 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3418@debian
+
+[2024-02-02 14:07:02 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:07:02 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+[2024-02-02 14:07:02 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is closed by 3418@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:07:21 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3448@debian
+
+[2024-02-02 14:07:21 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:07:21 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+[2024-02-02 14:07:21 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is closed by 3448@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:08:02 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3481@debian
+
+[2024-02-02 14:08:02 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:08:02 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:08:25 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3510@debian
+
+[2024-02-02 14:08:25 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:08:25 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:08:32 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' has been recovered (tr. 1-4)
+
+[2024-02-02 14:08:32 #2 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3549@debian
+
+[2024-02-02 14:08:32 #3 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:08:32 #4 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:08:38 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3579@debian
+
+[2024-02-02 14:08:38 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:08:39 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:08:49 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3608@debian
+
+[2024-02-02 14:08:49 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:08:49 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:09:01 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3637@debian
+
+[2024-02-02 14:09:01 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:09:01 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+[2024-02-02 14:09:01 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is closed by 3637@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:10:10 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3672@debian
+
+[2024-02-02 14:10:10 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:10:10 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+[2024-02-02 14:10:10 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is closed by 3672@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:11:39 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3706@debian
+
+[2024-02-02 14:11:39 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:11:40 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:12:31 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3738@debian
+
+[2024-02-02 14:12:31 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:12:31 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+[2024-02-02 14:12:31 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is closed by 3738@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:13:05 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3771@debian
+
+[2024-02-02 14:13:05 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:13:20 #3 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is closed by 3771@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:20:32 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3846@debian
+
+[2024-02-02 14:20:32 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:20:32 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+[2024-02-02 14:20:32 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is closed by 3846@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:20:41 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3876@debian
+
+[2024-02-02 14:20:41 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:20:46 #3 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is closed by 3876@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:23:01 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3923@debian
+
+[2024-02-02 14:23:01 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:23:01 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:23:59 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 3957@debian
+
+[2024-02-02 14:23:59 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:23:59 #3 type] 
+Type ejemplo_proxecto_objectdb.Point is not enhanced.
+
+[2024-02-02 14:23:59 #4 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is closed by 3957@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-02 14:24:40 #1 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is opened by 4003@debian
+
+[2024-02-02 14:24:40 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/objectdb.conf
+
+[2024-02-02 14:24:44 #3 store] 
+Database '/media/sf_AD/Trimestre2/Objectdb/objectdb-2.8.9/db/ejemplo1.odb' is closed by 4003@debian
+

@@ -1,0 +1,1022 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 13:59:44 #1 store.file] 
+readTextFile error.
+
+[2024-03-13 13:59:44 #2 store.file] 
+java.io.FileNotFoundException: /home/dam2/.objectdb/exolorer.xml (No existe el fichero o el directorio)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
+	at com.objectdb.o.STH.B(STH.java:731)
+	at com.objectdb.o.STH.A(STH.java:715)
+	at com.objectdb.o.CNF.<init>(CNF.java:106)
+	at com.objectdb.o.CNF.<clinit>(CNF.java:32)
+	at com.objectdb.o.MainFrame.init(MainFrame.java:132)
+	at com.objectdb.o.EXA.<init>(EXA.java:77)
+	at com.objectdb.Explorer$1.run(Explorer.java:57)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+[2024-03-13 14:00:21 #3 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 11693@A09equipo19
+
+[2024-03-13 14:00:21 #4 store] 
+Configuration path: /home/dam2/DAM2/AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:03:09 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 3772@debian
+
+[2024-03-13 14:03:09 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:03:09 #3 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:03:09 #4 type] 
+Type examen.Consumo is not enhanced.
+
+[2024-03-13 14:03:18 #5 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' is closed by 11693@A09equipo19
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:03:20 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 3813@debian
+
+[2024-03-13 14:03:20 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:03:20 #3 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:03:20 #4 type] 
+Type examen.Consumo is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:04:02 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 3854@debian
+
+[2024-03-13 14:04:02 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:04:02 #3 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:04:02 #4 type] 
+Type examen.Consumo is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:05:29 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/examen/concar.odb' has been recovered (tr. 7-7)
+
+[2024-03-13 14:05:29 #2 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 3898@debian
+
+[2024-03-13 14:05:29 #3 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:05:29 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:05:29 #5 type] 
+Type examen.Consumo is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:06:16 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 3941@debian
+
+[2024-03-13 14:06:16 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:06:16 #3 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:06:16 #4 type] 
+Type examen.Consumo is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:06:30 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 3982@debian
+
+[2024-03-13 14:06:30 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:06:30 #3 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:06:30 #4 type] 
+Type examen.Consumo is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:06:47 #1 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 11837@A09equipo19
+
+[2024-03-13 14:06:47 #2 store] 
+Configuration path: /home/dam2/DAM2/AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:07:18 #3 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' is closed by 11837@A09equipo19
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:08:38 #1 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 11908@A09equipo19
+
+[2024-03-13 14:08:38 #2 store] 
+Configuration path: /home/dam2/DAM2/AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:10:25 #1 explorer] 
+[ObjectDB 2.8.9] javax.persistence.PersistenceException
+Recovery file '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb$' does not match db file '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' (error 145)
+	at com.objectdb.Explorer$1.run(Explorer.java:57)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+Caused by: com.objectdb.o.UserException: Recovery file '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb$' does not match db file '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb'
+	at com.objectdb.o.MSG.a(MSG.java:64)
+	at com.objectdb.o.DFL.d(DFL.java:526)
+	at com.objectdb.o.DFL.H(DFL.java:480)
+	at com.objectdb.o.DFL.<init>(DFL.java:288)
+	at com.objectdb.o.DMG.<init>(DMG.java:27)
+	at com.objectdb.o.MST.<init>(MST.java:127)
+	at com.objectdb.o.MST.ap(MST.java:109)
+	at com.objectdb.o.MSF.Y9(MSF.java:190)
+	at com.objectdb.o.OMF.s(OMF.java:805)
+	at com.objectdb.jpa.EMF.s(EMF.java:130)
+	at com.objectdb.o.OMF.x(OMF.java:716)
+	at com.objectdb.jpa.EMF.createEntityManager(EMF.java:149)
+	... 16 more
+
+[2024-03-13 14:10:35 #2 explorer] 
+[ObjectDB 2.8.9] javax.persistence.PersistenceException
+Recovery file '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb$' does not match db file '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' (error 145)
+	at java.desktop/javax.swing.Timer.fireActionPerformed(Timer.java:311)
+	at java.desktop/javax.swing.Timer$DoPostEvent.run(Timer.java:243)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+Caused by: com.objectdb.o.UserException: Recovery file '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb$' does not match db file '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb'
+	at com.objectdb.o.MSG.a(MSG.java:64)
+	at com.objectdb.o.DFL.d(DFL.java:526)
+	at com.objectdb.o.DFL.H(DFL.java:480)
+	at com.objectdb.o.DFL.<init>(DFL.java:288)
+	at com.objectdb.o.DMG.<init>(DMG.java:27)
+	at com.objectdb.o.MST.<init>(MST.java:127)
+	at com.objectdb.o.MST.ap(MST.java:109)
+	at com.objectdb.o.MSF.Y9(MSF.java:190)
+	at com.objectdb.o.OMF.s(OMF.java:805)
+	at com.objectdb.jpa.EMF.s(EMF.java:130)
+	at com.objectdb.o.OMF.x(OMF.java:716)
+	at com.objectdb.jpa.EMF.createEntityManager(EMF.java:149)
+	... 17 more
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:11:33 #1 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 12058@A09equipo19
+
+[2024-03-13 14:11:33 #2 store] 
+Configuration path: /home/dam2/DAM2/AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:11:41 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 4155@debian
+
+[2024-03-13 14:11:41 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:11:41 #3 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:11:41 #4 type] 
+Type examen.Consumo is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:11:48 #1 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' has been recovered (tr. 7-7)
+
+[2024-03-13 14:11:48 #2 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 12111@A09equipo19
+
+[2024-03-13 14:11:48 #3 store] 
+Configuration path: /home/dam2/DAM2/AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:14:18 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 4209@debian
+
+[2024-03-13 14:14:18 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:14:18 #3 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:14:27 #1 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 12184@A09equipo19
+
+[2024-03-13 14:14:27 #2 store] 
+Configuration path: /home/dam2/DAM2/AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:14:31 #3 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' is closed by 12184@A09equipo19
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:17:42 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 4262@debian
+
+[2024-03-13 14:17:42 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:17:42 #3 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:17:42 #4 type] 
+Type examen.Consumo is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:17:47 #1 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' has been recovered (tr. 7-7)
+
+[2024-03-13 14:17:47 #2 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 12267@A09equipo19
+
+[2024-03-13 14:17:47 #3 store] 
+Configuration path: /home/dam2/DAM2/AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:24:24 #4 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' is closed by 12267@A09equipo19
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:27:41 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 4383@debian
+
+[2024-03-13 14:27:41 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:27:41 #3 type] 
+Type Pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 14:27:41 #4 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/examen/concar.odb' is closed by 4383@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:28:20 #1 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 12445@A09equipo19
+
+[2024-03-13 14:28:20 #2 store] 
+Configuration path: /home/dam2/DAM2/AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:28:26 #3 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' is closed by 12445@A09equipo19
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:29:07 #1 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 12496@A09equipo19
+
+[2024-03-13 14:29:07 #2 store] 
+Configuration path: /home/dam2/DAM2/AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:29:10 #3 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' is closed by 12496@A09equipo19
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:29:15 #1 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' is opened by 12541@A09equipo19
+
+[2024-03-13 14:29:15 #2 store] 
+Configuration path: /home/dam2/DAM2/AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:29:53 #3 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/examen/concar.odb' is closed by 12541@A09equipo19
+
+[2024-03-13 14:29:53 #4 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/Pdietaenfermidade/concar.odb' is opened by 12541@A09equipo19
+
+[2024-03-13 14:29:53 #5 store] 
+Configuration path: /home/dam2/DAM2/AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:30:51 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/Pdietaenfermidade/concar.odb' is opened by 4446@debian
+
+[2024-03-13 14:30:51 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:30:51 #3 type] 
+Type Pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 14:31:01 #6 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/Pdietaenfermidade/concar.odb' is closed by 12541@A09equipo19
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:31:03 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/Pdietaenfermidade/concar.odb' is opened by 4487@debian
+
+[2024-03-13 14:31:03 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:31:03 #3 type] 
+Type Pdietaenfermidade.Consumo is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:31:08 #1 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/Pdietaenfermidade/concar.odb' has been recovered (tr. 7-7)
+
+[2024-03-13 14:31:08 #2 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/Pdietaenfermidade/concar.odb' is opened by 12615@A09equipo19
+
+[2024-03-13 14:31:08 #3 store] 
+Configuration path: /home/dam2/DAM2/AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:31:12 #4 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/Pdietaenfermidade/concar.odb' is closed by 12615@A09equipo19
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:31:56 #1 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/Pdietaenfermidade/concar.odb' is opened by 12665@A09equipo19
+
+[2024-03-13 14:31:56 #2 store] 
+Configuration path: /home/dam2/DAM2/AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:32:05 #3 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/Pdietaenfermidade/concar.odb' is closed by 12665@A09equipo19
+
+[2024-03-13 14:32:06 #4 explorer] 
+[ObjectDB 2.8.9] javax.persistence.PersistenceException
+Failed to open file '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/pdietaenfermidade' (error 115)
+	at java.desktop/javax.swing.Timer.fireActionPerformed(Timer.java:311)
+	at java.desktop/javax.swing.Timer$DoPostEvent.run(Timer.java:243)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+Caused by: com.objectdb.o.UserException: Failed to open file '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/pdietaenfermidade'
+	at com.objectdb.o.MSG.a(MSG.java:77)
+	at com.objectdb.o.LFL.t(LFL.java:1505)
+	at com.objectdb.o.LFL.x(LFL.java:918)
+	at com.objectdb.o.LFL.x(LFL.java:814)
+	at com.objectdb.o.DFL.<init>(DFL.java:241)
+	at com.objectdb.o.DMG.<init>(DMG.java:27)
+	at com.objectdb.o.MST.<init>(MST.java:127)
+	at com.objectdb.o.MST.ap(MST.java:109)
+	at com.objectdb.o.MSF.Y9(MSF.java:190)
+	at com.objectdb.o.OMF.s(OMF.java:805)
+	at com.objectdb.jpa.EMF.s(EMF.java:130)
+	at com.objectdb.o.OMF.x(OMF.java:716)
+	at com.objectdb.jpa.EMF.createEntityManager(EMF.java:149)
+	... 17 more
+Caused by: java.io.FileNotFoundException: /home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/pdietaenfermidade (Es un directorio)
+	at java.base/java.io.RandomAccessFile.open0(Native Method)
+	at java.base/java.io.RandomAccessFile.open(RandomAccessFile.java:344)
+	at java.base/java.io.RandomAccessFile.<init>(RandomAccessFile.java:259)
+	at java.base/java.io.RandomAccessFile.<init>(RandomAccessFile.java:213)
+	at com.objectdb.o.LFL.x(LFL.java:901)
+	... 27 more
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:32:22 #1 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/Pdietaenfermidade/concar.odb' is opened by 12722@A09equipo19
+
+[2024-03-13 14:32:22 #2 store] 
+Configuration path: /home/dam2/DAM2/AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:32:29 #3 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/Pdietaenfermidade/concar.odb' is closed by 12722@A09equipo19
+
+[2024-03-13 14:32:29 #4 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 12722@A09equipo19
+
+[2024-03-13 14:32:29 #5 store] 
+Configuration path: /home/dam2/DAM2/AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:32:40 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 4532@debian
+
+[2024-03-13 14:32:40 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:32:40 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 14:32:40 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:32:40 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 4532@debian
+
+[2024-03-13 14:33:11 #6 store] 
+Database '/home/dam2/DAM2/AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 12722@A09equipo19
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:33:14 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 4574@debian
+
+[2024-03-13 14:33:14 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:33:14 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 14:33:14 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:33:14 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 4574@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:37:12 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 4632@debian
+
+[2024-03-13 14:37:12 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:37:12 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 14:37:12 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:37:12 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 4632@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:40:30 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 4682@debian
+
+[2024-03-13 14:40:30 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:40:31 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 14:40:31 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:40:31 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 4682@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:41:40 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 4724@debian
+
+[2024-03-13 14:41:40 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:41:40 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 14:41:40 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:41:40 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 4724@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:42:13 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 4764@debian
+
+[2024-03-13 14:42:13 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:42:13 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 14:42:13 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:42:13 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 4764@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:43:12 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 4805@debian
+
+[2024-03-13 14:43:12 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:43:12 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 14:43:12 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:43:12 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 4805@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:50:35 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 4865@debian
+
+[2024-03-13 14:50:35 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:50:35 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 14:50:35 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:50:35 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 4865@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:51:38 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 4907@debian
+
+[2024-03-13 14:51:38 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:51:38 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 14:51:38 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:51:38 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 4907@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:53:07 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 4948@debian
+
+[2024-03-13 14:53:07 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:53:07 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 14:53:07 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:53:07 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 4948@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:53:18 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 4989@debian
+
+[2024-03-13 14:53:18 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:53:18 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 14:53:18 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:53:18 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 4989@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 14:56:27 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5041@debian
+
+[2024-03-13 14:56:27 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 14:56:27 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 14:56:27 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 14:56:27 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5041@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:01:21 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5092@debian
+
+[2024-03-13 15:01:21 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:01:21 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:01:21 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:01:21 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5092@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:02:38 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5137@debian
+
+[2024-03-13 15:02:38 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:02:38 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:02:38 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:02:38 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5137@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:04:31 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5183@debian
+
+[2024-03-13 15:04:31 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:04:31 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:04:31 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:04:31 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5183@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:15:32 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5258@debian
+
+[2024-03-13 15:15:32 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:15:32 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:15:32 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:15:32 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5258@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:16:02 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5298@debian
+
+[2024-03-13 15:16:02 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:16:02 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:16:02 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:16:02 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5298@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:16:47 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5338@debian
+
+[2024-03-13 15:16:47 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:16:47 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:16:47 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:16:47 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5338@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:16:53 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5377@debian
+
+[2024-03-13 15:16:53 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:16:53 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:16:53 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:16:53 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5377@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:18:35 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5421@debian
+
+[2024-03-13 15:18:35 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:18:35 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:18:35 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:18:36 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5421@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:19:14 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5463@debian
+
+[2024-03-13 15:19:14 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:19:14 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:19:14 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:19:15 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5463@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:19:25 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5503@debian
+
+[2024-03-13 15:19:25 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:19:25 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:19:25 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:19:25 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5503@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:19:32 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5542@debian
+
+[2024-03-13 15:19:32 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:19:32 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:19:32 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:19:32 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5542@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:20:20 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5583@debian
+
+[2024-03-13 15:20:20 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:20:20 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:20:20 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:20:20 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5583@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:23:20 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5627@debian
+
+[2024-03-13 15:23:20 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:23:20 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:23:20 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:23:20 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5627@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:23:43 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5667@debian
+
+[2024-03-13 15:23:43 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:23:43 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:23:43 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:23:43 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5667@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:24:07 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5708@debian
+
+[2024-03-13 15:24:07 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:24:07 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:24:07 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:24:07 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5708@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:24:37 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5748@debian
+
+[2024-03-13 15:24:37 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:24:37 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:24:37 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:24:37 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5748@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:36:51 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5838@debian
+
+[2024-03-13 15:36:51 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:36:51 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:36:51 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:36:51 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5838@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:37:38 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5879@debian
+
+[2024-03-13 15:37:38 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:37:38 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:37:38 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:37:38 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5879@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:37:44 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5918@debian
+
+[2024-03-13 15:37:44 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:37:45 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:37:45 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:37:45 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5918@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:37:54 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5957@debian
+
+[2024-03-13 15:37:54 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:37:54 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:37:54 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:37:54 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5957@debian
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-03-13 15:38:28 #1 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is opened by 5998@debian
+
+[2024-03-13 15:38:28 #2 store] 
+Configuration path: /media/sf_AD/Trimestre2/Drivers/objectdb-2.8.9/objectdb.conf
+
+[2024-03-13 15:38:28 #3 type] 
+Type pdietaenfermidade.Consumo is not enhanced.
+
+[2024-03-13 15:38:28 #4 type] 
+Type pdietaenfermidade.Carne is not enhanced.
+
+[2024-03-13 15:38:28 #5 store] 
+Database '/media/sf_AD/Trimestre2/Examen/examen/src/pdietaenfermidade/concar.odb' is closed by 5998@debian
+
